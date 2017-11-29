@@ -17,6 +17,10 @@ DBMS는 크게 6가지의 기능을 가지고 있습니다.
 > - 보호 : 하드웨어나 소프트웨어의 오동작 또는 권한이 없는 악의적인 접근으로부터 시스템을 보호한다.
 > - 유지보수 : 시간이 지남에 따라 변화하는 요구사항을 반영할 수 있도록 하는 기능이다.
 
+
+----------
+
+
 ####MySQL
  **MySQL**[^mysql]은 DBMS중 관계형 데이터베이스 관리 시스템(RDBMS)에 분류되는 시스템입니다. MySQL은 페이스북, 구글, 어도비등 세계에서 가장 규모가 크고 빠르게 성장하는 기업들에서 사용되고 있는 관계형 데이터베이스 관리 시스템(RDBMS)입니다. 그러한 기업들은 이 시스템을 사용하여 대용량 웹 사이트, 비즈니스 크리티컬 시스템 및 패키지 소프트웨어에 전력을 공급하고 시간을 절약합니다.
 
@@ -24,12 +28,36 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 
 또한, MySQL은 따로 데이터베이스를 관리하거나 자료를 관리하기 위한  GUI (Graphical User Interface)관리 툴이 내장되어 있지 않기 때문에 이용자들은 명령 줄 인터페이스도구를 이용하거나 또는 데이터베이스 또는 데이터베이스를 만들고, 관리하는데, 데이터를 백업하는데, 상태를 검사하고, 데이터베이스 구조를 생성하거는데, 또는 데이터 레코더를 작성하는데 있어서 MySQL 프론트엔드 데스크톱 소프트웨어나 웹 애플리케이션을 사용해야 한다.
 
+
+----------
+
+
+####MySQL 구조
+![mysql구조사진](http://cfile28.uf.tistory.com/image/26219B435902D8852210A8)
+
+위 사진은 MySQL의 아키텍쳐를 나타냅니다. 사진을 보면 MySQL은 Storage Engines와 SQL Interface, Optimizer, Parser등을 구분하고 있는 것이 보입니다. MySQL의 서버는 두가지 크게 두개의 엔진으로 구분되어 지는데 첫번째는 **MySQL엔진**, 그리고 두번째는 **Storage 엔진**입니다. 이 둘의 특징은 다음과 같습니다.
+
+
+
+>**MySql Engine**
+
+> - MySQL 엔진은 클라이언트로부터 접속 및 쿼리 요청을 처리하는 커넥션 핸들러와 SQL 파서 및 전처리기, 그리고 쿼리의 최적화된 실행을 위한 옵티마이저가 중심을 이룹니다. 그리고 성능 향상을 위해 MyISAM의 키 캐시나 InnoDB의 버퍼 풀과 같은 보조 저장소 기능이 포함돼 있습니다. 또한, MySQL은 표준 SQL(ANSI SQL-92) 문법을 지원하기 때문에 표준 문법에 따라 작성된 쿼리는 타 DBMS와 호환되어 실행될 수 있습니다.
+
+>**Storage Engine**
+
+> - MySQL 엔진은 요청된 SQL 문장을 분석하거나 최적화하는 등 DBMS의 두뇌에 해당하는 처리를 수행하고, 실제 데이터를 디스크 스토리지에 저장하거나 디스크 스토리지로부터 데이터를 읽어오는 부분은 스토리지 엔진이 전담합니다.
+> - MySQL 서버에서 MySQL 엔진은 하나지만 스토리지 엔진은 여러 개를 동시에 사용할 수 있습니다. 테이블이 사용할 스토리지 엔진을 지정하면 이후 해당 테이블의 모든 읽기 작업이나 변경 작업은 정의된 스토리지 엔진이 처리합니다.	
+
+
+----------
+
+
 ####실습환경
 
 >**환경:**
 
 > - Ubuntu 16.04 LTS
-> - MySQL
+> - MySQL 5.7.20
 > - Apache 2.0
 > - PHP 7.1
 	 
@@ -40,63 +68,22 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 ----------
 
 
-**Documents**
+**MySQL 설치하기**
 -------------
 
 
-### Tables
+### 가상머신에 Ubuntu 설치
 
-**Markdown Extra** has a special syntax for tables:
+**VMware** 가상머신의 설치:
 
-Item     | Value
--------- | ---
-Computer | $1600
-Phone    | $12
-Pipe     | $1
+가장 먼저 VMware라는 가상머신 소프트웨어를 다운받아야 합니다.
 
-You can specify column alignment with one or two colons:
-
-| Item     | Value | Qty   |
-| :------- | ----: | :---: |
-| Computer | $1600 |  5    |
-| Phone    | $12   |  12   |
-| Pipe     | $1    |  234  |
+ <https://www.vmware.com/>
+ 
 
 
-```
-// Foo
-var bar = 0;
-```
+----------
 
-> **Tip:** To use **Prettify** instead of **Highlight.js**, just configure the **Markdown Extra** extension in the <i class="icon-cog"></i> **Settings** dialog.
-
-> **Note:** You can find more information:
-
-> - about **Prettify** syntax highlighting [here][5],
-> - about **Highlight.js** syntax highlighting [here][6].
-
-
-### Footnotes
-
-You can create footnotes like this[^footnote].
-
-  [^footnote]: Here is the *text* of the **footnote**.
-
-
-### SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                  | ASCII                        | HTML              |
- ----------------- | ---------------------------- | ------------------
-| Single backticks | `'Isn't this fun?'`            | 'Isn't this fun?' |
-| Quotes           | `"Isn't this fun?"`            | "Isn't this fun?" |
-| Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |
-
-
-### Table of contents
-
-You can insert a table of contents using the marker `[TOC]`:
 
 [TOC]
 
