@@ -2,9 +2,9 @@
 ===================
 
 
-**DBMS와 MySQL 소개**
+**1. DBMS와 MySQL 소개**
 -------------
-####DBMS
+####1-1 DBMS
 **데이터베이스 관리 시스템(DBMS)**[^dbms]은 다수의 사용자들이 데이터베이스 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합입니다. DBMS은 사용자 또는 다른 프로그램의 요구를 처리하고 적절히 응답하여 데이터를 사용할 수 있도록 해줍니다.
 
 DBMS는 크게 6가지의 기능을 가지고 있습니다.
@@ -21,7 +21,7 @@ DBMS는 크게 6가지의 기능을 가지고 있습니다.
 ----------
 
 
-####MySQL
+####1-2 MySQL
  **MySQL**[^mysql]은 DBMS중 관계형 데이터베이스 관리 시스템(RDBMS)에 분류되는 시스템입니다. MySQL은 페이스북, 구글, 어도비등 세계에서 가장 규모가 크고 빠르게 성장하는 기업들에서 사용되고 있는 관계형 데이터베이스 관리 시스템(RDBMS)입니다. 그러한 기업들은 이 시스템을 사용하여 대용량 웹 사이트, 비즈니스 크리티컬 시스템 및 패키지 소프트웨어에 전력을 공급하고 시간을 절약합니다.
 
 MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language)를 사용하는 개방소스의 관계형 데이터베이스 관리 시스템이며, 속도가 빠르고 가볍고 유연하며, 초보자도 쉽게 다룰 수 있는 쉬운 인터페이스가 특징입니다.
@@ -32,7 +32,7 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 ----------
 
 
-####MySQL 구조
+####1-3 MySQL 구조
 ![mysql구조사진](http://cfile28.uf.tistory.com/image/26219B435902D8852210A8)
 
 위 사진은 MySQL의 아키텍쳐를 나타냅니다. 사진을 보면 MySQL은 Storage Engines와 SQL Interface, Optimizer, Parser등을 구분하고 있는 것이 보입니다. MySQL의 서버는 두가지 크게 두개의 엔진으로 구분되어 지는데 첫번째는 **MySQL엔진**, 그리고 두번째는 **Storage 엔진**입니다. 이 둘의 특징은 다음과 같습니다.
@@ -52,7 +52,7 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 ----------
 
 
-####실습환경
+####1-4 실습환경
 
 >**환경:**
 
@@ -68,11 +68,11 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 ----------
 
 
-**MySQL 설치하기**
+**2. MySQL 설치하기**
 -------------
 
 
-### 가상머신에 Ubuntu 설치
+####2-1 가상머신에 Ubuntu 설치
 
 **VMware** 가상머신의 설치:
 
@@ -83,50 +83,53 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 
 
 ----------
+####2-2 MySQL 설치
+
+
+----------
+####2-3 apache2 & php 설치
+
+
+----------
+####2-4 MySQL 연동하기
+
+----------
+3. MySQL  실습하기
+-------------
+####3-1 MySQL 실행
+
+>**MySQL**을 실행하는 것은 간단합니다. 터미널을 열고 **$mysql -uroot -p** 를 입력 후 엔터를 쳐주시고 아까 설정한 MySQL의 암호를 입력해 주시면 됩니다. MySQL을 들어가면 버전정보, 설치날짜등 확인 하실 수 있고 새로운 입력 창이 뜨게 됩니다.
+
+[사진 부분]
+
+	
+>MySQL에서 먼저 현재 어떠한 데이터베이스들이 있는지 확인하기위해 **>> show databases** 명령어를 입력해봅시다.
+
+[사진 부분]
+
+
+
+
+----------
+####3-2 Insert
+
+
+----------
+####3-3 Select
+
+
+----------
+####3-4 Delete
+
+----------
 
 
 [TOC]
 
 
-### UML diagrams
 
-You can also render sequence diagrams like this:
-
-```sequence
-Alice->Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob-->Alice: I am good thanks!
-```
-
-And flow charts like this:
-
-```flow
-st=>start: Start
-e=>end
-op=>operation: My Operation
-cond=>condition: Yes or No?
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
-
-> **Note:** You can find more information:
-
-> - about **Sequence diagrams** syntax [here][7],
-> - about **Flow charts** syntax [here][8].
 
 
 [^dbms]: [DBMS](https://en.wikipedia.org/wiki/Database/)는 다수의 사용자들이 데이터베이스 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합이다.
 
 [^mysql]: [MySQL](https://www.mysql.com/why-mysql/)은 세상에서 가장 많이 사용되는 오픈소스형태의 관계형 데이터베이스 관리 시스템(RDBMS)이다.
-
-
-  [1]: http://math.stackexchange.com/
-  [2]: http://daringfireball.net/projects/markdown/syntax "Markdown"
-  [3]: https://github.com/jmcmanus/pagedown-extra "Pagedown Extra"
-  [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference
-  [5]: https://code.google.com/p/google-code-prettify/
-  [6]: http://highlightjs.org/
-  [7]: http://bramp.github.io/js-sequence-diagrams/
-  [8]: http://adrai.github.io/flowchart.js/
