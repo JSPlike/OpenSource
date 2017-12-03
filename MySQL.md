@@ -104,25 +104,25 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 > Mac에서는 가상머신을 사용하기위해 parallels라는 앱을 사용합니다. 원래는 parallels홈페이지에서 사용료를 지불하고 유료로 사용해야하지만 **parallels Lite**의 출시로 linux관련 OS는 무료로 사용할 수 있습니다.
 
 
-1) parallels 검색
+**1) parallels 검색**
 
 **parallels Lite**의 설치는 AppStore에서 가능합니다. 먼저 Mac에서 SpotLight를 실행해주시고 App Store를 검색해주세요
 
 ![spotlight 검색](http://cfile27.uf.tistory.com/image/992413335A2380551C0E59)
 
-2) parallels 설치
+**2) parallels 설치**
 
 App Store에서 parallels Lite를 검색해서 설치해주세요
 
 ![parallels lite 검색](http://cfile22.uf.tistory.com/image/9945B2335A23808E269378) 
 
-3) app 실행 
+**3) app 실행**
 
 설치가 되셨다면 앱을 실행해 주세요 앱에서는 윈도우관련 운영체제는 유료로 제공하지만 리눅스 운영체제는 전부 무료로 제공하고 있습니다.
 
 ![앱 실행](http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7)
 
-4) 우분투 설치
+**4) 우분투 설치**
 
 우분투 설치는 아주 간단합니다. 그냥 우분투 앱을 더블클릭후 다운로드 버튼을 누르기만 하면 간단히 OS가 설치되어집니다.
 
