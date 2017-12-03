@@ -147,7 +147,18 @@ README 파일에서 설치된 프로그램들의 버전을 확인할 수 있다.
 
 별도의 설정이 필요한 경우 표시된 설정 파일 경로에 있는 설정파일을 수정하면 된다.
 
-cmd 창 접속 후 mysql -uroot -p
+cmd 창 접속 후 mysql -uroot -p [enter]
+apmsetup [enter]
+나중에 비밀번호 변경해야 한다.
+mysql> show databases;
+하면 데이터 베이스 목록을 확인할 수 있다.
+
+웹기반의 mysql 클라이언트인 phpMyadmin 접속 방법
+작업 표시줄의 아이콘 중 APMSETUP아이콘을 오른쪽 버튼으로 클릭한 후 mysql관리를 클릭한다.
+
+사용자명: root
+비밀번호: apmsetup
+
 
 ##### **2-2-2 Mac 환경 :**
 
