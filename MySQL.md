@@ -4,7 +4,7 @@
 
 **1. DBMS와 MySQL 소개**
 -------------
-####1-1 DBMS
+#### 1-1 DBMS
 **데이터베이스 관리 시스템(DBMS)**[^dbms]은 다수의 사용자들이 데이터베이스 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합입니다. DBMS은 사용자 또는 다른 프로그램의 요구를 처리하고 적절히 응답하여 데이터를 사용할 수 있도록 해줍니다.
 
 DBMS는 크게 6가지의 기능을 가지고 있습니다.
@@ -21,7 +21,7 @@ DBMS는 크게 6가지의 기능을 가지고 있습니다.
 ----------
 
 
-####1-2 MySQL
+#### 1-2 MySQL
  **MySQL**[^mysql]은 DBMS중 관계형 데이터베이스 관리 시스템(RDBMS)에 분류되는 시스템입니다. MySQL은 페이스북, 구글, 어도비등 세계에서 가장 규모가 크고 빠르게 성장하는 기업들에서 사용되고 있는 관계형 데이터베이스 관리 시스템(RDBMS)입니다. 그러한 기업들은 이 시스템을 사용하여 대용량 웹 사이트, 비즈니스 크리티컬 시스템 및 패키지 소프트웨어에 전력을 공급하고 시간을 절약합니다.
 
 MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language)를 사용하는 개방소스의 관계형 데이터베이스 관리 시스템이며, 속도가 빠르고 가볍고 유연하며, 초보자도 쉽게 다룰 수 있는 쉬운 인터페이스가 특징입니다.
@@ -32,7 +32,7 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 ----------
 
 
-####1-3 MySQL 구조
+#### 1-3 MySQL 구조
 ![mysql구조사진](http://cfile28.uf.tistory.com/image/26219B435902D8852210A8)
 
 위 사진은 MySQL의 아키텍쳐를 나타냅니다. 사진을 보면 MySQL은 Storage Engines와 SQL Interface, Optimizer, Parser등을 구분하고 있는 것이 보입니다. MySQL의 서버는 두가지 크게 두개의 엔진으로 구분되어 지는데 첫번째는 **MySQL엔진**, 그리고 두번째는 **Storage 엔진**입니다. 이 둘의 특징은 다음과 같습니다.
@@ -52,7 +52,7 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 ----------
 
 
-####1-4 실습환경
+#### 1-4 실습환경
 
 >**환경:**
 
@@ -72,9 +72,9 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 -------------
 
 
-####2-1 가상머신에 Ubuntu 설치
+#### 2-1 가상머신에 Ubuntu 설치
 
-#####**2-1-1 Windows 환경 :**
+##### **2-1-1 Windows 환경 :**
 
 **VMware** 가상머신의 설치:
 
@@ -97,7 +97,7 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 
 여러가지 종류의 가상머신 버전이 있습니다. 저희는 개인용 컴퓨터에서 사용할 Personal Desktop 탭에서 VMware Workstation Player을 무료다운받을 수 있습니다.
 
-#####**2-1-1 Mac 환경 :**
+##### **2-1-1 Mac 환경 :**
 
 
 > **TIP : **
@@ -134,15 +134,15 @@ App Store에서 parallels Lite를 검색해서 설치해주세요
 (http://cfile22.uf.tistory.com/image/99418A335A23821820145A)
 
 ----------
-####2-2 MySQL 설치
+#### 2-2 MySQL 설치
 
 
 ----------
-####2-3 apache2 & php 설치
+#### 2-3 apache2 & php 설치
 
 
 ----------
-####2-4 MySQL 연동하기
+#### 2-4 MySQL 연동하기
 
 ----------
 3. MySQL  실습하기
@@ -162,15 +162,15 @@ App Store에서 parallels Lite를 검색해서 설치해주세요
 
 
 ----------
-####3-2 Insert
+#### 3-2 Insert
 
 
 ----------
-####3-3 Select
+#### 3-3 Select
 
 
 ----------
-####3-4 Delete
+#### 3-4 Delete
 
 ----------
 
