@@ -39,12 +39,12 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 
 
 >**MySql Engine**
-
+>
 > - MySQL 엔진은 클라이언트로부터 접속 및 쿼리 요청을 처리하는 커넥션 핸들러와 SQL 파서 및 전처리기, 그리고 쿼리의 최적화된 실행을 위한 옵티마이저가 중심을 이룹니다. 그리고 성능 향상을 위해 MyISAM의 키 캐시나 InnoDB의 버퍼 풀과 같은 보조 저장소 기능이 포함돼 있습니다. 또한, MySQL은 표준 SQL(ANSI SQL-92) 문법을 지원하기 때문에 표준 문법에 따라 작성된 쿼리는 타 DBMS와 호환되어 실행될 수 있습니다.
 
 
 >**Storage Engine**
-
+>
 > - MySQL 엔진은 요청된 SQL 문장을 분석하거나 최적화하는 등 DBMS의 두뇌에 해당하는 처리를 수행하고, 실제 데이터를 디스크 스토리지에 저장하거나 디스크 스토리지로부터 데이터를 읽어오는 부분은 스토리지 엔진이 전담합니다.
 > - MySQL 서버에서 MySQL 엔진은 하나지만 스토리지 엔진은 여러 개를 동시에 사용할 수 있습니다. 테이블이 사용할 스토리지 엔진을 지정하면 이후 해당 테이블의 모든 읽기 작업이나 변경 작업은 정의된 스토리지 엔진이 처리합니다.	
 
@@ -55,12 +55,13 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 #### 1-4 실습환경
 
 >**환경:**
-
+>
 > - Ubuntu 16.04 LTS
 > - MySQL 5.7.20
 > - Apache 2.0
 > - PHP 7.1
 	 
+
 	
  > **Tip:** 무작정 최신버전을 설치하는 것은 좋지 않습니다. 
 	 
@@ -86,52 +87,46 @@ MySQL은 표준 데이터베이스 질의언어인 SQL(Structured Query Language
 
 아래의 사진은 VMware사이트의 메인 화면
 
-![vmware install_01]
-(http://cfile26.uf.tistory.com/image/99AC13335A237B2521D607)
+![vmware install_01](http://cfile26.uf.tistory.com/image/99AC13335A237B2521D607)
 
 왼쪽 사이드바에서 다운로드 부분으로 들어가주세요
 
 
-![vmware install_02]
-(http://cfile28.uf.tistory.com/image/99378A335A237B270848E6)
+![vmware install_02](http://cfile28.uf.tistory.com/image/99378A335A237B270848E6)
 
 여러가지 종류의 가상머신 버전이 있습니다. 저희는 개인용 컴퓨터에서 사용할 Personal Desktop 탭에서 VMware Workstation Player을 무료다운받을 수 있습니다.
 
 ##### **2-1-1 Mac 환경 :**
 
 
-> **TIP : **
+> TIP :
 > 
->Mac에서는 가상머신을 사용하기위해 parallels라는 앱을 사용합니다. 원래는 parallels홈페이지에서 사용료를 지불하고 유료로 사용해야하지만 **parallels Lite**의 출시로 linux관련 OS는 무료로 사용할 수 있습니다.
+> Mac에서는 가상머신을 사용하기위해 parallels라는 앱을 사용합니다. 원래는 parallels홈페이지에서 사용료를 지불하고 유료로 사용해야하지만 **parallels Lite**의 출시로 linux관련 OS는 무료로 사용할 수 있습니다.
 
 
 1) parallels 검색
 
 **parallels Lite**의 설치는 AppStore에서 가능합니다. 먼저 Mac에서 SpotLight를 실행해주시고 App Store를 검색해주세요
 
-![spotlight 검색]
-(http://cfile27.uf.tistory.com/image/992413335A2380551C0E59)
+![spotlight 검색](http://cfile27.uf.tistory.com/image/992413335A2380551C0E59)
 
 2) parallels 설치
 
 App Store에서 parallels Lite를 검색해서 설치해주세요
 
-![parallels lite 검색]
-(http://cfile22.uf.tistory.com/image/9945B2335A23808E269378) 
+![parallels lite 검색](http://cfile22.uf.tistory.com/image/9945B2335A23808E269378) 
 
 3) app 실행 
 
 설치가 되셨다면 앱을 실행해 주세요 앱에서는 윈도우관련 운영체제는 유료로 제공하지만 리눅스 운영체제는 전부 무료로 제공하고 있습니다.
 
-![앱 실행]
-(http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7)
+![앱 실행](http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7)
 
 4) 우분투 설치
 
 우분투 설치는 아주 간단합니다. 그냥 우분투 앱을 더블클릭후 다운로드 버튼을 누르기만 하면 간단히 OS가 설치되어집니다.
 
-![우분투 다운]
-(http://cfile22.uf.tistory.com/image/99418A335A23821820145A)
+![우분투 다운](http://cfile22.uf.tistory.com/image/99418A335A23821820145A)
 
 ----------
 #### 2-2 MySQL 설치
