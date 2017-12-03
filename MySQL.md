@@ -131,6 +131,7 @@ App Store에서 parallels Lite를 검색해서 설치해주세요
 ----------
 #### 2-2 MySQL 설치
 
+MySQL을 설치해봅시다.
 
 ----------
 #### 2-3 apache2 & php 설치
