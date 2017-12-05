@@ -291,18 +291,18 @@ mysql의 클라이언트는 아주 많은 종류가 있다. 그 중 대표적인
 mysql을 설치하면 기본적으로 함께 설치되는 프로그램으로  mysql에서 만든 회사에서 제공하는 오픈소스 프로그램으로 무료로 사용 가능하다. 콘솔 환경에서 사용하는 명령어 기반의 클라이언트이다.
 
 - **mysql query browser**
-이 프로그램 또한 마찬가지로 mysql을 만든 회사에서 제공하는 프로그램이다. 이 프로그램은 기본적으로 설치되는 것은 아니기 때문에 사용하려면 [여기](http://dev.mysql.com/downloads/gui-tools/5.0.html,"mysql query browser download link")에서 별도로 다운로드 해야 한다. GUI(Graphic User Interface)환경이기 때문에 데이터베이스를 쉽게 접근할 수 있다는 장점이 있다.
+이 프로그램 또한 마찬가지로 mysql을 만든 회사에서 제공하는 프로그램이다. 이 프로그램은 기본적으로 설치되는 것은 아니기 때문에 사용하려면 [여기](http://dev.mysql.com/downloads/gui-tools/5.0.html,)에서 별도로 다운로드 해야 한다. GUI(Graphic User Interface)환경이기 때문에 데이터베이스를 쉽게 접근할 수 있다는 장점이 있다.
 
 
 - **phpMyAdmin**
-서버에 직접 설치되어 있는 웹 프로그램이다. mysql-moniter나 mysql query browser와 같은 경우는 개인 컴퓨터에 설치되어 있을 때만 사용 가능한 반면 phpMyAdmin은 웹으로 제공되는 서비스이기 때문에 장소에 제한되지 않고 웹 환경에서 데이터베이스를 제어할 수 있어 편리하다는 장점이 있다. phpMyAdmin에 대한 더 자세한 정보는 [여기](http://www.phpmyadmin.net/home_page/index.php,"About phpMyAdmin")에서 볼 수 있다.
+서버에 직접 설치되어 있는 웹 프로그램이다. mysql-moniter나 mysql query browser와 같은 경우는 개인 컴퓨터에 설치되어 있을 때만 사용 가능한 반면 phpMyAdmin은 웹으로 제공되는 서비스이기 때문에 장소에 제한되지 않고 웹 환경에서 데이터베이스를 제어할 수 있어 편리하다는 장점이 있다. phpMyAdmin에 대한 더 자세한 정보는 [여기](http://www.phpmyadmin.net/home_page/index.php)에서 볼 수 있다.
 
 - **navicat**
-navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로그램이다. 유료 프로그램이고 가격이 비싸지만 그 만큼 편리하고 가치 있는 프로그램이라고 할 수 있다. navicat은 [여기](http://www.navicat.com,"navicat download link")에서 다운로드 할 수 있다.
+navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로그램이다. 유료 프로그램이고 가격이 비싸지만 그 만큼 편리하고 가치 있는 프로그램이라고 할 수 있다. navicat은 [여기](http://www.navicat.com)에서 다운로드 할 수 있다.
 
 - **그 밖의 클라이언트**
-'TOAD' 에 대한 정보를 보려면 [클릭](http://www.quest.com/toad-for-mysql/,"About TOAD")
-'올챙이' 에 대한 정보를 보려면 [클릭](https://sites.google.com/site/tadpolefordb/,"About 올챙이")
+'TOAD' 에 대한 정보를 보려면 [클릭](http://www.quest.com/toad-for-mysql/)
+'올챙이' 에 대한 정보를 보려면 [클릭](https://sites.google.com/site/tadpolefordb/)
 
 ----------
 
