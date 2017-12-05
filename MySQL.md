@@ -63,7 +63,7 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 	 
 
 	
- > **Tip:** 무작정 최신버전을 설치하는 것은 좋지 않습니다. 
+ > **Tip:** 무작정 최신버전을 설치하는 것은 좋지 않다. 
 	 
 
 ----------
@@ -131,19 +131,146 @@ App Store에서 parallels Lite를 검색한 뒤 설치한다.
 ----------
 #### 2-2 MySQL 설치
 ##### **2-2-1 Windows 환경 :**
-mysql을 설치하는 방법에는 여러가지가 있지만 그 중 간편하게 설치하는 방법이다. APMSETUP이라고 하는 사이트에 접속하여 다운로드 페이지로 들어간다. 참고로 APM은 Apache Php Mysql의 약자이다. 이 프로그램을 설치하게 되면 컴퓨터에 Apache, PHP, mysql이 모두 설치가 되며 복잡한 설정을 할 필요가 없이 여러 시스템들을 사용할 수 있다
-[APMSETUP7 DOWNLOAD] 를 클릭하여 파일을 다운로드 받는다.
+mysql을 설치하는 방법에는 여러가지가 있지만 그 중 간편하게 설치하는 방법으로 APMSETUP이 있다.
+>APMSETUP 이라고 하는 사이트에 접속하여 다운로드 페이지로 들어간다.
+
+참고로 APM은 Apache Php Mysql의 약자이다. 이 프로그램을 설치하게 되면 컴퓨터에 Apache, PHP, mysql이 모두 설치가 되며 복잡한 설정을 할 필요가 없이 여러 시스템들을 사용할 수 있다
+
+>**[APMSETUP7 DOWNLOAD]** 를 클릭하여 파일을 다운로드 받는다.
+>
 실행한다.
 
+언어 설정을 하고
 다음다음다음 약관 확인
 APM_Setup 7 Default Data를 선택하고 다음
 설치 폴더 지정한 후 설치
-방화벽 엑세스 허용한 후
+방화벽 엑세스 허용한 후 마침
+
+*README 파일* 에서 설치된 프로그램들의 버전을 확인할 수 있다.
+
+------
+**#설치 확인**
+
+잘 설치 되었는지 확인하기 위해 웹 브라우저에 localhost를 입력해 본다.
+
+별도의 설정이 필요한 경우 표시된 설정 파일 경로에 있는 설정파일을 수정하면 된다.
+
+cmd 창 접속 후
+>mysql -uroot -p [enter]
+>apmsetup [enter]
+
+초기 비밀번호는 apmsetup이다. 하지만 필수적으로 비밀번호 변경하는 것을 권장한다.
+
+>mysql> show databases;
+
+위의 명령으로 데이터 베이스의 목록을 확인할 수 있다.
+
+-----
+**# 웹기반의 mysql 클라이언트인 phpMyadmin 접속 방법**
+
+
+hp 작업 표시줄의 아이콘 중 APMSETUP아이콘을 오른쪽 버튼으로 클릭한 후 mysql관리를 클릭한다.
+
+>사용자명: root
+>비밀번호: apmsetup
+
+라고 입력한 뒤  실행을 누른다.
+ 
+phpMyadmin은 mysql과 관련된 거의 모든 작업을 할 수 있는 강력한 프로그램으로 실행을 하면 데이터베이스 리스트를 볼 수 있다.
+데이터 베이스를 클릭하면 해당 데이터베이스에 존재하는 테이블 리스트를 확인할 수 있다.
+
+----
+**# uroot 비밀번호 변경방법**
+
+tray에서 apmsetup moniter라고 하는 이 시스템 tray를 오른쪽 클릭 후 mysql root 패스워드 변경을 클릭하고 패스워드를 변경한다.
+
+-------
+>※ 참고
+>Apache phpMyadmin과 같은 시스템들은 윈도우보다는 리눅스를 선호하기 때문에 여유가 된다면 가상머신을 이용하여 리눅스를 설치하고 그 위에 mysql을 설치하는 것을 권장한다.
+
 
 
 ##### **2-2-2 Mac 환경 :**
 
+
+
 ##### **2-2-3 Linux 환경 :**
+리눅스 중 우분투(Ubuntu)라고 하는 리눅스 배포판을 설치했다고 가정한 후의 설명이다.
+
+terminal 창을 열고  아래의 명령어를 작성한다.
+
+Apache 설치
+> sudo apt-get install apache2
+
+mysql 설치
+>sudo apt-get install mysql-server mysql-client
+
+php 설치
+>sudo apt-get install php5-common php5 libapache2-mod-php5
+
+php-mysql 연동 모듈설치
+>sudo apt-get install php5-mysql
+
+아파치 재시작
+>sudo /etc/init.d/apache2 restart
+
+만약 mysql만 설치할 것이라면 mysql만을 설치하면 된다.
+
+하지만 일반적으로 mysql이 웹을 위해 많이 사용되기도 하고 웹 환경에서 가장 많이 사용되는 기술 중 하나가 아파치라는 웹 서버와 php라고 하는 미들웨어이기 때문에 일반적으로 mysql, php, apache는 함께 사용되는 경우가 많다.
+
+모두 설치하였으면 terminal 창에 다음과 같이 입력하여 mysql에 접속한다.
+>mysql -uroot -p [enter]
+>[password 입력]
+
+mysql -uroot -p [password] 의 방법으로 접속하는 것 또한 가능하지만 보안을 고려하여 엔터 이후 password를 입력하는 것이 더 좋다.
+
+>show databases;
+
+를 입력하면 현재 존재하는 database리스트가 보인다.
+
+-------
+**# 설치 확인**
+
+apache가 잘 설치되었는지 확인하기 위해서는 firefox의 주소창에 localhost를 입력하여 접속해본다.
+
+It works! 가 출력되는 화면으로 접속할 것이다. 부가적인 확인을 위해 아래의 과정을 참고한다. 아래의 과정은 index.html이라는 파일이 현재 웹브라우저에서 localhost를 입력할 때 출력하고 있다는 것을 보이기 위한 과정으로 생략해도 좋다.
+
+>cd /var/www/index
+
+/var/www/index 경로로 들어간 후
+
+>ls -al
+
+파일 목록을 조회하면 index.html 파일을 확인할 수 있다.
+
+>cat index.html
+
+이 파일을 열람해본다.
+
+
+>vim index.html
+
+이 파일을 에디터에서 오픈하여 It works! 라는 문자열을 수정해본다.
+
+php가 잘 설치되었는지 확인하기 위한 과정은 다음과 같다.
+
+/var/www/index 경로에서
+
+>sudo vi phpinfo.php
+
+위 명령을 사용하여 vi 에디터로 phpinfo.php라는 이름의 파일을 하나 생성한다.
+
+i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한다.
+
+>< ?
+>phpinfo();
+>? >
+
+:wq 를 누르고 엔터를 쳐서 위의 내용을 저장한다.
+
+firefox에서 주소창에
+localhost/phpinfo.php를 입력하며 접속하면 php와 관련된 다양한 환경에 대한 내용들이 출력된다.
+이 내용들이 잘 출력되면 php가 잘 설치되었다는 의미이고 내용을 확인하다 보면 mysql에 관한 내용도 있는 것을 볼 수 있을 것이다. 이는 mysql이 php와 잘 연동되었다는 의미이다.
 
 ----------
 #### 2-3 apache2 & php 설치
