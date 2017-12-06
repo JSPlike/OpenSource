@@ -43,6 +43,7 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 > - MySQL 엔진은 클라이언트로부터 접속 및 쿼리 요청을 처리하는 커넥션 핸들러와 SQL 파서 및 전처리기, 그리고 쿼리의 최적화된 실행을 위한 옵티마이저가 중심을 이룬다. 그리고 성능 향상을 위해 MyISAM의 키 캐시나 InnoDB의 버퍼 풀과 같은 보조 저장소 기능이 포함되어 있다. 또한, MySQL은 표준 SQL(ANSI SQL-92) 문법을 지원하기 때문에 표준 문법에 따라 작성된 쿼리는 타 DBMS와 호환되어 실행될 수 있다.
 
 
+
 >**Storage Engine**
 >
 > - MySQL 엔진은 DBMS의 두뇌 역할을 담당하며 요청된 SQL 문장을 분석하거나 최적화하는 등의 처리를 수행한다. 그리고 스토리지 엔진은 실제 데이터를 디스크 스토리지에 저장하거나 디스크 스토리지로부터 데이터를 읽어오는 부분을 수행한다.
@@ -132,13 +133,14 @@ App Store에서 parallels Lite를 검색한 뒤 설치한다.
 #### 2-2 MySQL 설치
 ##### **2-2-1 Windows 환경 :**
 mysql을 설치하는 방법에는 여러가지가 있지만 그 중 간편하게 설치하는 방법으로 APMSETUP이 있다.
->APMSETUP 이라고 하는 사이트에 접속하여 다운로드 페이지로 들어간다.
+
+	APMSETUP 이라고 하는 사이트에 접속하여 다운로드 페이지로 들어간다.
 
 참고로 APM은 Apache Php Mysql의 약자이다. 이 프로그램을 설치하게 되면 컴퓨터에 Apache, PHP, mysql이 모두 설치가 되며 복잡한 설정을 할 필요가 없이 여러 시스템들을 사용할 수 있다
 
->**[APMSETUP7 DOWNLOAD]** 를 클릭하여 파일을 다운로드 받는다.
->
-실행한다.
+	[APMSETUP7 DOWNLOAD] 를 클릭하여 파일을 다운로드 받는다.
+
+	실행한다.
 
 언어 설정을 하고
 다음다음다음 약관 확인
@@ -156,12 +158,13 @@ APM_Setup 7 Default Data를 선택하고 다음
 별도의 설정이 필요한 경우 표시된 설정 파일 경로에 있는 설정파일을 수정하면 된다.
 
 cmd 창 접속 후
->mysql -uroot -p [enter]
->apmsetup [enter]
+
+	mysql -uroot -p [enter]
+	apmsetup [enter]
 
 초기 비밀번호는 apmsetup이다. 하지만 필수적으로 비밀번호 변경하는 것을 권장한다.
 
->mysql> show databases;
+	mysql> show databases;
 
 위의 명령으로 데이터 베이스의 목록을 확인할 수 있다.
 
@@ -171,8 +174,8 @@ cmd 창 접속 후
 
 hp 작업 표시줄의 아이콘 중 APMSETUP아이콘을 오른쪽 버튼으로 클릭한 후 mysql관리를 클릭한다.
 
->사용자명: root
->비밀번호: apmsetup
+	사용자명: root
+	비밀번호: apmsetup
 
 라고 입력한 뒤  실행을 누른다.
  
@@ -192,39 +195,134 @@ tray에서 apmsetup moniter라고 하는 이 시스템 tray를 오른쪽 클릭 
 
 ##### **2-2-2 Mac 환경 :**
 
+**#MAMP Stack**
 
+Mac에서 MySQL을 설치하는 방법은 여러가지가 있다. 이 문서에서는 그중 bitnami에서 제공하는 MAMP Stack이라는 것으로 MySQL을 설치하는 방법을 알아볼 것이다.
+
+**Bitnami MAMP Stack**은 완전 통합형이며 MAMP 개발 환경을 제공합니다. PHP, MySQL 및 Apache 외에도 FastCGI, OpenSSL, phpMyAdmin, ModSecurity, SQLite, Varnish, ImageMagick, xDebug, Xcache, OpenLDAP, ModSecurity, Memcache, OAuth, PEAR, PECL, APC, GD, cURL 및 기타 구성 요소가 포함됩니다. Zend Framework, Symfony, CodeIgniter, CakePHP, Smarty, Laravel과 같은 프레임 워크등을 제공하고 있다.
+
+---------
+
+>**Note:**
+>MAC에서 bitnami MAMP Stack을 이용한 설치 방법 이외에도 Homebrew를 이용하여 쉽게 설치하는 방법도 있다. 시간이 된다면 Homebrew를 이용해 MySQL을 설치하는 방법도 익혀보면 좋을 것이다.
+
+MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
+
+>**[ MAMP Stack 설치 ]**
+
+><https://bitnami.com/stack/mamp>
+
+>위의 링크를 통해 binami 사이트에 접속해보자 처음 접속하게 되면 이런 화면을 볼 수 있다. MAMP의 간단한 설명이 나와있다. 이 글의 위 내용이 있을 것이다.  
+
+![mamp]
+(http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112)
+
+	 
+ **MAMP**의 설치를 위해 오른쪽  **LOCAL INTALL**탭의 버전을 선택해 다운로드를 받아준다. 여기서는 현재의 최신버전인 **7.1.12.0 버전**을 설치할 것이다. 링크를 클릭하면 아래의 화면이 보이면서 설치가 완료된다.
+
+![install end]
+(http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7)
+
+이제 MAMP를 실행해 봅시다.
+
+![응용]
+(http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9)
+
+다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
+
+실행프로그램이 시작되면 몇가지 설정을 할 수 있는 화면들이 보이게 된다. 이때 설정이 필요없는 부분은 그냥 Pass하고 phpmyadmin등이 체크되어 있는 체크박스가 보인다.
+
+![설정1]
+(http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923)
+
+>**Note**
+>MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
+
+MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제를 하고 Next버튼을 진행해준다.
+
+![경로설정]
+(http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE)
+
+MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
+
+
+>**Note**
+>설치시 비밀번호를 입력하라는 폼이 등장한다. 이때 설정한 비밀번호는 나중에 MySQL접속시 루트계정의 비밀번호로 사용되니 외워두자.
+
+**[manager-OSX]**
+
+설치가 완료되었다면 이제 Mysql을 실행해보자.
+
+	실제로 여기까진 진행하였다면 MySQL의 설치는 완료된 것이다. 이제 MySQL실행하고 중지하는 manager-OSX를 알아보자.
+
+Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OSX** 프로그램을 실행해봅시다.
+
+![manager-OSX]
+(http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991)
+
+세개의 탭중 **Manage Servers** 탭에서 MySQL Database를 Start, Stop할 수 있다. MySQL 뿐만아니라 아파치 웹 서버도 여기서 쉽게 제어할 수 있다.
+
+	MySQL Database는 Start하고 아파치 웹서버는 Stop하여 사용을 중지해준다. 굳이 아파치 웹 서버를 지금 사용하지 않을 것이기 때문이다.
+
+**[MySQL 접속]**
+
+이제  MySQL에 접속이 되어지는지 확인해보아야 한다. 터미널에 들어가 다음의 명령어들을 수행해야 한다.
+
+MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한다.
+
+![이동]
+(http://cfile25.uf.tistory.com/image/99602D335A27FC80324778)
+
+	cd /Applications/mampstack-7.1.12-0[버전은 다를 수 있다]/mysql/bin
+
+그후 MySQL 접속 명령어를 입력하고 엔터를 누른다
+
+	./mysql -uroot -p
+
+이제 비밀번호를 입력하는 화면이 뜰 것이고 아까 등록한 비밀번호를 입력해준다.
+
+![mysql 접속]
+(http://cfile28.uf.tistory.com/image/99A4C4335A27FD5F0E2D75)
+
+Welcome이라는 글씨가 보이면서 **mysql >** 의 입력란이 보이면 설치에 성공한 것이다. 
 
 ##### **2-2-3 Linux 환경 :**
 리눅스 중 우분투(Ubuntu)라고 하는 리눅스 배포판을 설치했다고 가정한 후의 설명이다.
 
 terminal 창을 열고  아래의 명령어를 작성한다.
 
-Apache 설치
-> sudo apt-get install apache2
+[ Apache 설치 ]
 
-mysql 설치
->sudo apt-get install mysql-server mysql-client
+	sudo apt-get install apache2
 
-php 설치
->sudo apt-get install php5-common php5 libapache2-mod-php5
+[ mysql 설치 ]
 
-php-mysql 연동 모듈설치
->sudo apt-get install php5-mysql
+	sudo apt-get install mysql-server mysql-client
 
-아파치 재시작
->sudo /etc/init.d/apache2 restart
+[ php 설치 ]
+
+	sudo apt-get install php5-common php5 libapache2-mod-php5
+
+[ php-mysql 연동 모듈 설치 ]
+
+	sudo apt-get install php5-mysql
+
+[ 아파치 재 시작 ]
+
+	sudo /etc/init.d/apache2 restart
 
 만약 mysql만 설치할 것이라면 mysql만을 설치하면 된다.
 
 하지만 일반적으로 mysql이 웹을 위해 많이 사용되기도 하고 웹 환경에서 가장 많이 사용되는 기술 중 하나가 아파치라는 웹 서버와 php라고 하는 미들웨어이기 때문에 일반적으로 mysql, php, apache는 함께 사용되는 경우가 많다.
 
 모두 설치하였으면 terminal 창에 다음과 같이 입력하여 mysql에 접속한다.
->mysql -uroot -p [enter]
->[password 입력]
+
+	mysql -uroot -p [enter]
+	[password 입력]
 
 mysql -uroot -p [password] 의 방법으로 접속하는 것 또한 가능하지만 보안을 고려하여 엔터 이후 password를 입력하는 것이 더 좋다.
 
->show databases;
+	show databases;
 
 를 입력하면 현재 존재하는 database리스트가 보인다.
 
@@ -235,20 +333,20 @@ apache가 잘 설치되었는지 확인하기 위해서는 firefox의 주소창�
 
 It works! 가 출력되는 화면으로 접속할 것이다. 부가적인 확인을 위해 아래의 과정을 참고한다. 아래의 과정은 index.html이라는 파일이 현재 웹브라우저에서 localhost를 입력할 때 출력하고 있다는 것을 보이기 위한 과정으로 생략해도 좋다.
 
->cd /var/www/index
+	cd /var/www/index
 
 /var/www/index 경로로 들어간 후
 
->ls -al
+	ls -al
 
 파일 목록을 조회하면 index.html 파일을 확인할 수 있다.
 
->cat index.html
+	cat index.html
 
 이 파일을 열람해본다.
 
 
->vim index.html
+	vim index.html
 
 이 파일을 에디터에서 오픈하여 It works! 라는 문자열을 수정해본다.
 
@@ -256,30 +354,47 @@ php가 잘 설치되었는지 확인하기 위한 과정은 다음과 같다.
 
 /var/www/index 경로에서
 
->sudo vi phpinfo.php
+	sudo vi phpinfo.php
 
 위 명령을 사용하여 vi 에디터로 phpinfo.php라는 이름의 파일을 하나 생성한다.
 
-i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한다.
+i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한 후 :wq 와 엔터를 눌러 위의 내용을 저장한다.
 
->< ?
->phpinfo();
->? >
+	< ?
+	phpinfo();
+	? >
 
-:wq 를 누르고 엔터를 쳐서 위의 내용을 저장한다.
 
-firefox에서 주소창에
+
+firefox에서 주소 창에
 localhost/phpinfo.php를 입력하며 접속하면 php와 관련된 다양한 환경에 대한 내용들이 출력된다.
 이 내용들이 잘 출력되면 php가 잘 설치되었다는 의미이고 내용을 확인하다 보면 mysql에 관한 내용도 있는 것을 볼 수 있을 것이다. 이는 mysql이 php와 잘 연동되었다는 의미이다.
 
 ----------
-#### 2-3 apache2 & php 설치
+#### 2-3 MySQL 클라이언트(Client)
+저장된 데이터를 서버가 제공한 기능들을 이용하여 핸들링 하는 것을 데이터베이스 클라이언트라고 한다. 클라이언트가 웹으로 치면 서버가 웹 서버이고 데이터베이스 클라이언트는 웹 브라우저와 같은 기능을 한다고 할 수 있다.
+mysql의 클라이언트는 아주 많은 종류가 있다. 그 중 대표적인 것로는 다음과 같다.
 
+
+- **mysql-moniter**
+mysql을 설치하면 기본적으로 함께 설치되는 프로그램으로  mysql에서 만든 회사에서 제공하는 오픈소스 프로그램으로 무료로 사용 가능하다. 콘솔 환경에서 사용하는 명령어 기반의 클라이언트이다.
+
+- **mysql query browser**
+이 프로그램 또한 마찬가지로 mysql을 만든 회사에서 제공하는 프로그램이다. 이 프로그램은 기본적으로 설치되는 것은 아니기 때문에 사용하려면 [여기](http://dev.mysql.com/downloads/gui-tools/5.0.html,)에서 별도로 다운로드 해야 한다. GUI(Graphic User Interface)환경이기 때문에 데이터베이스를 쉽게 접근할 수 있다는 장점이 있다.
+
+
+- **phpMyAdmin**
+서버에 직접 설치되어 있는 웹 프로그램이다. mysql-moniter나 mysql query browser와 같은 경우는 개인 컴퓨터에 설치되어 있을 때만 사용 가능한 반면 phpMyAdmin은 웹으로 제공되는 서비스이기 때문에 장소에 제한되지 않고 웹 환경에서 데이터베이스를 제어할 수 있어 편리하다는 장점이 있다. phpMyAdmin에 대한 더 자세한 정보는 [여기](http://www.phpmyadmin.net/home_page/index.php)에서 볼 수 있다.
+
+- **navicat**
+navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로그램이다. 유료 프로그램이고 가격이 비싸지만 그 만큼 편리하고 가치 있는 프로그램이라고 할 수 있다. navicat은 [여기](http://www.navicat.com)에서 다운로드 할 수 있다.
+
+- **그 밖의 클라이언트**
+'TOAD' 에 대한 정보를 보려면 [클릭](http://www.quest.com/toad-for-mysql/)
+'올챙이' 에 대한 정보를 보려면 [클릭](https://sites.google.com/site/tadpolefordb/)
 
 ----------
-#### 2-4 MySQL 연동하기
 
-----------
 
 **3. MySQL  실습하기**
 -------------

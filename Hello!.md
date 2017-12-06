@@ -194,6 +194,7 @@ tray에서 apmsetup moniter라고 하는 이 시스템 tray를 오른쪽 클릭 
 
 
 ##### **2-2-2 Mac 환경 :**
+Mac에서 MySQL을 설치하는 방법은 여러가지가 있다. 이 문서에서는 그중 MAMP로 MySQL을 설치하는 방법을 알아볼 것이다.
 
 
 
