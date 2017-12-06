@@ -214,34 +214,29 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 
 >위의 링크를 통해 binami 사이트에 접속해보자 처음 접속하게 되면 이런 화면을 볼 수 있다. MAMP의 간단한 설명이 나와있다. 이 글의 위 내용이 있을 것이다.  
 
-![mamp]
-(http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112)
+![mamp](http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112)
 
 	 
  **MAMP**의 설치를 위해 오른쪽  **LOCAL INTALL**탭의 버전을 선택해 다운로드를 받아준다. 여기서는 현재의 최신버전인 **7.1.12.0 버전**을 설치할 것이다. 링크를 클릭하면 아래의 화면이 보이면서 설치가 완료된다.
 
-![install end]
-(http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7)
+![install end](http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7)
 
 이제 MAMP를 실행해 봅시다.
 
-![응용]
-(http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9)
+![응용](http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9)
 
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
 
 실행프로그램이 시작되면 몇가지 설정을 할 수 있는 화면들이 보이게 된다. 이때 설정이 필요없는 부분은 그냥 Pass하고 phpmyadmin등이 체크되어 있는 체크박스가 보인다.
 
-![설정1]
-(http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923)
+![설정1](http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923)
 
 >**Note**
 >MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
 
 MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제를 하고 Next버튼을 진행해준다.
 
-![경로설정]
-(http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE)
+![경로설정](http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE)
 
 MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
 
@@ -257,8 +252,7 @@ MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next
 
 Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OSX** 프로그램을 실행해봅시다.
 
-![manager-OSX]
-(http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991)
+![manager-OSX](http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991)
 
 세개의 탭중 **Manage Servers** 탭에서 MySQL Database를 Start, Stop할 수 있다. MySQL 뿐만아니라 아파치 웹 서버도 여기서 쉽게 제어할 수 있다.
 
@@ -270,8 +264,7 @@ Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OS
 
 MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한다.
 
-![이동]
-(http://cfile25.uf.tistory.com/image/99602D335A27FC80324778)
+![이동](http://cfile25.uf.tistory.com/image/99602D335A27FC80324778)
 
 	cd /Applications/mampstack-7.1.12-0[버전은 다를 수 있다]/mysql/bin
 
@@ -281,8 +274,7 @@ MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한�
 
 이제 비밀번호를 입력하는 화면이 뜰 것이고 아까 등록한 비밀번호를 입력해준다.
 
-![mysql 접속]
-(http://cfile28.uf.tistory.com/image/99A4C4335A27FD5F0E2D75)
+![mysql 접속](http://cfile28.uf.tistory.com/image/99A4C4335A27FD5F0E2D75)
 
 Welcome이라는 글씨가 보이면서 **mysql >** 의 입력란이 보이면 설치에 성공한 것이다. 
 
