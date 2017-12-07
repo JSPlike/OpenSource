@@ -88,12 +88,12 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 아래의 사진은 VMware사이트의 메인 화면
 
-![vmware install_01](http://cfile26.uf.tistory.com/image/99AC13335A237B2521D607)
+<img src="http://cfile26.uf.tistory.com/image/99AC13335A237B2521D607" width="500px" height="400px">
 
 왼쪽 사이드바의 **다운로드** 부분으로 들어간다.
 
 
-![vmware install_02](http://cfile28.uf.tistory.com/image/99378A335A237B270848E6)
+<img src="http://cfile28.uf.tistory.com/image/99378A335A237B270848E6" width="500px" height="400px">
 
 위와 같이 여러가지 종류의 가상머신 버전이 존재한다. 우리는 개인용 컴퓨터에서 사용할 예정이므로 Personal Desktop 탭에서 VMware Workstation Player을 무료로 다운받는다.
 
@@ -109,25 +109,25 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 **parallels Lite**의 설치는 AppStore에서 가능하다. 먼저 Mac에서 SpotLight를 실행한 뒤, App Store를 검색한다.
 
-![spotlight 검색](http://cfile27.uf.tistory.com/image/992413335A2380551C0E59)
+<img src="http://cfile27.uf.tistory.com/image/992413335A2380551C0E59" width="500px" height="400px">
 
 **2) parallels 설치**
 
 App Store에서 parallels Lite를 검색한 뒤 설치한다.
 
-![parallels lite 검색](http://cfile22.uf.tistory.com/image/9945B2335A23808E269378) 
+<img src="http://cfile22.uf.tistory.com/image/9945B2335A23808E269378" width="500px" height="400px">
 
 **3) app 실행**
 
 설치가 되셨다면 앱을 실행한다. 앱에서는 윈도우관련 운영체제는 유료로 제공하지만 리눅스 운영체제는 전부 무료로 제공하고 있다.
 
-![앱 실행](http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7)
+<img src="http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7" width="500px" height="400px">
 
 **4) 우분투 설치**
 
 우분투 설치는 아주 간단하다. 우분투 앱을 더블 클릭한 뒤 다운로드 버튼을 누르기만 하면 간단히 OS가 설치된다.
 
-![우분투 다운](http://cfile22.uf.tistory.com/image/99418A335A23821820145A)
+<img src="http://cfile22.uf.tistory.com/image/99418A335A23821820145A" width="500px" height="400px">
 
 ----------
 #### 2-2 MySQL 설치
@@ -214,17 +214,17 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 
 >위의 링크를 통해 binami 사이트에 접속해보자 처음 접속하게 되면 이런 화면을 볼 수 있다. MAMP의 간단한 설명이 나와있다. 이 글의 위 내용이 있을 것이다.  
 #### 
-![mamp](http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112)
+<img src="http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112" width="500px" height="400px">
 #### 
 	 
  **MAMP**의 설치를 위해 오른쪽  **LOCAL INTALL**탭의 버전을 선택해 다운로드를 받아준다. 여기서는 현재의 최신버전인 **7.1.12.0 버전**을 설치할 것이다. 링크를 클릭하면 아래의 화면이 보이면서 설치가 완료된다.
 #### 
-![install end](http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7)
+<img src="http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7" width="500px" height="400px">
 
 이제 MAMP를 실행해 봅시다.
 
 
-<img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="400px" height="350px">
+<img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="350px" height="350px">
 
 
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
@@ -235,7 +235,7 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 
 
 
-<img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="600px" height="400px">
+<img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="500px" height="400px">
 
 >**Note**
 >MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
@@ -244,7 +244,7 @@ MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제�
 
 #### 
 
-<img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="600px" height="400px">
+<img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="500px" height="400px">
 
 MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
 
@@ -260,7 +260,7 @@ MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next
 
 Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OSX** 프로그램을 실행해봅시다.
 
-<img src="http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991" width="600px" height="400px">
+<img src="http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991" width="500px" height="400px">
 
 세개의 탭중 **Manage Servers** 탭에서 MySQL Database를 Start, Stop할 수 있다. MySQL 뿐만아니라 아파치 웹 서버도 여기서 쉽게 제어할 수 있다.
 
@@ -414,11 +414,12 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 
 [사진 부분]
 
-####3-1-1 Database
+#### 3-1-1 Database
+
 **``Database **란 데이터가 실질적으로 적재되는 테이블들을 분류하는 상위 개념을 말한다.
 
 ---
-#####[데이터베이스 생성]
+##### [데이터베이스 생성]
 
 SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 다음과 같다.
 
@@ -438,13 +439,13 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 show databases; 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
 [그림]
 	
-#####[데이터베이스 삭제]
+##### [데이터베이스 삭제]
 
 데이터베이스를 삭제하는 query문은 다음과 같다.
 
 	DROP DATABASE `데이터베이스명`;
 만약 위에서 만들었던 class라는 데이터를 삭제하기 위해 **DROP DATABASE \`class\`;**라는 명령어를 사용한다면 class 데이터베이스가 사라지는 것을 확인할 수 있을 것이다.
-=======
+
 
 아래의 query문을 사용하여 임의의 데이터베이스 class를 생성해본다.
 
@@ -453,32 +454,32 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 show databases; 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
 [그림]
 	
-#####[데이터베이스 삭제]
+##### [데이터베이스 삭제]
 
 데이터베이스를 삭제하는 query문은 다음과 같다.
 
 	DROP DATABASE `데이터베이스명`;
 만약 위에서 만들었던 class라는 데이터를 삭제하기 위해 **DROP DATABASE \`class\`;**라는 명령어를 사용한다면 class 데이터베이스가 사라지는 것을 확인할 수 있을 것이다.
 
-#####[데이터베이스 열람]
+##### [데이터베이스 열람]
 데이터베이스를 열람하기 위한 query문은 다음과 같다.
 
 	SHOW DATABASES;
 
 
-#####[데이터베이스 선택]
+##### [데이터베이스 선택]
 위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
 
 	USE `데이터베이스명`;
 
 
-#####[데이터베이스 열람]
+##### [데이터베이스 열람]
 데이터베이스를 열람하기 위한 query문은 다음과 같다.
 
 	SHOW DATABASES;
 
 
-#####[데이터베이스 선택]
+##### [데이터베이스 선택]
 위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
 
 	USE `데이터베이스명`;
@@ -489,17 +490,17 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
   
 **[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
 #### 
-![테이블 샘플 다운로드](http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7)
+<img src="http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7" width="500px" height="400px">
   
 저장된 테이블을 확인한다.
 #### 
-![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)
+<img src="http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D" width="500px" height="400px">
 
 ----------
 
 
 
-####**SQL의 분류**
+#### **SQL의 분류**
 
 SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 
@@ -512,7 +513,7 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 	-> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
 
 ---------
-###**3-2 DDL**
+### **3-2 DDL**
 #### 3-2-1 Create
 
 >-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
@@ -574,15 +575,15 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 ※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
   
 **[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
-![테이블 샘플 다운로드](http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7)
+<img src="http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7" width="500px" height="400px">
   
 저장된 테이블을 확인한다.
-![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)
+<img src="http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D" width="500px" height="400px">
 
 ----------
 
 
-####**SQL의 분류**
+#### **SQL의 분류**
 
 SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 
@@ -595,7 +596,7 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 	-> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
 
 ---------
-###**3-2 DDL**
+### **3-2 DDL**
 #### 3-2-1 Create
 
 >-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
@@ -681,7 +682,7 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 
 ----------
 
-###**< DML >**
+### **< DML >**
 #### 3-5 Insert
 >-> 테이블에 새로운 레코드 삽입
 >**INSERT INTO 테이블명**
@@ -689,7 +690,7 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 
 ----------
 
-###**< DML >**
+### **< DML >**
 #### 3-5 Insert
 >-> 테이블에 새로운 레코드 삽입
 >**INSERT INTO 테이블명**
