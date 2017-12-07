@@ -33,7 +33,7 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 
 #### 1-3 MySQL 구조
-![mysql구조사진](http://cfile28.uf.tistory.com/image/26219B435902D8852210A8)
+<img src="http://cfile28.uf.tistory.com/image/26219B435902D8852210A8" width="500px" height="350px">
 
 위 사진은 MySQL의 아키텍쳐를 나타낸다. 사진을 보면 MySQL이 Storage Engines와 SQL Interface, Optimizer, Parser등을 구분하고 있는 것을 볼 수 있다. MySQL의 서버는 두가지 크게 두개의 엔진으로 구분되어 지는데 첫번째는 **MySQL엔진**, 그리고 두번째는 **Storage 엔진**이다. 이 둘의 특징은 다음과 같다.
 
@@ -88,12 +88,12 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 아래의 사진은 VMware사이트의 메인 화면
 
-![vmware install_01](http://cfile26.uf.tistory.com/image/99AC13335A237B2521D607)
+<img src="http://cfile26.uf.tistory.com/image/99AC13335A237B2521D607" width="500px" height="350px">
 
 왼쪽 사이드바의 **다운로드** 부분으로 들어간다.
 
 
-![vmware install_02](http://cfile28.uf.tistory.com/image/99378A335A237B270848E6)
+<img src="http://cfile28.uf.tistory.com/image/99378A335A237B270848E6" width="500px" height="350px">
 
 위와 같이 여러가지 종류의 가상머신 버전이 존재한다. 우리는 개인용 컴퓨터에서 사용할 예정이므로 Personal Desktop 탭에서 VMware Workstation Player을 무료로 다운받는다.
 
@@ -109,25 +109,25 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 **parallels Lite**의 설치는 AppStore에서 가능하다. 먼저 Mac에서 SpotLight를 실행한 뒤, App Store를 검색한다.
 
-![spotlight 검색](http://cfile27.uf.tistory.com/image/992413335A2380551C0E59)
+<img src="http://cfile27.uf.tistory.com/image/992413335A2380551C0E59" width="500px" height="350px">
 
 **2) parallels 설치**
 
 App Store에서 parallels Lite를 검색한 뒤 설치한다.
 
-![parallels lite 검색](http://cfile22.uf.tistory.com/image/9945B2335A23808E269378) 
+<img src="http://cfile22.uf.tistory.com/image/9945B2335A23808E269378" width="500px" height="350px">
 
 **3) app 실행**
 
 설치가 되셨다면 앱을 실행한다. 앱에서는 윈도우관련 운영체제는 유료로 제공하지만 리눅스 운영체제는 전부 무료로 제공하고 있다.
 
-![앱 실행](http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7)
+<img src="http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7" width="500px" height="350px">
 
 **4) 우분투 설치**
 
 우분투 설치는 아주 간단하다. 우분투 앱을 더블 클릭한 뒤 다운로드 버튼을 누르기만 하면 간단히 OS가 설치된다.
 
-![우분투 다운](http://cfile22.uf.tistory.com/image/99418A335A23821820145A)
+<img src="http://cfile22.uf.tistory.com/image/99418A335A23821820145A" width="500px" height="350px">
 
 ----------
 #### 2-2 MySQL 설치
@@ -213,33 +213,38 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 ><https://bitnami.com/stack/mamp>
 
 >위의 링크를 통해 binami 사이트에 접속해보자 처음 접속하게 되면 이런 화면을 볼 수 있다. MAMP의 간단한 설명이 나와있다. 이 글의 위 내용이 있을 것이다.  
-
-![mamp](http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112)
-
+#### 
+<img src="http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112" width="500px" height="350px">
+#### 
 	 
  **MAMP**의 설치를 위해 오른쪽  **LOCAL INTALL**탭의 버전을 선택해 다운로드를 받아준다. 여기서는 현재의 최신버전인 **7.1.12.0 버전**을 설치할 것이다. 링크를 클릭하면 아래의 화면이 보이면서 설치가 완료된다.
-
-![install end](http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7)
+#### 
+<img src="http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7" width="500px" height="350px">
 
 이제 MAMP를 실행해 봅시다.
 
 
-<img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="400px" height="350px">
+<img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="350px" height="300px">
 
 
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
 
 실행프로그램이 시작되면 몇가지 설정을 할 수 있는 화면들이 보이게 된다. 이때 설정이 필요없는 부분은 그냥 Pass하고 phpmyadmin등이 체크되어 있는 체크박스가 보인다.
 
+#### 
 
-<img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="600px" height="400px">
+
+
+<img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="500px" height="350px">
 
 >**Note**
 >MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
 
 MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제를 하고 Next버튼을 진행해준다.
 
-<img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="600px" height="400px">
+#### 
+
+<img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="500px" height="350px">
 
 MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
 
@@ -255,7 +260,7 @@ MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next
 
 Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OSX** 프로그램을 실행해봅시다.
 
-<img src="http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991" width="600px" height="400px">
+<img src="http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991" width="500px" height="350px">
 
 세개의 탭중 **Manage Servers** 탭에서 MySQL Database를 Start, Stop할 수 있다. MySQL 뿐만아니라 아파치 웹 서버도 여기서 쉽게 제어할 수 있다.
 
@@ -268,7 +273,7 @@ Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OS
 MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한다.
 
 
-![이동](http://cfile25.uf.tistory.com/image/99602D335A27FC80324778)
+<img src="http://cfile25.uf.tistory.com/image/99602D335A27FC80324778">
 
 	cd /Applications/mampstack-7.1.12-0[버전은 다를 수 있다]/mysql/bin
 
@@ -278,7 +283,7 @@ MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한�
 
 이제 비밀번호를 입력하는 화면이 뜰 것이고 아까 등록한 비밀번호를 입력해준다.
 
-![mysql 접속](http://cfile28.uf.tistory.com/image/99A4C4335A27FD5F0E2D75)
+<img src="http://cfile28.uf.tistory.com/image/99A4C4335A27FD5F0E2D75" width="400px" height="350px">
 
 Welcome이라는 글씨가 보이면서 **mysql >** 의 입력란이 보이면 설치에 성공한 것이다. 
 
@@ -410,7 +415,8 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 [사진 부분]
 
 #### 3-1-1 Database
-**``Database **란 데이터가 실질적으로 적재되는 테이블들을 분류하는 상위 개념을 말한다.
+
+**Database ** 란 데이터가 실질적으로 적재되는 테이블들을 분류하는 상위 개념을 말한다.
 
 ---
 ##### [데이터베이스 생성]
@@ -424,6 +430,22 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 [그림]
 
 그리고 `CHARACTER SET utf8 COLLATE utf8_general_ci` 은 특정 데이터베이스의 인코딩 설정을 하는 명령으로 현재 생성할 데이터베이스의 기본 언어 인코딩 값을 UTF-8로 설정한다는 의미이다. 인코딩이 무엇인지 잘 모를 때에는 위와 같이 쓰는 것이 바람직하다.
+
+
+아래의 query문을 사용하여 임의의 데이터베이스 class를 생성해본다.
+
+	CREATE DATABASE `class` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+show databases; 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
+[그림]
+	
+##### [데이터베이스 삭제]
+
+데이터베이스를 삭제하는 query문은 다음과 같다.
+
+	DROP DATABASE `데이터베이스명`;
+만약 위에서 만들었던 class라는 데이터를 삭제하기 위해 **DROP DATABASE \`class\`;**라는 명령어를 사용한다면 class 데이터베이스가 사라지는 것을 확인할 수 있을 것이다.
+
 
 아래의 query문을 사용하여 임의의 데이터베이스 class를 생성해본다.
 
@@ -446,6 +468,20 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 
 
 ##### [데이터베이스 선택]
+
+위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
+
+	USE `데이터베이스명`;
+
+
+##### [데이터베이스 열람]
+데이터베이스를 열람하기 위한 query문은 다음과 같다.
+
+	SHOW DATABASES;
+
+
+##### [데이터베이스 선택]
+
 위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
 
 	USE `데이터베이스명`;
@@ -455,15 +491,104 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 ※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
   
 **[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
-![테이블 샘플 다운로드](http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7)
+#### 
+<img src="http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7" width="500px" height="350px">
   
 저장된 테이블을 확인한다.
-![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)
+#### 
+<img src="http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D" width="500px" height="350px">
 
 ----------
 
 
-####**SQL의 분류**
+
+#### **SQL의 분류**
+
+SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
+
+	1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
+	-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
+	
+	2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
+
+	3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
+	-> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
+
+---------
+### **3-2 DDL**
+#### 3-2-1 Create
+
+>-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
+>**CREATE TABLE 테이블명(  **
+>   **컬럼명 데이터타입**
+>**);**
+
+ - 테이블?
+테이블이란 데이터가 실질적으로 저장되는 저장소를 말한다.
+
+ - *샘플 중 CREATE 문*
+    
+CREATE TABLE IF NOT EXISTS `BONUS` (
+  `ENAME` varchar(10) DEFAULT NULL,
+  `JOB` varchar(9) DEFAULT NULL,
+  `SAL` double DEFAULT NULL,
+  `COMM` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ - BONUS 의 이름을 가진 테이블에 ENAME, JOB, SAL, COMM의 column을 가진 테이블을 생성
+  
+ -  IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT EXISTS**는 테이블이 존재하지 않을 경우 생성하라는 의미. 추가옵션으로 필요로 할시에 사용한다.
+ - 데이터 타입
+1. CHAR : 0 ~ 255 고정문자 길이
+2. VARCHAR : 0 ~ 65535 가변 문자 길이 (테이블을 만들 때 문자의 길이를 20으로 지정하여도 삽입시 문자의 길이가 5만큼의 크기를 차지 했을 때 5만 차지하도록 해준다)
+3. INT : -2147483648 ~ 2147483647 정수형
+4. FLOAE : 작은 부동소수점
+5. DOUBLE : 큰 부동소수점
+6. DECIMAL(M, D) : 소수부의 자릿수를 미리 정해 놓고, 고정된 자릿수로만 소수 부분을 표현
+- M : 소수 부분을 포함한 실수의 총 자릿수, 최댓값 65
+- D : 소수 부분의 자릿수, D가 0이면 정수
+7. DATE : YYYY-MM-DD (년-월-일)
+8. DATETIME : YYYY-MM-DD HH:MM:SS (년-월-일 시:분:초)
+9. TIMESTAMP : YYYYMMDDHHMMSS (년월일시분초)
+10. TIME : HH:MM:SS (시:분:초)
+ - 제약조건
+1. NOT NULL : 해당 column은 NULL로 지정할 수 없다.
+2. UNIQUE : 해당 column은 서로 다른 값을 가진다.
+3. PRIMARY KEY : NOT NULL + UNIQUE, 대표키로 값에 NULL을 넣을 수 없고 식별할 수 있는 값을 넣어야만 한다. 반드시 1개 이상 명시.
+4. FOREIGN KEY : 테이블간에 연관성을 갖도록 하고 참조 무결성을 명시
+- 참조 무결성?
+->  한 테이블의 레코드는 반드시 다른 테이블의 레코드와 연관시켜야 하는 것을 의미. 레코드들을 삽입, 삭제, 수정할 때 참조 무결성 제약조건에 위배될 수 있음.
+- 위반되었을 때?
+ 1) Default operation -> 거부
+ ex)  `SAL` double NOT NULL DEFAULT 1000;
+ 2) referential triggered action 절
+ 
+ > **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
+ > **ON DELETE SET NULL ON UPDATE CASCADE** 
+ > (ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
+ > or
+ > **ON DELETE SET DEFAULT ON UPDATE CASCADE**
+ > (DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
+
+5. CHECK: 애트리뷰트나 도메인 정의 뒤에 사용하여 데이터의 값을 제한할 수 있다. -> 투플 기반 제약 조건
+ ex)  `SAL` double DEFAULT NULL CHECK ( `SAL`>0 AND `SAL`<5000)
+
+=======
+※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
+  
+**[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
+
+<img src="http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7" width="500px" height="350px">
+  
+저장된 테이블을 확인한다.
+
+<img src="http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D" width="500px" height="350px">
+
+
+----------
+
+
+#### **SQL의 분류**
 
 SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 
@@ -487,6 +612,10 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 테이블에 적재될 데이터의 구조와 형식을 정의 하는 것을 말한다.
 테이블에 어떤 형식의 데이터들이 삽입되고 저장될 것인지는 데이터를 삽입하기 전에 미리 정의 해놓아야 한다.
 즉 스키마는 일종의 데이터의 설계도라고 할 수 있다. 만약 스키마와 맞지 않는 데이터를 삽입하려고 하면 오류가 발생한다.
+
+=======
+#### 3-2-1 Create
+
 
 -------------
 ### 3-2-1 CREATE
@@ -589,13 +718,34 @@ CREATE는 테이블을 생성하는 쿼리 명령어이다.
 
 ----------
 
-###**< DML >**
+#### 3-2-2 ALTER
+> -> TABLE에 대한 정의를 변경
+> ALTER TABLE 테이블명 ADD 
+> ALTER TABLE 테이블명 ALTER 
+ > ALTER TABLE 테이블명 DROP
+
+-----------
+#### 3-2-3 DROP
+> -> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제
+
+----------
+
+### **< DML >**
 #### 3-5 Insert
 >-> 테이블에 새로운 레코드 삽입
 >**INSERT INTO 테이블명**
 >**VALUES 레코드값**
 
 ----------
+
+### **< DML >**
+#### 3-5 Insert
+>-> 테이블에 새로운 레코드 삽입
+>**INSERT INTO 테이블명**
+>**VALUES 레코드값**
+
+----------
+
 #### 3-6 Delete
 > -> 테이블에 조건에 맞는 레코드를 삭제
 >**DELETE FROM 테이블명 [WHERE 삭제하려는 칼럼 명 = 값];**
@@ -628,6 +778,96 @@ CREATE는 테이블을 생성하는 쿼리 명령어이다.
 >**ORDER BY 컬럼명**
 
 ----------
+
+
+**4. MySQL 사용중 오류발생**
+-----
+
+## **4-1 버그 발생** 
+
+MySQL은 버전별로 버그의 차이가 있다 이 문서에서 사용한 MySQL 버전은 5.7.20버전이다. MySQL을 사용하다보면 사용자의 잘못으로 생기는 버그 또는 시스템적으로 보유하고 있는 버그 등이 있다. <http://bugs.mysql.com> 를 통해서 MySql의 버그들을 확인할 수 있고 또 해결 할 수도 있다. 이 문서에는 MySQL을 사용하며 생길 수 있는 그리고 생겼던 몇가지 버그들을 다루어 볼 것이다.
+
+## 
+>**Note:**
+>
+이제 나올 몇가지 버그는 MySQL을 사용하면서 생겼던 버그 입니다. 버전에 따른 새로운 버그가 생길 수도 있으며 그러한 버그들에 대처하는 방법을 알고 있는 것이 중요합니다.
+#### 
+
+#### **#첫번째 버그 발생**
+
+<img src="http://cfile27.uf.tistory.com/image/99BD9F335A28F96D2F720E">
+
+처음 발생한 버그는 Node.js의 node-mysql 모듈을 사용하여 MySQL을 Connection하기위해 그 정보를 저장하고 MySQL과의 연동을 요청했을 때 에러가 발생했고 에러는 위의 메시지를 띄워주고 있다. 위의 에러메시지를 확대해서 보여주면 다음과 같다.
+
+```
+Host '127.0.0.1' is not allowed to connect to this MySQL server
+```
+
+루트 호스트인 127.0.0.1 또는 localhost에서 MySQL에 접속할 수 있는 연결을 허락하지 않는 다는 메시지 이며 이는 권한의 문제를 동반하고 있다. 처음 이 에러를 접했을 때 왜 루트 유저가 MySQL 서버에 접속할 수 없는지에 대한 의문이 있었지만 그건 MySQL 자체적인 문제인 걸로 따로 권한을 다시 설정해 주어야 한다.
+
+이 문제를 해결하기 위해서는 먼저 새로운 MySQL을 접속할 유저를 생성해야 한다. 먼저 루트 권한으로 MySQL에 접속하자.
+#### 
+<img src="http://cfile1.uf.tistory.com/image/99B05E335A28FD4B0FF9F4">
+
+>**Note:**
+>
+>권한이 있는 다른 유저로 접속해도 상관은 없지만 루트 유저로 접속하는 것이 낫다.
+
+이제 MySQL 데이터 베이스 사용을 명시하기 위해 MySQL을 사용한다는 명령어인 **use mysql**을  입력해주고 새 유저를 만들어 보자
+
+```
+use mysql
+
+CREATE USER 'joonyoung'@'localhost' IDENTIFIED BY '12341234';
+
+CREATE USER '[새 유저이름]'@'localhost' IDENTIFIED BY '[새 비밀번호]';
+```
+#### 
+<img src="http://cfile27.uf.tistory.com/image/9954EF335A28FE0B1DC118">
+
+유저를 만들었다면 그 유저에 권한을 부여해 보자
+
+```
+GRANT ALL PRIVILEGES ON *.* TO 'joonyoung'@'localhost'
+
+-> WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO '[유저 이름]'@'localhost'
+
+-> WITH GRANT OPTION;
+```
+#### 
+<img src="http://cfile8.uf.tistory.com/image/990DF2335A28FE8C25A7E9">
+
+외부접속유저에게도 권한을 주기위해 같은 이름의 유저를 생성해 줍니다.
+```
+CREATE USER 'joonyoung'@'%' IDENTIFIED BY '12341234';
+
+CREATE USER '[유저 이름]'@'%' IDENTIFIED BY '[유저 비밀번호]';
+```
+>**Note:**
+>처음 유저생성 코드와의 차이점은 @뒤의 'localhost'와 '%'의 차이점 입니다. %는 local이 아님을 뜻할 수 있다.
+#### 
+<img src="http://cfile22.uf.tistory.com/image/997B89335A28FFBE124396">
+
+그리고 나서 이 유저에 권한도 상향 설정 해줍니다.
+```
+GRANT ALL PRIVILEGES ON *.* TO 'joonyoung'@'%'
+
+-> WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO '[유저 이름]'@'%'
+
+-> WITH GRANT OPTION;
+```
+#### 
+<img src="http://cfile26.uf.tistory.com/image/995729335A28FFCD1AB1FC">
+
+여기까지 유저를 생성하고 새권한을 주는 과정을 진행해 보았다.
+
+> 이 후에 이 유저를 통해 Connection을 진행하게 되면 처음 '127.0.0.1'에서 MySQL 허가를 받을 수 없다는 메시지는 뜨지 않는다.
+
+# 
 
 
 ----------
