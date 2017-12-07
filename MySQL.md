@@ -33,7 +33,7 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 
 #### 1-3 MySQL 구조
-![mysql구조사진](http://cfile28.uf.tistory.com/image/26219B435902D8852210A8)
+<img src="http://cfile28.uf.tistory.com/image/26219B435902D8852210A8" width="500px" height="350px">
 
 위 사진은 MySQL의 아키텍쳐를 나타낸다. 사진을 보면 MySQL이 Storage Engines와 SQL Interface, Optimizer, Parser등을 구분하고 있는 것을 볼 수 있다. MySQL의 서버는 두가지 크게 두개의 엔진으로 구분되어 지는데 첫번째는 **MySQL엔진**, 그리고 두번째는 **Storage 엔진**이다. 이 둘의 특징은 다음과 같다.
 
@@ -88,12 +88,12 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 아래의 사진은 VMware사이트의 메인 화면
 
-<img src="http://cfile26.uf.tistory.com/image/99AC13335A237B2521D607" width="500px" height="400px">
+<img src="http://cfile26.uf.tistory.com/image/99AC13335A237B2521D607" width="500px" height="350px">
 
 왼쪽 사이드바의 **다운로드** 부분으로 들어간다.
 
 
-<img src="http://cfile28.uf.tistory.com/image/99378A335A237B270848E6" width="500px" height="400px">
+<img src="http://cfile28.uf.tistory.com/image/99378A335A237B270848E6" width="500px" height="350px">
 
 위와 같이 여러가지 종류의 가상머신 버전이 존재한다. 우리는 개인용 컴퓨터에서 사용할 예정이므로 Personal Desktop 탭에서 VMware Workstation Player을 무료로 다운받는다.
 
@@ -109,25 +109,25 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 **parallels Lite**의 설치는 AppStore에서 가능하다. 먼저 Mac에서 SpotLight를 실행한 뒤, App Store를 검색한다.
 
-<img src="http://cfile27.uf.tistory.com/image/992413335A2380551C0E59" width="500px" height="400px">
+<img src="http://cfile27.uf.tistory.com/image/992413335A2380551C0E59" width="500px" height="350px">
 
 **2) parallels 설치**
 
 App Store에서 parallels Lite를 검색한 뒤 설치한다.
 
-<img src="http://cfile22.uf.tistory.com/image/9945B2335A23808E269378" width="500px" height="400px">
+<img src="http://cfile22.uf.tistory.com/image/9945B2335A23808E269378" width="500px" height="350px">
 
 **3) app 실행**
 
 설치가 되셨다면 앱을 실행한다. 앱에서는 윈도우관련 운영체제는 유료로 제공하지만 리눅스 운영체제는 전부 무료로 제공하고 있다.
 
-<img src="http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7" width="500px" height="400px">
+<img src="http://cfile8.uf.tistory.com/image/998A0B335A23813724B6B7" width="500px" height="350px">
 
 **4) 우분투 설치**
 
 우분투 설치는 아주 간단하다. 우분투 앱을 더블 클릭한 뒤 다운로드 버튼을 누르기만 하면 간단히 OS가 설치된다.
 
-<img src="http://cfile22.uf.tistory.com/image/99418A335A23821820145A" width="500px" height="400px">
+<img src="http://cfile22.uf.tistory.com/image/99418A335A23821820145A" width="500px" height="350px">
 
 ----------
 #### 2-2 MySQL 설치
@@ -214,17 +214,17 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 
 >위의 링크를 통해 binami 사이트에 접속해보자 처음 접속하게 되면 이런 화면을 볼 수 있다. MAMP의 간단한 설명이 나와있다. 이 글의 위 내용이 있을 것이다.  
 #### 
-<img src="http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112" width="500px" height="400px">
+<img src="http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112" width="500px" height="350px">
 #### 
 	 
  **MAMP**의 설치를 위해 오른쪽  **LOCAL INTALL**탭의 버전을 선택해 다운로드를 받아준다. 여기서는 현재의 최신버전인 **7.1.12.0 버전**을 설치할 것이다. 링크를 클릭하면 아래의 화면이 보이면서 설치가 완료된다.
 #### 
-<img src="http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7" width="500px" height="400px">
+<img src="http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7" width="500px" height="350px">
 
 이제 MAMP를 실행해 봅시다.
 
 
-<img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="350px" height="350px">
+<img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="350px" height="300px">
 
 
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
@@ -235,7 +235,7 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 
 
 
-<img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="500px" height="400px">
+<img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="500px" height="350px">
 
 >**Note**
 >MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
@@ -244,7 +244,7 @@ MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제�
 
 #### 
 
-<img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="500px" height="400px">
+<img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="500px" height="350px">
 
 MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
 
@@ -260,7 +260,7 @@ MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next
 
 Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OSX** 프로그램을 실행해봅시다.
 
-<img src="http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991" width="500px" height="400px">
+<img src="http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991" width="500px" height="350px">
 
 세개의 탭중 **Manage Servers** 탭에서 MySQL Database를 Start, Stop할 수 있다. MySQL 뿐만아니라 아파치 웹 서버도 여기서 쉽게 제어할 수 있다.
 
@@ -273,7 +273,7 @@ Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OS
 MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한다.
 
 
-![이동](http://cfile25.uf.tistory.com/image/99602D335A27FC80324778)
+<img src="http://cfile25.uf.tistory.com/image/99602D335A27FC80324778">
 
 	cd /Applications/mampstack-7.1.12-0[버전은 다를 수 있다]/mysql/bin
 
@@ -283,7 +283,7 @@ MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한�
 
 이제 비밀번호를 입력하는 화면이 뜰 것이고 아까 등록한 비밀번호를 입력해준다.
 
-![mysql 접속](http://cfile28.uf.tistory.com/image/99A4C4335A27FD5F0E2D75)
+<img src="http://cfile28.uf.tistory.com/image/99A4C4335A27FD5F0E2D75" width="400px" height="350px">
 
 Welcome이라는 글씨가 보이면서 **mysql >** 의 입력란이 보이면 설치에 성공한 것이다. 
 
@@ -490,11 +490,11 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
   
 **[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
 #### 
-<img src="http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7" width="500px" height="400px">
+<img src="http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7" width="500px" height="350px">
   
 저장된 테이블을 확인한다.
 #### 
-<img src="http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D" width="500px" height="400px">
+<img src="http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D" width="500px" height="350px">
 
 ----------
 
@@ -575,10 +575,13 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 ※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
   
 **[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
-<img src="http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7" width="500px" height="400px">
+
+<img src="http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7" width="500px" height="350px">
   
 저장된 테이블을 확인한다.
-<img src="http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D" width="500px" height="400px">
+
+<img src="http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D" width="500px" height="350px">
+
 
 ----------
 
