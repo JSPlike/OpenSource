@@ -1,4 +1,4 @@
-﻿MySQL REFERENCE
+MySQL REFERENCE
 ===================
 
 
@@ -403,17 +403,137 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 
 
 
+----------
+※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
+  
+**[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
+![테이블 샘플 다운로드](http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7)
+  
+저장된 테이블을 확인한다.
+![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)
 
 ----------
-#### 3-2 Insert
+
+####-SQL의 분류
+1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
+-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
+2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
+-> 데이터베이스 사용자가 응용 프로그램이나 질의어를 통하여 저장된 데이터를 실질적으로 처리하는 데 사용되는 언어
+3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
+-> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
+
+---------
+###**< DDL >**
+#### 3-2 Create
+>-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
+>**CREATE TABLE 테이블명(  **
+>   **컬럼명 데이터타입**
+>**);**
+
+ - 테이블?
+테이블이란 데이터가 실질적으로 저장되는 저장소를 말한다.
+
+ - *샘플 중 CREATE 문*
+    
+CREATE TABLE IF NOT EXISTS `BONUS` (
+  `ENAME` varchar(10) DEFAULT NULL,
+  `JOB` varchar(9) DEFAULT NULL,
+  `SAL` double DEFAULT NULL,
+  `COMM` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ - BONUS 의 이름을 가진 테이블에 ENAME, JOB, SAL, COMM의 column을 가진 테이블을 생성
+  
+ -  IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT EXISTS**는 테이블이 존재하지 않을 경우 생성하라는 의미. 추가옵션으로 필요로 할시에 사용한다.
+ - 데이터 타입
+1. CHAR : 0 ~ 255 고정문자 길이
+2. VARCHAR : 0 ~ 65535 가변 문자 길이 (테이블을 만들 때 문자의 길이를 20으로 지정하여도 삽입시 문자의 길이가 5만큼의 크기를 차지 했을 때 5만 차지하도록 해준다)
+3. INT : -2147483648 ~ 2147483647 정수형
+4. FLOAE : 작은 부동소수점
+5. DOUBLE : 큰 부동소수점
+6. DECIMAL(M, D) : 소수부의 자릿수를 미리 정해 놓고, 고정된 자릿수로만 소수 부분을 표현
+- M : 소수 부분을 포함한 실수의 총 자릿수, 최댓값 65
+- D : 소수 부분의 자릿수, D가 0이면 정수
+7. DATE : YYYY-MM-DD (년-월-일)
+8. DATETIME : YYYY-MM-DD HH:MM:SS (년-월-일 시:분:초)
+9. TIMESTAMP : YYYYMMDDHHMMSS (년월일시분초)
+10. TIME : HH:MM:SS (시:분:초)
+ - 제약조건
+1. NOT NULL : 해당 column은 NULL로 지정할 수 없다.
+2. UNIQUE : 해당 column은 서로 다른 값을 가진다.
+3. PRIMARY KEY : NOT NULL + UNIQUE, 대표키로 값에 NULL을 넣을 수 없고 식별할 수 있는 값을 넣어야만 한다. 반드시 1개 이상 명시.
+4. FOREIGN KEY : 테이블간에 연관성을 갖도록 하고 참조 무결성을 명시
+- 참조 무결성?
+->  한 테이블의 레코드는 반드시 다른 테이블의 레코드와 연관시켜야 하는 것을 의미. 레코드들을 삽입, 삭제, 수정할 때 참조 무결성 제약조건에 위배될 수 있음.
+- 위반되었을 때?
+ 1) Default operation -> 거부
+ ex)  `SAL` double NOT NULL DEFAULT 1000;
+ 2) referential triggered action 절
+ 
+ > **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
+ > **ON DELETE SET NULL ON UPDATE CASCADE** 
+ > (ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
+ > or
+ > **ON DELETE SET DEFAULT ON UPDATE CASCADE**
+ > (DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
+
+5. CHECK: 애트리뷰트나 도메인 정의 뒤에 사용하여 데이터의 값을 제한할 수 있다. -> 투플 기반 제약 조건
+ ex)  `SAL` double DEFAULT NULL CHECK ( `SAL`>0 AND `SAL`<5000)
+
 
 
 ----------
-#### 3-3 Select
+#### 3-3 ALTER
+> -> TABLE에 대한 정의를 변경
+> ALTER TABLE 테이블명 ADD 
+> ALTER TABLE 테이블명 ALTER 
+ > ALTER TABLE 테이블명 DROP
 
+-----------
+#### 3-4 DROP
+> -> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제
 
 ----------
-#### 3-4 Delete
+
+###**< DML >**
+#### 3-5 Insert
+>-> 테이블에 새로운 레코드 삽입
+>**INSERT INTO 테이블명**
+>**VALUES 레코드값**
+
+----------
+#### 3-6 Delete
+> -> 테이블에 조건에 맞는 레코드를 삭제
+>**DELETE FROM 테이블명 [WHERE 삭제하려는 칼럼 명 = 값];**
+
+-그 외 삭제 명령
+
+1. TRUNCATE
+> -> 테이블의 전체 데이터를 삭제
+>테이블에 외부키가 없다면 DELETE보다 훨씬 빠르게 삭제
+>**TRUNCATE 테이블명;**
+
+2. DROP TABLE
+> -> 테이블을 삭제
+>**DROP TABLE 테이블명;**
+
+----------
+
+#### 3-7 Update
+> -> 테이블에서 조건에 맞는 레코드의 내용을 변경
+>**UPDATE 테이블명 SET 수정할 레코드값 [WHERE 수정해야할 컬럼명 = 값]**
+
+----------
+#### 3-8 Select
+> -> 테이블에서 조건에 맞는 레코드를 검색
+>**SELECT 컬럼명 FROM 테이블명**
+>**WHERE 조건**
+>**GROUP BY 그룹화 컬럼(들)**
+>**HAVING 그룹조건**
+>**ORDER BY 컬럼명**
+
+----------
+
 
 ----------
 
