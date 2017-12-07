@@ -223,20 +223,23 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 
 이제 MAMP를 실행해 봅시다.
 
-![응용](http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9)
+
+<img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="400px" height="350px">
+
 
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
 
 실행프로그램이 시작되면 몇가지 설정을 할 수 있는 화면들이 보이게 된다. 이때 설정이 필요없는 부분은 그냥 Pass하고 phpmyadmin등이 체크되어 있는 체크박스가 보인다.
 
-![설정1](http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923)
+
+<img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="600px" height="400px">
 
 >**Note**
 >MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
 
 MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제를 하고 Next버튼을 진행해준다.
 
-![경로설정](http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE)
+<img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="600px" height="400px">
 
 MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
 
@@ -252,7 +255,7 @@ MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next
 
 Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OSX** 프로그램을 실행해봅시다.
 
-![manager-OSX](http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991)
+<img src="http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991" width="600px" height="400px">
 
 세개의 탭중 **Manage Servers** 탭에서 MySQL Database를 Start, Stop할 수 있다. MySQL 뿐만아니라 아파치 웹 서버도 여기서 쉽게 제어할 수 있다.
 
@@ -263,6 +266,7 @@ Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OS
 이제  MySQL에 접속이 되어지는지 확인해보아야 한다. 터미널에 들어가 다음의 명령어들을 수행해야 한다.
 
 MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한다.
+
 
 ![이동](http://cfile25.uf.tistory.com/image/99602D335A27FC80324778)
 
@@ -291,6 +295,7 @@ terminal 창을 열고  아래의 명령어를 작성한다.
 
 	sudo apt-get install mysql-server mysql-client
 
+
 [ php 설치 ]
 
 	sudo apt-get install php5-common php5 libapache2-mod-php5
@@ -298,6 +303,7 @@ terminal 창을 열고  아래의 명령어를 작성한다.
 [ php-mysql 연동 모듈 설치 ]
 
 	sudo apt-get install php5-mysql
+
 
 [ 아파치 재 시작 ]
 
@@ -352,9 +358,11 @@ php가 잘 설치되었는지 확인하기 위한 과정은 다음과 같다.
 
 i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한 후 :wq 와 엔터를 눌러 위의 내용을 저장한다.
 
+
 	< ?
 	phpinfo();
 	? >
+
 
 
 
@@ -436,10 +444,12 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 
 	SHOW DATABASES;
 
+
 #####[데이터베이스 선택]
 위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
 
 	USE `데이터베이스명`;
+
 
 ----------
 ※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
@@ -451,6 +461,7 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 ![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)
 
 ----------
+
 
 ####**SQL의 분류**
 
@@ -467,6 +478,7 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 ---------
 ###**3-2 DDL**
 #### 3-2-1 Create
+
 >-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
 >**CREATE TABLE 테이블명(  **
 >   **컬럼명 데이터타입**
@@ -524,6 +536,7 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 
 
 
+
 ----------
 #### 3-2-2 ALTER
 > -> TABLE에 대한 정의를 변경
@@ -566,6 +579,7 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 >**UPDATE 테이블명 SET 수정할 레코드값 [WHERE 수정해야할 컬럼명 = 값]**
 
 ----------
+
 #### 3-8 Select
 > -> 테이블에서 조건에 맞는 레코드를 검색
 >**SELECT 컬럼명 FROM 테이블명**
