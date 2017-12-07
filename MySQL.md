@@ -1,4 +1,4 @@
-﻿MySQL REFERENCE
+MySQL REFERENCE
 ===================
 
 
@@ -230,14 +230,20 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
 
 실행프로그램이 시작되면 몇가지 설정을 할 수 있는 화면들이 보이게 된다. 이때 설정이 필요없는 부분은 그냥 Pass하고 phpmyadmin등이 체크되어 있는 체크박스가 보인다.
+
 #### 
+
+
+
 <img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="600px" height="400px">
 
 >**Note**
 >MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
 
 MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제를 하고 Next버튼을 진행해준다.
+
 #### 
+
 <img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="600px" height="400px">
 
 MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
@@ -424,6 +430,22 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 
 그리고 `CHARACTER SET utf8 COLLATE utf8_general_ci` 은 특정 데이터베이스의 인코딩 설정을 하는 명령으로 현재 생성할 데이터베이스의 기본 언어 인코딩 값을 UTF-8로 설정한다는 의미이다. 인코딩이 무엇인지 잘 모를 때에는 위와 같이 쓰는 것이 바람직하다.
 
+
+아래의 query문을 사용하여 임의의 데이터베이스 class를 생성해본다.
+
+	CREATE DATABASE `class` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+show databases; 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
+[그림]
+	
+#####[데이터베이스 삭제]
+
+데이터베이스를 삭제하는 query문은 다음과 같다.
+
+	DROP DATABASE `데이터베이스명`;
+만약 위에서 만들었던 class라는 데이터를 삭제하기 위해 **DROP DATABASE \`class\`;**라는 명령어를 사용한다면 class 데이터베이스가 사라지는 것을 확인할 수 있을 것이다.
+=======
+
 아래의 query문을 사용하여 임의의 데이터베이스 class를 생성해본다.
 
 	CREATE DATABASE `class` CHARACTER SET utf8 COLLATE utf8_general_ci;
@@ -450,6 +472,18 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 	USE `데이터베이스명`;
 
 
+#####[데이터베이스 열람]
+데이터베이스를 열람하기 위한 query문은 다음과 같다.
+
+	SHOW DATABASES;
+
+
+#####[데이터베이스 선택]
+위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
+
+	USE `데이터베이스명`;
+
+
 ----------
 ※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
   
@@ -459,6 +493,90 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
   
 저장된 테이블을 확인한다.
 #### 
+![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)
+
+----------
+
+
+
+####**SQL의 분류**
+
+SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
+
+	1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
+	-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
+	
+	2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
+
+	3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
+	-> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
+
+---------
+###**3-2 DDL**
+#### 3-2-1 Create
+
+>-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
+>**CREATE TABLE 테이블명(  **
+>   **컬럼명 데이터타입**
+>**);**
+
+ - 테이블?
+테이블이란 데이터가 실질적으로 저장되는 저장소를 말한다.
+
+ - *샘플 중 CREATE 문*
+    
+CREATE TABLE IF NOT EXISTS `BONUS` (
+  `ENAME` varchar(10) DEFAULT NULL,
+  `JOB` varchar(9) DEFAULT NULL,
+  `SAL` double DEFAULT NULL,
+  `COMM` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ - BONUS 의 이름을 가진 테이블에 ENAME, JOB, SAL, COMM의 column을 가진 테이블을 생성
+  
+ -  IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT EXISTS**는 테이블이 존재하지 않을 경우 생성하라는 의미. 추가옵션으로 필요로 할시에 사용한다.
+ - 데이터 타입
+1. CHAR : 0 ~ 255 고정문자 길이
+2. VARCHAR : 0 ~ 65535 가변 문자 길이 (테이블을 만들 때 문자의 길이를 20으로 지정하여도 삽입시 문자의 길이가 5만큼의 크기를 차지 했을 때 5만 차지하도록 해준다)
+3. INT : -2147483648 ~ 2147483647 정수형
+4. FLOAE : 작은 부동소수점
+5. DOUBLE : 큰 부동소수점
+6. DECIMAL(M, D) : 소수부의 자릿수를 미리 정해 놓고, 고정된 자릿수로만 소수 부분을 표현
+- M : 소수 부분을 포함한 실수의 총 자릿수, 최댓값 65
+- D : 소수 부분의 자릿수, D가 0이면 정수
+7. DATE : YYYY-MM-DD (년-월-일)
+8. DATETIME : YYYY-MM-DD HH:MM:SS (년-월-일 시:분:초)
+9. TIMESTAMP : YYYYMMDDHHMMSS (년월일시분초)
+10. TIME : HH:MM:SS (시:분:초)
+ - 제약조건
+1. NOT NULL : 해당 column은 NULL로 지정할 수 없다.
+2. UNIQUE : 해당 column은 서로 다른 값을 가진다.
+3. PRIMARY KEY : NOT NULL + UNIQUE, 대표키로 값에 NULL을 넣을 수 없고 식별할 수 있는 값을 넣어야만 한다. 반드시 1개 이상 명시.
+4. FOREIGN KEY : 테이블간에 연관성을 갖도록 하고 참조 무결성을 명시
+- 참조 무결성?
+->  한 테이블의 레코드는 반드시 다른 테이블의 레코드와 연관시켜야 하는 것을 의미. 레코드들을 삽입, 삭제, 수정할 때 참조 무결성 제약조건에 위배될 수 있음.
+- 위반되었을 때?
+ 1) Default operation -> 거부
+ ex)  `SAL` double NOT NULL DEFAULT 1000;
+ 2) referential triggered action 절
+ 
+ > **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
+ > **ON DELETE SET NULL ON UPDATE CASCADE** 
+ > (ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
+ > or
+ > **ON DELETE SET DEFAULT ON UPDATE CASCADE**
+ > (DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
+
+5. CHECK: 애트리뷰트나 도메인 정의 뒤에 사용하여 데이터의 값을 제한할 수 있다. -> 투플 기반 제약 조건
+ ex)  `SAL` double DEFAULT NULL CHECK ( `SAL`>0 AND `SAL`<5000)
+
+=======
+※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
+  
+**[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
+![테이블 샘플 다운로드](http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7)
+  
+저장된 테이블을 확인한다.
 ![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)
 
 ----------
@@ -551,6 +669,18 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 
 ----------
 
+#### 3-2-2 ALTER
+> -> TABLE에 대한 정의를 변경
+> ALTER TABLE 테이블명 ADD 
+> ALTER TABLE 테이블명 ALTER 
+ > ALTER TABLE 테이블명 DROP
+
+-----------
+#### 3-2-3 DROP
+> -> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제
+
+----------
+
 ###**< DML >**
 #### 3-5 Insert
 >-> 테이블에 새로운 레코드 삽입
@@ -558,6 +688,15 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 >**VALUES 레코드값**
 
 ----------
+
+###**< DML >**
+#### 3-5 Insert
+>-> 테이블에 새로운 레코드 삽입
+>**INSERT INTO 테이블명**
+>**VALUES 레코드값**
+
+----------
+
 #### 3-6 Delete
 > -> 테이블에 조건에 맞는 레코드를 삭제
 >**DELETE FROM 테이블명 [WHERE 삭제하려는 칼럼 명 = 값];**
@@ -590,6 +729,7 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 >**ORDER BY 컬럼명**
 
 ----------
+
 
 **4. MySQL 사용중 오류발생**
 -----
@@ -679,6 +819,7 @@ GRANT ALL PRIVILEGES ON *.* TO '[유저 이름]'@'%'
 > 이 후에 이 유저를 통해 Connection을 진행하게 되면 처음 '127.0.0.1'에서 MySQL 허가를 받을 수 없다는 메시지는 뜨지 않는다.
 
 # 
+
 
 ----------
 
