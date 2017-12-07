@@ -195,7 +195,7 @@ tray에서 apmsetup moniter라고 하는 이 시스템 tray를 오른쪽 클릭 
 
 ##### **2-2-2 Mac 환경 :**
 
-**#MAMP Stack**
+**# MAMP Stack**
 
 Mac에서 MySQL을 설치하는 방법은 여러가지가 있다. 이 문서에서는 그중 bitnami에서 제공하는 MAMP Stack이라는 것으로 MySQL을 설치하는 방법을 알아볼 것이다.
 
@@ -223,20 +223,23 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 
 이제 MAMP를 실행해 봅시다.
 
-![응용](http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9)
+
+<img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="400px" height="350px">
+
 
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
 
 실행프로그램이 시작되면 몇가지 설정을 할 수 있는 화면들이 보이게 된다. 이때 설정이 필요없는 부분은 그냥 Pass하고 phpmyadmin등이 체크되어 있는 체크박스가 보인다.
 
-![설정1](http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923)
+
+<img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="600px" height="400px">
 
 >**Note**
 >MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
 
 MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제를 하고 Next버튼을 진행해준다.
 
-![경로설정](http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE)
+<img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="600px" height="400px">
 
 MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
 
@@ -252,7 +255,7 @@ MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next
 
 Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OSX** 프로그램을 실행해봅시다.
 
-![manager-OSX](http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991)
+<img src="http://cfile6.uf.tistory.com/image/9968CA335A27FB27335991" width="600px" height="400px">
 
 세개의 탭중 **Manage Servers** 탭에서 MySQL Database를 Start, Stop할 수 있다. MySQL 뿐만아니라 아파치 웹 서버도 여기서 쉽게 제어할 수 있다.
 
@@ -263,6 +266,7 @@ Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OS
 이제  MySQL에 접속이 되어지는지 확인해보아야 한다. 터미널에 들어가 다음의 명령어들을 수행해야 한다.
 
 MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한다.
+
 
 ![이동](http://cfile25.uf.tistory.com/image/99602D335A27FC80324778)
 
@@ -280,7 +284,7 @@ Welcome이라는 글씨가 보이면서 **mysql >** 의 입력란이 보이면 �
 
 ##### **2-2-3 Linux 환경 :**
 리눅스 중 우분투(Ubuntu)라고 하는 리눅스 배포판을 설치했다고 가정한 후의 설명이다.
-
+############
 terminal 창을 열고  아래의 명령어를 작성한다.
 
 [ Apache 설치 ]
@@ -291,6 +295,7 @@ terminal 창을 열고  아래의 명령어를 작성한다.
 
 	sudo apt-get install mysql-server mysql-client
 
+
 [ php 설치 ]
 
 	sudo apt-get install php5-common php5 libapache2-mod-php5
@@ -299,14 +304,15 @@ terminal 창을 열고  아래의 명령어를 작성한다.
 
 	sudo apt-get install php5-mysql
 
+
 [ 아파치 재 시작 ]
 
 	sudo /etc/init.d/apache2 restart
 
 만약 mysql만 설치할 것이라면 mysql만을 설치하면 된다.
-
+######
 하지만 일반적으로 mysql이 웹을 위해 많이 사용되기도 하고 웹 환경에서 가장 많이 사용되는 기술 중 하나가 아파치라는 웹 서버와 php라고 하는 미들웨어이기 때문에 일반적으로 mysql, php, apache는 함께 사용되는 경우가 많다.
-
+######
 모두 설치하였으면 terminal 창에 다음과 같이 입력하여 mysql에 접속한다.
 
 	mysql -uroot -p [enter]
@@ -322,7 +328,7 @@ mysql -uroot -p [password] 의 방법으로 접속하는 것 또한 가능하지
 **# 설치 확인**
 
 apache가 잘 설치되었는지 확인하기 위해서는 firefox의 주소창에 localhost를 입력하여 접속해본다.
-
+######
 It works! 가 출력되는 화면으로 접속할 것이다. 부가적인 확인을 위해 아래의 과정을 참고한다. 아래의 과정은 index.html이라는 파일이 현재 웹브라우저에서 localhost를 입력할 때 출력하고 있다는 것을 보이기 위한 과정으로 생략해도 좋다.
 
 	cd /var/www/index
@@ -342,15 +348,17 @@ It works! 가 출력되는 화면으로 접속할 것이다. 부가적인 확인
 
 이 파일을 에디터에서 오픈하여 It works! 라는 문자열을 수정해본다.
 
+---------
 php가 잘 설치되었는지 확인하기 위한 과정은 다음과 같다.
-
+######
 /var/www/index 경로에서
 
 	sudo vi phpinfo.php
 
 위 명령을 사용하여 vi 에디터로 phpinfo.php라는 이름의 파일을 하나 생성한다.
-
+######
 i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한 후 :wq 와 엔터를 눌러 위의 내용을 저장한다.
+
 
 	< ?
 	phpinfo();
@@ -358,8 +366,8 @@ i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한 후 :wq 
 
 
 
-firefox에서 주소 창에
-localhost/phpinfo.php를 입력하며 접속하면 php와 관련된 다양한 환경에 대한 내용들이 출력된다.
+
+firefox에서 주소 창에 localhost/phpinfo.php를 입력하며 접속하면 php와 관련된 다양한 환경에 대한 내용들이 출력된다.
 이 내용들이 잘 출력되면 php가 잘 설치되었다는 의미이고 내용을 확인하다 보면 mysql에 관한 내용도 있는 것을 볼 수 있을 것이다. 이는 mysql이 php와 잘 연동되었다는 의미이다.
 
 ----------
@@ -388,7 +396,7 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 ----------
 
 
-**3. MySQL  실습하기**
+**3. 데이터 관리 - SQL**
 -------------
 #### 3-1 MySQL 실행
 
@@ -397,10 +405,50 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 [사진 부분]
 
 	
->먼저, MySQL에 현재 어떠한 데이터베이스들이 있는지 확인하기위해 **>> show databases** 명령어를 입력해본다.
+>먼저, MySQL에 현재 어떠한 데이터베이스들이 있는지 확인하기위해 **>> show databases;** 명령어를 입력해본다.
 
 [사진 부분]
 
+#### 3-1-1 Database
+**``Database **란 데이터가 실질적으로 적재되는 테이블들을 분류하는 상위 개념을 말한다.
+
+---
+##### [데이터베이스 생성]
+
+SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 다음과 같다.
+
+	CREATE DATABASE `데이터베이스명` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+여기서 데이터베이스명 양쪽에 붙어있는 기호 **`**은 작은따옴표가 아니라 억음부호(grave accent)라고 하는 것으로 키보드 상으로는 아래 그림과 같은 위치에 있다.
+
+[그림]
+
+그리고 `CHARACTER SET utf8 COLLATE utf8_general_ci` 은 특정 데이터베이스의 인코딩 설정을 하는 명령으로 현재 생성할 데이터베이스의 기본 언어 인코딩 값을 UTF-8로 설정한다는 의미이다. 인코딩이 무엇인지 잘 모를 때에는 위와 같이 쓰는 것이 바람직하다.
+
+아래의 query문을 사용하여 임의의 데이터베이스 class를 생성해본다.
+
+	CREATE DATABASE `class` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+show databases; 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
+[그림]
+	
+##### [데이터베이스 삭제]
+
+데이터베이스를 삭제하는 query문은 다음과 같다.
+
+	DROP DATABASE `데이터베이스명`;
+만약 위에서 만들었던 class라는 데이터를 삭제하기 위해 **DROP DATABASE \`class\`;**라는 명령어를 사용한다면 class 데이터베이스가 사라지는 것을 확인할 수 있을 것이다.
+
+##### [데이터베이스 열람]
+데이터베이스를 열람하기 위한 query문은 다음과 같다.
+
+	SHOW DATABASES;
+
+
+##### [데이터베이스 선택]
+위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
+
+	USE `데이터베이스명`;
 
 
 ----------
@@ -414,118 +462,216 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 
 ----------
 
-####-SQL의 분류
-1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
--> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
-2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
--> 데이터베이스 사용자가 응용 프로그램이나 질의어를 통하여 저장된 데이터를 실질적으로 처리하는 데 사용되는 언어
-3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
--> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
+
+####**SQL의 분류**
+
+SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
+
+	1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
+	→ SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
+	
+	2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
+	→ 데이터베이스 사용자가 응용 프로그램이나 질의어를 통하여 저장된 데이터를 실질적으로 처리하는 데 사용되는 언어
+
+	3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
+	→ 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
 
 ---------
-###**< DDL >**
-#### 3-2 Create
->-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
->**CREATE TABLE 테이블명(  **
->   **컬럼명 데이터타입**
->**);**
+### **3-2 DDL**
 
- - 테이블?
-테이블이란 데이터가 실질적으로 저장되는 저장소를 말한다.
+##### **``테이블(Table)** 이란
+'데이터가 실질적으로 저장되는 저장소' 라고 할 수 있다.
+비유하자면 데이터베이스가 디렉토리라고 할 때 테이블은 파일이라고 할 수 있다.
+디렉토리는 파일들을 그룹핑해주는 역할을 하는 것이고 파일은 데이터를 담는 역할을 한다. 여기서 파일과 유사한 기능을 하는 것이 **테이블**이라고 할 수 있다.
+######
+#####**``스키마(schema)**란?
+테이블에 적재될 데이터의 구조와 형식을 정의 하는 것을 말한다.
+테이블에 어떤 형식의 데이터들이 삽입되고 저장될 것인지는 데이터를 삽입하기 전에 미리 정의 해놓아야 한다.
+즉 스키마는 일종의 데이터의 설계도라고 할 수 있다. 만약 스키마와 맞지 않는 데이터를 삽입하려고 하면 오류가 발생한다.
 
- - *샘플 중 CREATE 문*
+-------------
+### 3-2-1 CREATE
+
+CREATE는 테이블을 생성하는 쿼리 명령어이다.
+사용하는 방법은 아래와 같으며 이 명령어를 이용하여 데이터 삽입 전 SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의하게 된다.
+
+	CREATE TABLE table_name (
+	    칼럼명1 data_type,
+	    칼럼명2 data_type
+	)
+
+#####
+아래는 테이블 생성과 관련된 예제이다.
     
-CREATE TABLE IF NOT EXISTS `BONUS` (
-  `ENAME` varchar(10) DEFAULT NULL,
-  `JOB` varchar(9) DEFAULT NULL,
-  `SAL` double DEFAULT NULL,
-  `COMM` double DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    
+	-- student 테이블 생성
+	CREATE TABLE `student` (
+	    `id`  tinyint NOT NULL ,
+	    `name`  char(4) NOT NULL ,
+	    `sex`  enum('남자','여자') NOT NULL ,
+	    `address`  varchar(50) NOT NULL ,
+	    `birthday`  datetime NOT NULL ,
+	    PRIMARY KEY (`id`)
+	);
+    -- BONUS 테이블 생성
+	CREATE TABLE IF NOT EXISTS `BONUS` (
+	  `ENAME` varchar(10) DEFAULT NULL,
+	  `JOB` varchar(9) DEFAULT NULL,
+	  `SAL` double DEFAULT NULL,
+	  `COMM` double DEFAULT NULL
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
- - BONUS 의 이름을 가진 테이블에 ENAME, JOB, SAL, COMM의 column을 가진 테이블을 생성
-  
- -  IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT EXISTS**는 테이블이 존재하지 않을 경우 생성하라는 의미. 추가옵션으로 필요로 할시에 사용한다.
- - 데이터 타입
-1. CHAR : 0 ~ 255 고정문자 길이
-2. VARCHAR : 0 ~ 65535 가변 문자 길이 (테이블을 만들 때 문자의 길이를 20으로 지정하여도 삽입시 문자의 길이가 5만큼의 크기를 차지 했을 때 5만 차지하도록 해준다)
-3. INT : -2147483648 ~ 2147483647 정수형
-4. FLOAE : 작은 부동소수점
-5. DOUBLE : 큰 부동소수점
-6. DECIMAL(M, D) : 소수부의 자릿수를 미리 정해 놓고, 고정된 자릿수로만 소수 부분을 표현
-- M : 소수 부분을 포함한 실수의 총 자릿수, 최댓값 65
-- D : 소수 부분의 자릿수, D가 0이면 정수
-7. DATE : YYYY-MM-DD (년-월-일)
-8. DATETIME : YYYY-MM-DD HH:MM:SS (년-월-일 시:분:초)
-9. TIMESTAMP : YYYYMMDDHHMMSS (년월일시분초)
-10. TIME : HH:MM:SS (시:분:초)
- - 제약조건
-1. NOT NULL : 해당 column은 NULL로 지정할 수 없다.
-2. UNIQUE : 해당 column은 서로 다른 값을 가진다.
-3. PRIMARY KEY : NOT NULL + UNIQUE, 대표키로 값에 NULL을 넣을 수 없고 식별할 수 있는 값을 넣어야만 한다. 반드시 1개 이상 명시.
-4. FOREIGN KEY : 테이블간에 연관성을 갖도록 하고 참조 무결성을 명시
-- 참조 무결성?
-->  한 테이블의 레코드는 반드시 다른 테이블의 레코드와 연관시켜야 하는 것을 의미. 레코드들을 삽입, 삭제, 수정할 때 참조 무결성 제약조건에 위배될 수 있음.
-- 위반되었을 때?
- 1) Default operation -> 거부
- ex)  `SAL` double NOT NULL DEFAULT 1000;
- 2) referential triggered action 절
+ BONUS 의 이름을 가진 테이블에 ENAME, JOB, SAL, COMM의 column을 가진 테이블을 생성
  
- > **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
- > **ON DELETE SET NULL ON UPDATE CASCADE** 
+#######
+
+IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT EXISTS**는 테이블이 존재하지 않을 경우 생성하라는 의미. 추가옵션으로 필요로 할시에 사용한다.
+ 
+#######
+
+**[데이터 타입]**
+
+|Data Type | Explanation |
+| :---------- | :--------- |
+| CHAR   |  0 ~ 255 고정문자 길이      |
+| VARCHAR | 0 ~ 65535 가변 문자 길이 (테이블을 만들 때 문자의 길이를 20으로 지정하여도 삽입시 문자의 길이가 5만큼의 크기를 차지 했을 때 5만 차지하도록 해준다)|
+| INT | -2147483648 ~ 2147483647 정수형|
+| FLOAE | 작은 부동소수점|
+| DOUBLE | 큰 부동소수점|
+|DECIMAL(M, D) | 소수부의 자릿수를 미리 정해 놓고, 고정된 자릿수로만 소수 부분을 표현 ` M : 소수 부분을 포함한 실수의 총 자릿수 / 최댓값 65, D : 소수 부분의 자릿수, D가 0이면 정수`|
+| DATE | YYYY-MM-DD (년-월-일)|
+| DATETIME | YYYY-MM-DD HH:MM:SS (년-월-일 시:분:초)|
+| TIMESTAMP | YYYYMMDDHHMMSS (년월일시분초)|
+| TIME | HH:MM:SS (시:분:초)|
+
+######
+
+**[제약조건]**      
+
+|Constraint | Explanation |
+| :---------- | :--------- |
+| NOT NULL | 해당 column은 NULL로 지정할 수 없다.|
+| UNIQUE | 해당 column은 서로 다른 값을 가진다.|
+| PRIMARY KEY | NOT NULL + UNIQUE, 대표키로 값에 NULL을 넣을 수 없고 식별할 수 있는 값을 넣어야만 한다. 반드시 1개 이상 명시.|
+| FOREIGN KEY | 테이블간에 연관성을 갖도록 하고 \``참조 무결성"을 명시 |
+| CHECK| 애트리뷰트나 도메인 정의 뒤에 사용하여 데이터의 값을 제한할 수 있다. -> 투플 기반 제약 조건  ex)\`SAL\` double DEFAULT NULL CHECK ( \`SAL\`>0 AND \`SAL\`<5000)|
+
+
+--------------
+**[제약조건 문법]**
+  
+  
+| Constraint  | 예시 (Create문 안에 쓴다고 가정)                                                                          |
+|-------------|-----------------------------------------------------------------------------------------------------------|
+| NOT NULL    | 컬럼명 데이터형 NOT NULL → ID INT NOT NULL                                                                |
+| UNIQUE      | UNIQUE(컬럼명) → UNIQUE(ID)                                                                               |
+| PRIMARY KEY | PRIMARY KEY(컬럼명) → PRIMARY KEY(ID)                                                                     |
+| FOREIGN KEY | FOREIGN KEY(컬렴명) REFERENCES 테이블명 (참조할 컬럼명) → FOREIGN KEY(ssn) REFERENCES EMPLOYEE(Super_ssn) |
+| CHECK       | 컬럼명 데이터형 CHECK(조건) → SAL double CHECK ( SAL>0 AND SAL<5000)|                                     |
+
+
+--------------
+
+##### **``참조 무결성**이란?
+한 테이블의 레코드는 반드시 다른 테이블의 레코드와 연관시켜야 하는 것을 의미한다. 레코드를 삽입, 삭제, 수정할 때 참조 무결성 제약조건에 위배될 수 있기 때문에 유의해야 한다.
+#######
+참조무결성이 위반되는 경우 아래와 같이 **해결**한다.
+
+>	 1) Default operation 
+>		 >`SAL` double NOT NULL DEFAULT 1000;
+		 
+>	 2) referential triggered action 절
+ 
+>> **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
+> **ON DELETE SET NULL ON UPDATE CASCADE** 
  > (ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
  > or
- > **ON DELETE SET DEFAULT ON UPDATE CASCADE**
+> **ON DELETE SET DEFAULT ON UPDATE CASCADE**
  > (DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
 
-5. CHECK: 애트리뷰트나 도메인 정의 뒤에 사용하여 데이터의 값을 제한할 수 있다. -> 투플 기반 제약 조건
- ex)  `SAL` double DEFAULT NULL CHECK ( `SAL`>0 AND `SAL`<5000)
+
+
 
 
 
 ----------
-#### 3-3 ALTER
-> -> TABLE에 대한 정의를 변경
-> ALTER TABLE 테이블명 ADD 
-> ALTER TABLE 테이블명 ALTER 
- > ALTER TABLE 테이블명 DROP
+#### 3-2-2 ALTER
+>→ TABLE에 대한 정의를 변경
+> ALTER TABLE 테이블명 ADD 추가할컬럼명 데이터형
+> ALTER TABLE 테이블명 MODIFY 변경할컬럼명 데이터형
+ > ALTER TABLE 테이블명 DROP 삭제할컬럼명
+
+**[ALTER 문법]**
+\# 테이블에 있는 컬럼 수정, 추가, 삭제하기
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/5.JPG?raw=true" width="600px" height="400px">
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/6.JPG?raw=true" width="600px" height="400px">
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/7.JPG?raw=true" width="600px" height="400px">
+
+\# 테이블에 제약조건 추가하기
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/10.JPG?raw=true" width="600px" height="400px">
+
+
 
 -----------
-#### 3-4 DROP
-> -> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제
+#### 3-2-3 DROP
+> → SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제
+> DROP TABLE 삭제할 테이블 명
+
+**[DROP 문법]**
+
+\# 테이블 삭제하기
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/8.JPG?raw=true">
 
 ----------
 
 ###**< DML >**
 #### 3-5 Insert
->-> 테이블에 새로운 레코드 삽입
+>→ 테이블에 새로운 레코드 삽입
 >**INSERT INTO 테이블명**
 >**VALUES 레코드값**
 
+**[INSERT 문법]**
+
+\#레코드 추가하기
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/9.JPG?raw=true" >
+
+
+
 ----------
 #### 3-6 Delete
-> -> 테이블에 조건에 맞는 레코드를 삭제
+> → 테이블에 조건에 맞는 레코드를 삭제
 >**DELETE FROM 테이블명 [WHERE 삭제하려는 칼럼 명 = 값];**
+
+**[DELETE 문법]**
+
+\# SAL>2000의 조건을 만족한 레코드만 삭제
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/11.JPG?raw=true" >
+
+\# 모든 레코드를 삭제
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/12.JPG?raw=true">
+
 
 -그 외 삭제 명령
 
 1. TRUNCATE
-> -> 테이블의 전체 데이터를 삭제
+> → 테이블의 전체 데이터를 삭제
 >테이블에 외부키가 없다면 DELETE보다 훨씬 빠르게 삭제
 >**TRUNCATE 테이블명;**
 
 2. DROP TABLE
-> -> 테이블을 삭제
+> → 테이블을 삭제
 >**DROP TABLE 테이블명;**
 
 ----------
 
 #### 3-7 Update
-> -> 테이블에서 조건에 맞는 레코드의 내용을 변경
+>→ 테이블에서 조건에 맞는 레코드의 내용을 변경
 >**UPDATE 테이블명 SET 수정할 레코드값 [WHERE 수정해야할 컬럼명 = 값]**
 
 ----------
+
 #### 3-8 Select
-> -> 테이블에서 조건에 맞는 레코드를 검색
+>→ 테이블에서 조건에 맞는 레코드를 검색
 >**SELECT 컬럼명 FROM 테이블명**
 >**WHERE 조건**
 >**GROUP BY 그룹화 컬럼(들)**
@@ -547,3 +693,5 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 [^dbms]: [DBMS](https://en.wikipedia.org/wiki/Database/)는 다수의 사용자들이 데이터베이스 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합이다.
 
 [^mysql]: [MySQL](https://www.mysql.com/why-mysql/)은 현재 가장 많이 사용되고 있는 오픈소스형태의 관계형 데이터베이스 관리 시스템(RDBMS)이다.
+
+
