@@ -223,11 +223,14 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 
 이제 MAMP를 실행해 봅시다.
 
+
 <img src="http://cfile6.uf.tistory.com/image/99DAF8335A27F985206DE9" width="400px" height="350px">
+
 
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
 
 실행프로그램이 시작되면 몇가지 설정을 할 수 있는 화면들이 보이게 된다. 이때 설정이 필요없는 부분은 그냥 Pass하고 phpmyadmin등이 체크되어 있는 체크박스가 보인다.
+
 
 <img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="600px" height="400px">
 
@@ -264,6 +267,7 @@ Mac의 응용프로그램을 담고 있는 Lanchpad에 들어가서 **manager-OS
 
 MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한다.
 
+
 ![이동](http://cfile25.uf.tistory.com/image/99602D335A27FC80324778)
 
 	cd /Applications/mampstack-7.1.12-0[버전은 다를 수 있다]/mysql/bin
@@ -291,6 +295,7 @@ terminal 창을 열고  아래의 명령어를 작성한다.
 
 	sudo apt-get install mysql-server mysql-client
 
+
 [ php 설치 ]
 
 	sudo apt-get install php5-common php5 libapache2-mod-php5
@@ -298,6 +303,7 @@ terminal 창을 열고  아래의 명령어를 작성한다.
 [ php-mysql 연동 모듈 설치 ]
 
 	sudo apt-get install php5-mysql
+
 
 [ 아파치 재 시작 ]
 
@@ -352,9 +358,11 @@ php가 잘 설치되었는지 확인하기 위한 과정은 다음과 같다.
 
 i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한 후 :wq 와 엔터를 눌러 위의 내용을 저장한다.
 
+
 	< ?
 	phpinfo();
 	? >
+
 
 
 
@@ -397,10 +405,50 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 [사진 부분]
 
 	
->먼저, MySQL에 현재 어떠한 데이터베이스들이 있는지 확인하기위해 **>> show databases** 명령어를 입력해본다.
+>먼저, MySQL에 현재 어떠한 데이터베이스들이 있는지 확인하기위해 **>> show databases;** 명령어를 입력해본다.
 
 [사진 부분]
 
+####3-1-1 Database
+**``Database **란 데이터가 실질적으로 적재되는 테이블들을 분류하는 상위 개념을 말한다.
+
+---
+#####[데이터베이스 생성]
+
+SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 다음과 같다.
+
+	CREATE DATABASE `데이터베이스명` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+여기서 데이터베이스명 양쪽에 붙어있는 기호 **`**은 작은따옴표가 아니라 억음부호(grave accent)라고 하는 것으로 키보드 상으로는 아래 그림과 같은 위치에 있다.
+
+[그림]
+
+그리고 `CHARACTER SET utf8 COLLATE utf8_general_ci` 은 특정 데이터베이스의 인코딩 설정을 하는 명령으로 현재 생성할 데이터베이스의 기본 언어 인코딩 값을 UTF-8로 설정한다는 의미이다. 인코딩이 무엇인지 잘 모를 때에는 위와 같이 쓰는 것이 바람직하다.
+
+아래의 query문을 사용하여 임의의 데이터베이스 class를 생성해본다.
+
+	CREATE DATABASE `class` CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+show databases; 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
+[그림]
+	
+#####[데이터베이스 삭제]
+
+데이터베이스를 삭제하는 query문은 다음과 같다.
+
+	DROP DATABASE `데이터베이스명`;
+만약 위에서 만들었던 class라는 데이터를 삭제하기 위해 **DROP DATABASE \`class\`;**라는 명령어를 사용한다면 class 데이터베이스가 사라지는 것을 확인할 수 있을 것이다.
+
+#####[데이터베이스 열람]
+데이터베이스를 열람하기 위한 query문은 다음과 같다.
+
+	SHOW DATABASES;
+
+
+#####[데이터베이스 선택]
+위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
+
+	USE `데이터베이스명`;
 
 
 ----------
@@ -414,17 +462,23 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 
 ----------
 
-####-SQL의 분류
-1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
--> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
-2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
--> 데이터베이스 사용자가 응용 프로그램이나 질의어를 통하여 저장된 데이터를 실질적으로 처리하는 데 사용되는 언어
-3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
--> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
+
+####**SQL의 분류**
+
+SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
+
+	1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
+	-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
+	
+	2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
+
+	3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
+	-> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
 
 ---------
-###**< DDL >**
-#### 3-2 Create
+###**3-2 DDL**
+#### 3-2-1 Create
+
 >-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
 >**CREATE TABLE 테이블명(  **
 >   **컬럼명 데이터타입**
@@ -482,15 +536,16 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 
 
 
+
 ----------
-#### 3-3 ALTER
+#### 3-2-2 ALTER
 > -> TABLE에 대한 정의를 변경
 > ALTER TABLE 테이블명 ADD 
 > ALTER TABLE 테이블명 ALTER 
  > ALTER TABLE 테이블명 DROP
 
 -----------
-#### 3-4 DROP
+#### 3-2-3 DROP
 > -> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제
 
 ----------
@@ -524,6 +579,7 @@ CREATE TABLE IF NOT EXISTS `BONUS` (
 >**UPDATE 테이블명 SET 수정할 레코드값 [WHERE 수정해야할 컬럼명 = 값]**
 
 ----------
+
 #### 3-8 Select
 > -> 테이블에서 조건에 맞는 레코드를 검색
 >**SELECT 컬럼명 FROM 테이블명**
