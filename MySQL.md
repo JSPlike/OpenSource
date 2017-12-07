@@ -602,12 +602,12 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
  > ALTER TABLE 테이블명 DROP 삭제할컬럼명
 
 **[ALTER 문법]**
-\# 테이블에 있는 컬럼 수정, 추가, 삭제하기
+\# 테이블에 있는 컬럼 수정, 추가, 삭제하기  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/5.JPG?raw=true" width="600px" height="400px">
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/6.JPG?raw=true" width="600px" height="400px">
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/7.JPG?raw=true" width="600px" height="400px">
 
-\# 테이블에 제약조건 추가하기
+\# 테이블에 제약조건 추가하기  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/10.JPG?raw=true" width="600px" height="400px">
 
 
@@ -619,7 +619,7 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 
 **[DROP 문법]**
 
-\# 테이블 삭제하기
+\# 테이블 삭제하기  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/8.JPG?raw=true">
 
 ----------
@@ -632,7 +632,7 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 
 **[INSERT 문법]**
 
-\#레코드 추가하기
+\#레코드 추가하기  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/9.JPG?raw=true" >
 
 
@@ -644,10 +644,10 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 
 **[DELETE 문법]**
 
-\# SAL>2000의 조건을 만족한 레코드만 삭제
+\# SAL>2000의 조건을 만족한 레코드만 삭제  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/11.JPG?raw=true" >
 
-\# 모든 레코드를 삭제
+\# 모든 레코드를 삭제  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/12.JPG?raw=true">
 
 
