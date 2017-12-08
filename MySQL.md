@@ -1,18 +1,24 @@
 MySQL REFERENCE MANUAL
 ===================
 
+
 ## **0. MySQL 개요 및 목차**
 
 ### 0-1 주제 선정 이유 및 개요
+
 데이터베이스는 데이터를 일정한 형태로 저장해 놓은 것을 의미한다. 하지만 단순 파일에 데이터를 일괄적으로 저장하는 것과는 많은 차이가 있다. 단순 파일과는 다른  많은 기능들이 데이터베이스 내에 존재하며 이러한 기능들은 데이터를 보다 정밀하게 조작해야 하는 일에 유용하게 사용될 수 있다. 웹 애플리케이션을 만들거나 서버와 클라이언트를 이용한 프로그램을 제작해야 하는 경우, 데이터베이스를 이용해 체계적으로 구축한 데이터는 더욱 더 그 가치를 발휘할 수 있다.
 #### 
 4차 산업시대인 현재, 대량의 데이터를 효율적으로 관리하는 것은 더 중요한 것으로 여겨지고 있다. 이러한 사회의 흐름에서 프로그래머라면 누구나 한 번쯤은 관심을 가질 수밖에 없는 데이터베이스 분야 중 가장 접근하기 편한 데이터베이스는 MySQL일 것이다. 오픈소스이고 무료로 제공된다는 점에서도 충분히 매력있지만 이식성이 좋고 가볍고 빠르다는 점에서 많은 웹 애플리케이션은 기본 데이터베이스로 MySQL로 채택하고 있다.
 #### 
 이러한 의식의 흐름에서 보다 많은 사람들이 MySQL을 쉽고 편하게 사용할 수 있도록 한글 매뉴얼을 제작해보고자 MySQL이라는 오픈소스를 선택하게 되었다. 문서는 데이터베이스 관리 시스템과 그중 하나인 MySQL을 소개하는 것부터 이를 컴퓨터에 설치하고 SQL언어로 데이터를 직접 조작하는 방법까지 차례로 기술되었다. 구체적인 목차는 아래와 같다.
 
+
 ### 0-2 목차
 
+
 [TOC]
+
+
 
 
 ## **1. DBMS와 MySQL 소개**
@@ -89,7 +95,11 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 ### 2-1 가상머신에 Ubuntu 설치
 
 
+### 2-1 가상머신에 Ubuntu 설치
+
+
 #### 2-1-1 **Windows 환경**
+
 
 
 **VMware** 가상머신의 설치:
@@ -427,9 +437,11 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 
 ## **3. MySQL  실습하기**
 
+
 ### 3-1 MySQL 실행
 
 **"MySQL을 실행**하는 것은 간단하다. 터미널을 열고 `$mysql -uroot -p` 를 입력 한 후 엔터를 친 뒤 아까 설정한 MySQL의 암호를 입력하면 된다. MySQL에 들어가면 버전정보, 설치날짜등을 볼 수 있고 새로운 입력 창이 뜨는 것을 확인할 수 있다.
+
 
 <img src="https://user-images.githubusercontent.com/32252093/33759540-07590d04-dc46-11e7-97b5-996e77a2f8ca.JPG" width="500px" height="200px">
 
@@ -451,7 +463,9 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 	CREATE DATABASE `데이터베이스명` CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
+
 여기서 데이터베이스명 양쪽에 붙어있는 기호 `은 작은따옴표가 아니라 **억음부호(grave accent)** 라고 하는 것으로 키보드 상으로는 아래 그림과 같은 위치에 있다.
+
 
 
 <img src="https://user-images.githubusercontent.com/32252093/33759533-05325b0c-dc46-11e7-9cd8-a9411c11e63a.png" width="500px" height="200px">
@@ -524,7 +538,6 @@ class라는 이름의 데이터베이스가 생긴 것을 확인할 수 있다.
 SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 
 	1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
-
 	→ SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
 	
 	2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
@@ -540,7 +553,9 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 #### 3-2-1 CREATE
 
 
-##### (1) **테이블(Table)** 이란
+
+##### (1) **테이블(Table)** 이란?
+
 
 '데이터가 실질적으로 저장되는 저장소' 라고 할 수 있다.
 비유하자면 데이터베이스가 디렉토리라고 할 때 테이블은 파일이라고 할 수 있다.
@@ -556,6 +571,7 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 ###### 
 즉, 스키마는 일종의 데이터의 설계도라고 할 수 있다. 만약 스키마와 맞지 않는 데이터를 삽입하려고 하면 오류가 발생한다.
 
+
 ##### 
 ##### (3) **테이블 생성**
 테이블을 생성하는 쿼리문은 아래와 같다.
@@ -567,7 +583,9 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 --------------------- 
  - 예제   
 
+
 -- student 테이블 생성
+
 	
 	CREATE TABLE `student` (
 		`id`  tinyint NOT NULL ,
@@ -578,7 +596,7 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 		PRIMARY KEY (`id`)
 	);
 		
-   -- BONUS 테이블 생성
+-- BONUS 테이블 생성
 
 	CREATE TABLE IF NOT EXISTS `BONUS` (
 	  `ENAME` varchar(10) DEFAULT NULL,
@@ -675,6 +693,7 @@ ALTER 쿼리문은 TABLE에 대한 정의를 변경하는 역할을 한다.
 명령어의 사용 방법은 아래와 같다.
 
 
+
 	ALTER TABLE 테이블명 ADD 추가할컬럼명 데이터형;
 	
 	ALTER TABLE 테이블명 MODIFY 변경할컬럼명 데이터형;
@@ -685,12 +704,13 @@ ALTER 쿼리문은 TABLE에 대한 정의를 변경하는 역할을 한다.
 
 ---------
 ##### (1) 테이블에 있는 컬럼 수정, 추가, 삭제하기  
-<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/5.JPG?raw=true" width="600px" height="400px">
-<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/6.JPG?raw=true" width="600px" height="400px">
-<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/7.JPG?raw=true" width="600px" height="400px">
+<img src="https://user-images.githubusercontent.com/32252098/33768445-6ab21634-dc69-11e7-977d-618ada4fe419.png" width="600px" height="400px">
+<img src="https://user-images.githubusercontent.com/32252098/33768448-6f9feb80-dc69-11e7-8197-94493bc39c0c.png" width="600px" height="400px">
+<img src="https://user-images.githubusercontent.com/32252098/33768459-73b45332-dc69-11e7-9da6-ac414cd1b0c8.png" width="600px" height="400px">
 
 ##### (2) 테이블에 제약조건 추가하기  
-<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/10.JPG?raw=true" width="600px" height="400px">
+<img src="https://user-images.githubusercontent.com/32252098/33768476-83c906fa-dc69-11e7-97b5-e7af1a92a273.png" width="600px" height="400px">
+
 
 
 
@@ -706,7 +726,9 @@ DROP 쿼리문은 SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제하는 역할을 �
 
 
 ##### (1) 테이블 삭제하기  
-<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/8.JPG?raw=true">
+
+<img src="https://user-images.githubusercontent.com/32252098/33768470-77c5070a-dc69-11e7-9c3f-ce3b0e786110.png">
+
 
 
 ----------
@@ -724,7 +746,9 @@ INSERT는 테이블에 새로운 레코드를 삽입할 떄 사용하는 쿼리�
 #### 
 
 ##### (1) 레코드 추가하기  
-<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/9.JPG?raw=true" >
+
+<img src="https://user-images.githubusercontent.com/32252098/33768474-7e6789d4-dc69-11e7-8833-0db4ff3d39c0.png" >
+
 
 
 
@@ -732,21 +756,21 @@ INSERT는 테이블에 새로운 레코드를 삽입할 떄 사용하는 쿼리�
 
 #### 3-3-2 DELETE
 
+
 DELETE는 테이블에 조건에 맞는 레코드를 삭제할 때 사용하는 명령어이다.
 
 	DELETE FROM 테이블명 [WHERE 삭제하려는 칼럼 명 = 값];
 
 
-
-
 ##### (1)  특정 레코드 삭제
 
+
 SAL>2000의 조건을 만족한 레코드만 삭제  
-<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/11.JPG?raw=true" >
+<img src="https://user-images.githubusercontent.com/32252098/33768485-8d3bdad2-dc69-11e7-9b70-00a6c374002f.png" >
 
 -----
 ##### (2) 모든 레코드 삭제  
-<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/12.JPG?raw=true">
+<img src="https://user-images.githubusercontent.com/32252098/33768369-12f6b756-dc69-11e7-9c53-09af9a4e8c19.png">
 
 ----
 ##### (3) 그 외 삭제 명령
@@ -756,16 +780,23 @@ SAL>2000의 조건을 만족한 레코드만 삭제
 
 	TRUNCATE 테이블명;
 
+<img src="https://user-images.githubusercontent.com/32252098/33768383-269c70ac-dc69-11e7-823f-3413a1a8d6b5.png">
+
+
 ###### 2. DROP TABLE
 테이블을 삭제하는 명령어이다. 위에서 한 번 소개한 적 있다. 사용법은 다음과 같다.
 
 	DROP TABLE 테이블명;
 
-----------
+<img src="https://user-images.githubusercontent.com/32252098/33768388-2c095bae-dc69-11e7-893b-7d11161ae127.png">
+
+
+
 
 #### 3-3-3 Update
 테이블에서 조건에 맞는 레코드의 내용을 변경할 때 사용하는 명령어이다.
 사용법은 아래와 같다.
+
 
 
 	UPDATE 테이블명 SET 컬럼 명 = 값 [WHERE 컬럼 명 = 값];
@@ -775,6 +806,9 @@ SAL>2000의 조건을 만족한 레코드만 삭제
 WHERE절은 필수적인 사항이 아니기 때문에 꼭 사용하지 않아도 무관하지만 WHERE을 사용하지 않으면 해당 테이블의 모든 컬럼 값이 변경되므로 WHERE을 통한 조건설정을 통해 변경하고자 하는 컬럼 값을 설정해 주는 것이 일반적이다.
 #### 
 이에 대한 예시는 다음과 같다.
+
+
+<img src="https://user-images.githubusercontent.com/32252098/33768392-31219aa2-dc69-11e7-8de1-15082157960b.png">
 
 
 ----------
@@ -791,14 +825,33 @@ WHERE절은 필수적인 사항이 아니기 때문에 꼭 사용하지 않아�
 
 
 조회하고자 하는 컬럼명과 그 컬럼이 속한 테이블을 명시해주는 부분은 `SELECT 컬럼명 FROM 테이블 명`부분이다.
+
+
+<img src="https://user-images.githubusercontent.com/32252098/33768397-35b3e76e-dc69-11e7-8159-88bfee24365a.png">
+
 #### 
 `WHERE 조건`부분을 통해 해당 조건에 부합하는 튜플만을 조회할 수 있다.
+
+<img src="https://user-images.githubusercontent.com/32252098/33768401-3be1a27a-dc69-11e7-880c-e2da722a7f13.png">
+
+<img src="https://user-images.githubusercontent.com/32252098/33768406-42222f10-dc69-11e7-8959-bf7971bd6166.png">
+
 #### 
 `GROUP BY 그룹화 컬럼(들)`절은 `SELECT SUM(salary)`와 같이 특정 그룹으로 묶어 데이터를 집계하고자 할 때 사용하는 부분으로 WHERE와 ORDER BY절 사이에 위치한다.
+
+<img src="https://user-images.githubusercontent.com/32252098/33768414-47fa2ad2-dc69-11e7-97d1-d5612f4eb2fe.png">
+
 #### 
 `HAVING 그룹조건` 절은 GROUP BY절 다음에 위치하여 GROUP BY한 결과를 대상으로 다시 조건 필터를 거는 역할을 수행한다.
+
+<img src="https://user-images.githubusercontent.com/32252098/33768419-4d3ed038-dc69-11e7-94c2-abca65040cdc.png">
+
 #### 
 `ORDER BY 컬럼명`절은 데이터를 해당 컬럼명을 기준으로 정렬하고자 할 때 사용하는 절이다. Default는 오름차순으로 되어있지만 확실하게 명시하고자 할 때 `ORDER BY 컬럼명 ASC;`으로 작성할 수 있고 내림차순으로 정렬하고자 할 때는 `ORDER BY 컬럼명 DESC;`라고 작성하면 된다.
+
+<img src="https://user-images.githubusercontent.com/32252098/33768425-52392796-dc69-11e7-961a-4d80ff136bd4.png">
+
+<img src="https://user-images.githubusercontent.com/32252098/33768430-577f3b0a-dc69-11e7-883b-a76fefab5118.png">
 
 
 ----------
@@ -853,6 +906,7 @@ CREATE USER '[새 유저이름]'@'localhost' IDENTIFIED BY '[새 비밀번호]';
 
 ```
 GRANT ALL PRIVILEGES ON *.* TO 'joonyoung'@'localhost'
+
 
 -> WITH GRANT OPTION;
 
