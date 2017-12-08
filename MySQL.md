@@ -852,6 +852,15 @@ BONUS테이블에 레코드 중 SAL>2000과 JOB='student'를 만족한 레코드
 #### 
 `GROUP BY 그룹화 컬럼(들)`절은 `SELECT SUM(salary)`와 같이 특정 그룹으로 묶어 데이터를 집계하고자 할 때 사용하는 부분으로 WHERE와 ORDER BY절 사이에 위치한다.
 
+※ 자주 쓰이는 GROUP BY 함수들
+|함수|설명|
+|:-------|:--------------------------------|
+|COUNT(필드명) | NULL 값이 아닌 레코드 수를 구한다. |
+|SUM(필드명) | 필드명의 합계를 구한다. |
+|AVG(필드명) | 각각의 그룹 안에서 필드명의 평균값을 구한다. |
+|MAX(필드명) | 최대값을 구한다. |
+|MIN(필드명) | 최소값을 구한다. |
+
 <img src="https://user-images.githubusercontent.com/32252098/33768414-47fa2ad2-dc69-11e7-97d1-d5612f4eb2fe.png">
 BONUS테이블에 레코드 중 JOB을 그룹으로 묶어서 같은 데이터의 수를 COUNT(*)를 통해 나타내주고 컬럼명을 JOB_COUNT로 명시하여 ENAME, JOB, JOB_COUNT를 검색한다. 이때 ENAME은 전체 레코드 중에서 그룹지을 때 제일 윗부분에 있는 데이터로 출력된다.
 
