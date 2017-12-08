@@ -468,17 +468,22 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 ----------
 
 
+
 #### **SQL의 분류**
+
 
 SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 
 	1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
-	-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
+
+	→ SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
 	
 	2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
+	→ 데이터베이스 사용자가 응용 프로그램이나 질의어를 통하여 저장된 데이터를 실질적으로 처리하는 데 사용되는 언어
 
 	3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
-	-> 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
+	→ 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
+
 
 ---------
 ### **3-2 DDL**
@@ -488,7 +493,9 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 비유하자면 데이터베이스가 디렉토리라고 할 때 테이블은 파일이라고 할 수 있다.
 디렉토리는 파일들을 그룹핑해주는 역할을 하는 것이고 파일은 데이터를 담는 역할을 한다. 여기서 파일과 유사한 기능을 하는 것이 **테이블**이라고 할 수 있다.
 ######
+
 ##### **``스키마(schema)**란?
+
 테이블에 적재될 데이터의 구조와 형식을 정의 하는 것을 말한다.
 테이블에 어떤 형식의 데이터들이 삽입되고 저장될 것인지는 데이터를 삽입하기 전에 미리 정의 해놓아야 한다.
 즉 스키마는 일종의 데이터의 설계도라고 할 수 있다. 만약 스키마와 맞지 않는 데이터를 삽입하려고 하면 오류가 발생한다.
@@ -526,6 +533,7 @@ CREATE는 테이블을 생성하는 쿼리 명령어이다.
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
  BONUS 의 이름을 가진 테이블에 ENAME, JOB, SAL, COMM의 column을 가진 테이블을 생성
+
  
 #######
 
@@ -550,15 +558,28 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 
 ######
 
-**[제약조건]**
+**[제약조건]**      
 
 |Constraint | Explanation |
 | :---------- | :--------- |
 | NOT NULL | 해당 column은 NULL로 지정할 수 없다.|
 | UNIQUE | 해당 column은 서로 다른 값을 가진다.|
 | PRIMARY KEY | NOT NULL + UNIQUE, 대표키로 값에 NULL을 넣을 수 없고 식별할 수 있는 값을 넣어야만 한다. 반드시 1개 이상 명시.|
-| FOREIGN KEY | 테이블간에 연관성을 갖도록 하고 \``참조 무결성"을 명시 (자세한 문법 아래 참고)|
+| FOREIGN KEY | 테이블간에 연관성을 갖도록 하고 \``참조 무결성"을 명시 |
 | CHECK| 애트리뷰트나 도메인 정의 뒤에 사용하여 데이터의 값을 제한할 수 있다. -> 투플 기반 제약 조건  ex)\`SAL\` double DEFAULT NULL CHECK ( \`SAL\`>0 AND \`SAL\`<5000)|
+
+
+--------------
+**[제약조건 문법]**
+  
+  
+| Constraint  | 예시 (Create문 안에 쓴다고 가정)                                                                          |
+|-------------|-----------------------------------------------------------------------------------------------------------|
+| NOT NULL    | 컬럼명 데이터형 NOT NULL → ID INT NOT NULL                                                                |
+| UNIQUE      | UNIQUE(컬럼명) → UNIQUE(ID)                                                                               |
+| PRIMARY KEY | PRIMARY KEY(컬럼명) → PRIMARY KEY(ID)                                                                     |
+| FOREIGN KEY | FOREIGN KEY(컬렴명) REFERENCES 테이블명 (참조할 컬럼명) → FOREIGN KEY(ssn) REFERENCES EMPLOYEE(Super_ssn) |
+| CHECK       | 컬럼명 데이터형 CHECK(조건) → SAL double CHECK ( SAL>0 AND SAL<5000)|                                     |
 
 
 --------------
@@ -566,17 +587,15 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 ##### **``참조 무결성**이란?
 한 테이블의 레코드는 반드시 다른 테이블의 레코드와 연관시켜야 하는 것을 의미한다. 레코드를 삽입, 삭제, 수정할 때 참조 무결성 제약조건에 위배될 수 있기 때문에 유의해야 한다.
 #######
-참조무결성이 위반되는 경우 아래와 같은 에러가 나타난다.
+참조무결성이 위반되는 경우 아래와 같이 **해결**한다.
 
-	 1) Default operation -> 거부
-		 ex)`SAL` double NOT NULL DEFAULT 1000;
+>	 1) Default operation 
+>		 >`SAL` double NOT NULL DEFAULT 1000;
 		 
-	 2) referential triggered action 절
+>	 2) referential triggered action 절
  
- -----
- 
-##### **``Foreign Key** 문법
-> **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
+>> **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
+
 > **ON DELETE SET NULL ON UPDATE CASCADE** 
  > (ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
  > or
@@ -590,49 +609,84 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 
 ----------
 #### 3-2-2 ALTER
-> -> TABLE에 대한 정의를 변경
-> ALTER TABLE 테이블명 ADD 
-> ALTER TABLE 테이블명 ALTER 
- > ALTER TABLE 테이블명 DROP
+
+>→ TABLE에 대한 정의를 변경
+> ALTER TABLE 테이블명 ADD 추가할컬럼명 데이터형
+> ALTER TABLE 테이블명 MODIFY 변경할컬럼명 데이터형
+ > ALTER TABLE 테이블명 DROP 삭제할컬럼명
+
+**[ALTER 문법]**
+\# 테이블에 있는 컬럼 수정, 추가, 삭제하기  
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/5.JPG?raw=true" width="600px" height="400px">
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/6.JPG?raw=true" width="600px" height="400px">
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/7.JPG?raw=true" width="600px" height="400px">
+
+\# 테이블에 제약조건 추가하기  
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/10.JPG?raw=true" width="600px" height="400px">
+
+
 
 -----------
 #### 3-2-3 DROP
-> -> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제
+> → SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제
+> DROP TABLE 삭제할 테이블 명
+
+**[DROP 문법]**
+
+\# 테이블 삭제하기  
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/8.JPG?raw=true">
+
 
 ----------
 
 ### **< DML >**
 #### 3-5 Insert
->-> 테이블에 새로운 레코드 삽입
+>→ 테이블에 새로운 레코드 삽입
 >**INSERT INTO 테이블명**
 >**VALUES 레코드값**
 
+**[INSERT 문법]**
+
+\#레코드 추가하기  
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/9.JPG?raw=true" >
+
+
+
 ----------
 #### 3-6 Delete
-> -> 테이블에 조건에 맞는 레코드를 삭제
+> → 테이블에 조건에 맞는 레코드를 삭제
 >**DELETE FROM 테이블명 [WHERE 삭제하려는 칼럼 명 = 값];**
+
+**[DELETE 문법]**
+
+\# SAL>2000의 조건을 만족한 레코드만 삭제  
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/11.JPG?raw=true" >
+
+\# 모든 레코드를 삭제  
+<img src="https://github.com/JSPlike/OpenSource/blob/gaeun/12.JPG?raw=true">
+
 
 -그 외 삭제 명령
 
 1. TRUNCATE
-> -> 테이블의 전체 데이터를 삭제
+> → 테이블의 전체 데이터를 삭제
 >테이블에 외부키가 없다면 DELETE보다 훨씬 빠르게 삭제
 >**TRUNCATE 테이블명;**
 
 2. DROP TABLE
-> -> 테이블을 삭제
+> → 테이블을 삭제
 >**DROP TABLE 테이블명;**
 
 ----------
 
 #### 3-7 Update
-> -> 테이블에서 조건에 맞는 레코드의 내용을 변경
+>→ 테이블에서 조건에 맞는 레코드의 내용을 변경
 >**UPDATE 테이블명 SET 수정할 레코드값 [WHERE 수정해야할 컬럼명 = 값]**
 
 ----------
 
 #### 3-8 Select
-> -> 테이블에서 조건에 맞는 레코드를 검색
+>→ 테이블에서 조건에 맞는 레코드를 검색
 >**SELECT 컬럼명 FROM 테이블명**
 >**WHERE 조건**
 >**GROUP BY 그룹화 컬럼(들)**
@@ -654,3 +708,5 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 [^dbms]: [DBMS](https://en.wikipedia.org/wiki/Database/)는 다수의 사용자들이 데이터베이스 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합이다.
 
 [^mysql]: [MySQL](https://www.mysql.com/why-mysql/)은 현재 가장 많이 사용되고 있는 오픈소스형태의 관계형 데이터베이스 관리 시스템(RDBMS)이다.
+
+
