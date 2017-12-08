@@ -16,7 +16,7 @@ MySQL REFERENCE MANUAL
 ### 0-2 목차
 
 
-[TOC]
+[[TOC]]
 
 
 
