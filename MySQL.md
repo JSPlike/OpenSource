@@ -208,7 +208,7 @@ tray에서 apmsetup moniter라고 하는 이 시스템 tray를 오른쪽 클릭 
 #### **2-2-2 Mac 환경**
 ##### **(1) 설치**
 **# MAMP Stack**
-###### 
+ 
 Mac에서 MySQL을 설치하는 방법은 여러가지가 있다. 이 문서에서는 그중 bitnami에서 제공하는 MAMP Stack이라는 것으로 MySQL을 설치하는 방법을 알아볼 것이다.
 ##### 
 **Bitnami MAMP Stack**은 완전 통합형이며 MAMP 개발 환경을 제공합니다. PHP, MySQL 및 Apache 외에도 FastCGI, OpenSSL, phpMyAdmin, ModSecurity, SQLite, Varnish, ImageMagick, xDebug, Xcache, OpenLDAP, ModSecurity, Memcache, OAuth, PEAR, PECL, APC, GD, cURL 및 기타 구성 요소가 포함됩니다. Zend Framework, Symfony, CodeIgniter, CakePHP, Smarty, Laravel과 같은 프레임 워크등을 제공하고 있다.
