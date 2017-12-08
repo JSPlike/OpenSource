@@ -200,7 +200,7 @@ tray에서 apmsetup moniter라고 하는 이 시스템 tray를 오른쪽 클릭 
 
 ##### **2-2-2 Mac 환경 :**
 
-**# MAMP Stack**
+**#MAMP Stack**
 
 Mac에서 MySQL을 설치하는 방법은 여러가지가 있다. 이 문서에서는 그중 bitnami에서 제공하는 MAMP Stack이라는 것으로 MySQL을 설치하는 방법을 알아볼 것이다.
 
@@ -218,12 +218,12 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 ><https://bitnami.com/stack/mamp>
 
 >위의 링크를 통해 binami 사이트에 접속해보자 처음 접속하게 되면 이런 화면을 볼 수 있다. MAMP의 간단한 설명이 나와있다. 이 글의 위 내용이 있을 것이다.  
-
+#### 
 ![mamp](http://cfile4.uf.tistory.com/image/99282B335A27F86C0ED112)
-
+#### 
 	 
  **MAMP**의 설치를 위해 오른쪽  **LOCAL INTALL**탭의 버전을 선택해 다운로드를 받아준다. 여기서는 현재의 최신버전인 **7.1.12.0 버전**을 설치할 것이다. 링크를 클릭하면 아래의 화면이 보이면서 설치가 완료된다.
-
+#### 
 ![install end](http://cfile29.uf.tistory.com/image/997996335A27F88B0604E7)
 
 이제 MAMP를 실행해 봅시다.
@@ -235,15 +235,14 @@ MAMP Stack을 다운받기 위해 먼저 bitnami사이트에 들어간다.
 다운이 완료되었다면 Mac의 응용프로그램에 들어가서 MAMP를 실행할 수 있다. 더블클릭을 하는 것 만으로 MAMP설치 프로그램을 실행한다.
 
 실행프로그램이 시작되면 몇가지 설정을 할 수 있는 화면들이 보이게 된다. 이때 설정이 필요없는 부분은 그냥 Pass하고 phpmyadmin등이 체크되어 있는 체크박스가 보인다.
-
-
+#### 
 <img src="http://cfile7.uf.tistory.com/image/9917BD335A27FA0C0DB923" width="600px" height="400px">
 
 >**Note**
 >MAMP를 설치하게 되면 기본으로 apache2와 PhpMyAdmin이 같이 설치되어진다. 이점을 유의해야 한다.
 
 MySQL, Apache2, PHP 등과 관련이 없는 체크항목은 모두 체크해제를 하고 Next버튼을 진행해준다.
-
+#### 
 <img src="http://cfile5.uf.tistory.com/image/992FC5335A27FA6C3408CE" width="600px" height="400px">
 
 MAMP Stack의 경로설정까지도 그냥 디폴트 경로로 이용하고 Next 버튼을 눌러 설치를 진행해준다.
@@ -289,7 +288,7 @@ Welcome이라는 글씨가 보이면서 **mysql >** 의 입력란이 보이면 �
 
 ##### **2-2-3 Linux 환경 :**
 리눅스 중 우분투(Ubuntu)라고 하는 리눅스 배포판을 설치했다고 가정한 후의 설명이다.
-############
+
 terminal 창을 열고  아래의 명령어를 작성한다.
 
 [ Apache 설치 ]
@@ -315,9 +314,9 @@ terminal 창을 열고  아래의 명령어를 작성한다.
 	sudo /etc/init.d/apache2 restart
 
 만약 mysql만 설치할 것이라면 mysql만을 설치하면 된다.
-######
+
 하지만 일반적으로 mysql이 웹을 위해 많이 사용되기도 하고 웹 환경에서 가장 많이 사용되는 기술 중 하나가 아파치라는 웹 서버와 php라고 하는 미들웨어이기 때문에 일반적으로 mysql, php, apache는 함께 사용되는 경우가 많다.
-######
+
 모두 설치하였으면 terminal 창에 다음과 같이 입력하여 mysql에 접속한다.
 
 	mysql -uroot -p [enter]
@@ -333,7 +332,7 @@ mysql -uroot -p [password] 의 방법으로 접속하는 것 또한 가능하지
 **# 설치 확인**
 
 apache가 잘 설치되었는지 확인하기 위해서는 firefox의 주소창에 localhost를 입력하여 접속해본다.
-######
+
 It works! 가 출력되는 화면으로 접속할 것이다. 부가적인 확인을 위해 아래의 과정을 참고한다. 아래의 과정은 index.html이라는 파일이 현재 웹브라우저에서 localhost를 입력할 때 출력하고 있다는 것을 보이기 위한 과정으로 생략해도 좋다.
 
 	cd /var/www/index
@@ -353,15 +352,14 @@ It works! 가 출력되는 화면으로 접속할 것이다. 부가적인 확인
 
 이 파일을 에디터에서 오픈하여 It works! 라는 문자열을 수정해본다.
 
----------
 php가 잘 설치되었는지 확인하기 위한 과정은 다음과 같다.
-######
+
 /var/www/index 경로에서
 
 	sudo vi phpinfo.php
 
 위 명령을 사용하여 vi 에디터로 phpinfo.php라는 이름의 파일을 하나 생성한다.
-######
+
 i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한 후 :wq 와 엔터를 눌러 위의 내용을 저장한다.
 
 
@@ -372,7 +370,8 @@ i를 눌러 삽입모드로 변경한 다음 아래 내용을 작성한 후 :wq 
 
 
 
-firefox에서 주소 창에 localhost/phpinfo.php를 입력하며 접속하면 php와 관련된 다양한 환경에 대한 내용들이 출력된다.
+firefox에서 주소 창에
+localhost/phpinfo.php를 입력하며 접속하면 php와 관련된 다양한 환경에 대한 내용들이 출력된다.
 이 내용들이 잘 출력되면 php가 잘 설치되었다는 의미이고 내용을 확인하다 보면 mysql에 관한 내용도 있는 것을 볼 수 있을 것이다. 이는 mysql이 php와 잘 연동되었다는 의미이다.
 
 ----------
@@ -401,7 +400,7 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 ----------
 
 
-**3. 데이터 관리 - SQL**
+**3. MySQL  실습하기**
 -------------
 #### 3-1 MySQL 실행
 
@@ -414,11 +413,11 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 
 [사진 부분]
 
-#### 3-1-1 Database
+####3-1-1 Database
 **``Database **란 데이터가 실질적으로 적재되는 테이블들을 분류하는 상위 개념을 말한다.
 
 ---
-##### [데이터베이스 생성]
+#####[데이터베이스 생성]
 
 SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 다음과 같다.
 
@@ -437,20 +436,20 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 show databases; 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
 [그림]
 	
-##### [데이터베이스 삭제]
+#####[데이터베이스 삭제]
 
 데이터베이스를 삭제하는 query문은 다음과 같다.
 
 	DROP DATABASE `데이터베이스명`;
 만약 위에서 만들었던 class라는 데이터를 삭제하기 위해 **DROP DATABASE \`class\`;**라는 명령어를 사용한다면 class 데이터베이스가 사라지는 것을 확인할 수 있을 것이다.
 
-##### [데이터베이스 열람]
+#####[데이터베이스 열람]
 데이터베이스를 열람하기 위한 query문은 다음과 같다.
 
 	SHOW DATABASES;
 
 
-##### [데이터베이스 선택]
+#####[데이터베이스 선택]
 위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
 
 	USE `데이터베이스명`;
@@ -460,9 +459,11 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 ※  실습에 사용한 샘플을 다운로드 하고 싶다면 [클릭](http://ttend.tistory.com/604)
   
 **[source 파일경로]**를 통해서 테이블을 데이터베이스에 저장한다.
+#### 
 ![테이블 샘플 다운로드](http://cfile29.uf.tistory.com/image/2732B542587610BF2395B7)
   
 저장된 테이블을 확인한다.
+#### 
 ![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)
 
 ----------
@@ -486,6 +487,7 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 
 
 ---------
+
 ### **3-2 DDL**
 
 ##### **``테이블(Table)** 이란
@@ -503,18 +505,17 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 -------------
 ### 3-2-1 CREATE
 
-CREATE는 테이블을 생성하는 쿼리 명령어이다.
-사용하는 방법은 아래와 같으며 이 명령어를 이용하여 데이터 삽입 전 SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의하게 된다.
+>-> SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의
+>**CREATE TABLE 테이블명(  **
+>   **컬럼명 데이터타입**
+>**);**
 
-	CREATE TABLE table_name (
-	    칼럼명1 data_type,
-	    칼럼명2 data_type
-	)
+ - 테이블?
+테이블이란 데이터가 실질적으로 저장되는 저장소를 말한다.
 
-#####
-아래는 테이블 생성과 관련된 예제이다.
+ - *샘플 중 CREATE 문*
     
-    
+
 	-- student 테이블 생성
 	CREATE TABLE `student` (
 	    `id`  tinyint NOT NULL ,
@@ -597,12 +598,14 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 >> **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
 
 > **ON DELETE SET NULL ON UPDATE CASCADE** 
+
  > (ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
  > or
-> **ON DELETE SET DEFAULT ON UPDATE CASCADE**
+ > **ON DELETE SET DEFAULT ON UPDATE CASCADE**
  > (DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
 
-
+5. CHECK: 애트리뷰트나 도메인 정의 뒤에 사용하여 데이터의 값을 제한할 수 있다. -> 투플 기반 제약 조건
+ ex)  `SAL` double DEFAULT NULL CHECK ( `SAL`>0 AND `SAL`<5000)
 
 
 
@@ -695,6 +698,94 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 
 ----------
 
+**4. MySQL 사용중 오류발생**
+-----
+
+## **4-1 버그 발생** 
+
+MySQL은 버전별로 버그의 차이가 있다 이 문서에서 사용한 MySQL 버전은 5.7.20버전이다. MySQL을 사용하다보면 사용자의 잘못으로 생기는 버그 또는 시스템적으로 보유하고 있는 버그 등이 있다. <http://bugs.mysql.com> 를 통해서 MySql의 버그들을 확인할 수 있고 또 해결 할 수도 있다. 이 문서에는 MySQL을 사용하며 생길 수 있는 그리고 생겼던 몇가지 버그들을 다루어 볼 것이다.
+
+## 
+>**Note:**
+>
+이제 나올 몇가지 버그는 MySQL을 사용하면서 생겼던 버그 입니다. 버전에 따른 새로운 버그가 생길 수도 있으며 그러한 버그들에 대처하는 방법을 알고 있는 것이 중요합니다.
+#### 
+
+#### **#첫번째 버그 발생**
+
+<img src="http://cfile27.uf.tistory.com/image/99BD9F335A28F96D2F720E">
+
+처음 발생한 버그는 Node.js의 node-mysql 모듈을 사용하여 MySQL을 Connection하기위해 그 정보를 저장하고 MySQL과의 연동을 요청했을 때 에러가 발생했고 에러는 위의 메시지를 띄워주고 있다. 위의 에러메시지를 확대해서 보여주면 다음과 같다.
+
+```
+Host '127.0.0.1' is not allowed to connect to this MySQL server
+```
+
+루트 호스트인 127.0.0.1 또는 localhost에서 MySQL에 접속할 수 있는 연결을 허락하지 않는 다는 메시지 이며 이는 권한의 문제를 동반하고 있다. 처음 이 에러를 접했을 때 왜 루트 유저가 MySQL 서버에 접속할 수 없는지에 대한 의문이 있었지만 그건 MySQL 자체적인 문제인 걸로 따로 권한을 다시 설정해 주어야 한다.
+
+이 문제를 해결하기 위해서는 먼저 새로운 MySQL을 접속할 유저를 생성해야 한다. 먼저 루트 권한으로 MySQL에 접속하자.
+#### 
+<img src="http://cfile1.uf.tistory.com/image/99B05E335A28FD4B0FF9F4">
+
+>**Note:**
+>
+>권한이 있는 다른 유저로 접속해도 상관은 없지만 루트 유저로 접속하는 것이 낫다.
+
+이제 MySQL 데이터 베이스 사용을 명시하기 위해 MySQL을 사용한다는 명령어인 **use mysql**을  입력해주고 새 유저를 만들어 보자
+
+```
+use mysql
+
+CREATE USER 'joonyoung'@'localhost' IDENTIFIED BY '12341234';
+
+CREATE USER '[새 유저이름]'@'localhost' IDENTIFIED BY '[새 비밀번호]';
+```
+#### 
+<img src="http://cfile27.uf.tistory.com/image/9954EF335A28FE0B1DC118">
+
+유저를 만들었다면 그 유저에 권한을 부여해 보자
+
+```
+GRANT ALL PRIVILEGES ON *.* TO 'joonyoung'@'localhost'
+
+-> WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO '[유저 이름]'@'localhost'
+
+-> WITH GRANT OPTION;
+```
+#### 
+<img src="http://cfile8.uf.tistory.com/image/990DF2335A28FE8C25A7E9">
+
+외부접속유저에게도 권한을 주기위해 같은 이름의 유저를 생성해 줍니다.
+```
+CREATE USER 'joonyoung'@'%' IDENTIFIED BY '12341234';
+
+CREATE USER '[유저 이름]'@'%' IDENTIFIED BY '[유저 비밀번호]';
+```
+>**Note:**
+>처음 유저생성 코드와의 차이점은 @뒤의 'localhost'와 '%'의 차이점 입니다. %는 local이 아님을 뜻할 수 있다.
+#### 
+<img src="http://cfile22.uf.tistory.com/image/997B89335A28FFBE124396">
+
+그리고 나서 이 유저에 권한도 상향 설정 해줍니다.
+```
+GRANT ALL PRIVILEGES ON *.* TO 'joonyoung'@'%'
+
+-> WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* TO '[유저 이름]'@'%'
+
+-> WITH GRANT OPTION;
+```
+#### 
+<img src="http://cfile26.uf.tistory.com/image/995729335A28FFCD1AB1FC">
+
+여기까지 유저를 생성하고 새권한을 주는 과정을 진행해 보았다.
+
+> 이 후에 이 유저를 통해 Connection을 진행하게 되면 처음 '127.0.0.1'에서 MySQL 허가를 받을 수 없다는 메시지는 뜨지 않는다.
+
+# 
 
 ----------
 
