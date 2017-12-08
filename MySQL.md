@@ -702,13 +702,18 @@ ALTER 쿼리문은 TABLE에 대한 정의를 변경하는 역할을 한다.
 
 ---------
 ##### (1) 테이블에 있는 컬럼 수정, 추가, 삭제하기  
-<img src="https://user-images.githubusercontent.com/32252098/33768445-6ab21634-dc69-11e7-977d-618ada4fe419.png" width="600px" height="400px">
+<img src="https://user-images.githubusercontent.com/32252098/33768445-6ab21634-dc69-11e7-977d-618ada4fe419.png">
+EMP 테이블의 JOB 컬럼 데이터타입을 VARCHAR(15)로 변경한다.
+
 <img src="https://user-images.githubusercontent.com/32252098/33768448-6f9feb80-dc69-11e7-8197-94493bc39c0c.png" width="600px" height="400px">
+EMP테이블에 데이터형이 CHAR형이고 컬럼명이 SEX인 컬럼을 추가한다.
+
 <img src="https://user-images.githubusercontent.com/32252098/33768459-73b45332-dc69-11e7-9da6-ac414cd1b0c8.png" width="600px" height="400px">
+EMP테이블에 SEX컬럼을 삭제한다.
 
 ##### (2) 테이블에 제약조건 추가하기  
 <img src="https://user-images.githubusercontent.com/32252098/33768476-83c906fa-dc69-11e7-97b5-e7af1a92a273.png" width="600px" height="400px">
-
+BONUS테이블인 컬럼 ENAME에 PK제약조건을 추가한다.
 
 
 
@@ -726,6 +731,7 @@ DROP 쿼리문은 SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제하는 역할을 �
 ##### (1) 테이블 삭제하기  
 
 <img src="https://user-images.githubusercontent.com/32252098/33768470-77c5070a-dc69-11e7-9c3f-ce3b0e786110.png">
+EMP 테이블을 삭제한다.
 
 
 
@@ -746,6 +752,7 @@ INSERT는 테이블에 새로운 레코드를 삽입할 떄 사용하는 쿼리�
 ##### (1) 레코드 추가하기  
 
 <img src="https://user-images.githubusercontent.com/32252098/33768474-7e6789d4-dc69-11e7-8833-0db4ff3d39c0.png" >
+BONUS테이블에 레코드를 추가한다.
 
 
 
@@ -761,23 +768,19 @@ DELETE는 테이블에 조건에 맞는 레코드를 삭제할 때 사용하는 
 
 
 ----
-##### (3) 그 외 삭제 명령
-
-###### 1. TRUNCATE
-테이블의 전체 데이터를 삭제하는 명령어이며 테이블에 외부키가 없다면 DELETE보다 훨씬 빠르게 삭제된다는 특징이 있다. 사용법은 다음과 같다.
 
 
 
 
 ##### (1)  특정 레코드 삭제
 
-
-SAL>2000의 조건을 만족한 레코드만 삭제  
 <img src="https://user-images.githubusercontent.com/32252098/33768485-8d3bdad2-dc69-11e7-9b70-00a6c374002f.png" >
+BONUS테이블에서 SAL>2000의 조건을 만족한 레코드만 삭제 한다.
 
 -----
 ##### (2) 모든 레코드 삭제  
 <img src="https://user-images.githubusercontent.com/32252098/33768369-12f6b756-dc69-11e7-9c53-09af9a4e8c19.png">
+BONUS테이블에 있는 모든 레코드를 삭제한다.
 
 ----
 ##### (3) 그 외 삭제 명령
@@ -788,7 +791,7 @@ SAL>2000의 조건을 만족한 레코드만 삭제
 	TRUNCATE 테이블명;
 
 <img src="https://user-images.githubusercontent.com/32252098/33768383-269c70ac-dc69-11e7-823f-3413a1a8d6b5.png">
-
+BONUS테이블의 전체 데이터를 삭제한다.
 
 ###### 2. DROP TABLE
 테이블을 삭제하는 명령어이다. 위에서 한 번 소개한 적 있다. 사용법은 다음과 같다.
@@ -796,7 +799,7 @@ SAL>2000의 조건을 만족한 레코드만 삭제
 	DROP TABLE 테이블명;
 
 <img src="https://user-images.githubusercontent.com/32252098/33768388-2c095bae-dc69-11e7-893b-7d11161ae127.png">
-
+BONUS테이블을 삭제한다.
 
 
 
@@ -816,7 +819,7 @@ WHERE절은 필수적인 사항이 아니기 때문에 꼭 사용하지 않아�
 
 
 <img src="https://user-images.githubusercontent.com/32252098/33768392-31219aa2-dc69-11e7-8de1-15082157960b.png">
-
+BONUS테이블에 ENAME='gaeun'조건을 만족한 레코드를 COMM=24로 수정한다.
 
 ----------
 
@@ -835,31 +838,37 @@ WHERE절은 필수적인 사항이 아니기 때문에 꼭 사용하지 않아�
 
 
 <img src="https://user-images.githubusercontent.com/32252098/33768397-35b3e76e-dc69-11e7-8159-88bfee24365a.png">
+BONUS테이블에 있는 모든(*) 컬럼들을 검색한다.
 
 #### 
 `WHERE 조건`부분을 통해 해당 조건에 부합하는 튜플만을 조회할 수 있다.
 
 <img src="https://user-images.githubusercontent.com/32252098/33768401-3be1a27a-dc69-11e7-880c-e2da722a7f13.png">
+BONUS테이블에 레코드 중 SAL>3000을 만족한 레코드에서 ENAME컬럼만 검색한다.
 
 <img src="https://user-images.githubusercontent.com/32252098/33768406-42222f10-dc69-11e7-8959-bf7971bd6166.png">
+BONUS테이블에 레코드 중 SAL>2000과 JOB='student'를 만족한 레코드에서 ENAME, JOB컬럼만 검색한다.
 
 #### 
 `GROUP BY 그룹화 컬럼(들)`절은 `SELECT SUM(salary)`와 같이 특정 그룹으로 묶어 데이터를 집계하고자 할 때 사용하는 부분으로 WHERE와 ORDER BY절 사이에 위치한다.
 
 <img src="https://user-images.githubusercontent.com/32252098/33768414-47fa2ad2-dc69-11e7-97d1-d5612f4eb2fe.png">
+BONUS테이블에 레코드 중 JOB을 그룹으로 묶어서 같은 데이터의 수를 COUNT(*)를 통해 나타내주고 컬럼명을 JOB_COUNT로 명시하여 ENAME, JOB, JOB_COUNT를 검색한다. 이때 ENAME은 전체 레코드 중에서 그룹지을 때 제일 윗부분에 있는 데이터로 출력된다.
 
 #### 
 `HAVING 그룹조건` 절은 GROUP BY절 다음에 위치하여 GROUP BY한 결과를 대상으로 다시 조건 필터를 거는 역할을 수행한다.
 
 <img src="https://user-images.githubusercontent.com/32252098/33768419-4d3ed038-dc69-11e7-94c2-abca65040cdc.png">
+BONUS테이블에 레코드 중 JOB을 그룹으로 묶어서 데이터 수를 COUNT(*)를 통해 나타내주고 GROUP BY의 결과들 중에서 1보다 큰 값을 컬럼명을 JOB_COUNT로 명시하여 ENAME, JOB, JOB_COUNT로 검색한다.
 
 #### 
 `ORDER BY 컬럼명`절은 데이터를 해당 컬럼명을 기준으로 정렬하고자 할 때 사용하는 절이다. Default는 오름차순으로 되어있지만 확실하게 명시하고자 할 때 `ORDER BY 컬럼명 ASC;`으로 작성할 수 있고 내림차순으로 정렬하고자 할 때는 `ORDER BY 컬럼명 DESC;`라고 작성하면 된다.
 
 <img src="https://user-images.githubusercontent.com/32252098/33768425-52392796-dc69-11e7-961a-4d80ff136bd4.png">
+BONUS테이블에서 ENAME, COMM을 검색해주는데 COMM의 데이터들을 오름차순으로 정렬해준다.
 
 <img src="https://user-images.githubusercontent.com/32252098/33768430-577f3b0a-dc69-11e7-883b-a76fefab5118.png">
-
+BONUS테이블에 레코드 중 JOB을 그룹으로 묶어서 데이터 수를 COUNT(*)를 통해 나타내주고 GROUP BY의 결과들 중에서 0보다 큰 값을 조건으로 설정하며 ENAME, JOB, COUNT(*)를 검색한다. 또 COUNT(*)의 값은 오름차순으로 정렬해준다.
 
 ----------
 
@@ -1025,4 +1034,3 @@ INSERT INTO book_count(id, book, b_count) VALUES(?, ?, ?) ON DUPLICATE KEY UPDAT
 [^dbms]: [DBMS](https://en.wikipedia.org/wiki/Database/)는 다수의 사용자들이 데이터베이스 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합이다.
 
 [^mysql]: [MySQL](https://www.mysql.com/why-mysql/)은 현재 가장 많이 사용되고 있는 오픈소스형태의 관계형 데이터베이스 관리 시스템(RDBMS)이다.
-
