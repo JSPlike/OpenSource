@@ -416,13 +416,12 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 
 **"MySQL을 실행**하는 것은 간단하다. 터미널을 열고 `$mysql -uroot -p` 를 입력 한 후 엔터를 친 뒤 아까 설정한 MySQL의 암호를 입력하면 된다. MySQL에 들어가면 버전정보, 설치날짜등을 볼 수 있고 새로운 입력 창이 뜨는 것을 확인할 수 있다.
 
-[사진 부분]
+<img src="https://user-images.githubusercontent.com/32252093/33759540-07590d04-dc46-11e7-97b5-996e77a2f8ca.JPG" width="500px" height="200px">
 
 	
 먼저, MySQL에 현재 어떠한 데이터베이스들이 있는지 확인하기위해
  `>> show databases;` 입력해본다.
 
-[사진 부분]
 
 ### 
 #### 3-1-1 Database
@@ -436,7 +435,7 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 
 여기서 데이터베이스명 양쪽에 붙어있는 기호 **`**은 작은따옴표가 아니라 **억음부호(grave accent)**라고 하는 것으로 키보드 상으로는 아래 그림과 같은 위치에 있다.
 
-[그림]
+<img src="https://user-images.githubusercontent.com/32252093/33759533-05325b0c-dc46-11e7-9cd8-a9411c11e63a.png" width="500px" height="200px">
 
 그리고 `CHARACTER SET utf8 COLLATE utf8_general_ci` 은 특정 데이터베이스의 인코딩 설정을 하는 명령으로 현재 생성할 데이터베이스의 기본 언어 인코딩 값을 UTF-8로 설정한다는 의미이다. 인코딩이 무엇인지 잘 모를 때에는 위와 같이 쓰는 것이 바람직하다.
 
@@ -448,7 +447,10 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 #### 
 `show databases;` 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
 
-[그림]
+<img src="https://user-images.githubusercontent.com/32252093/33759541-08cd6234-dc46-11e7-9e63-9be917c7c5e3.png" width="500px" height="200px">
+
+class라는 이름의 데이터베이스가 생긴 것을 확인할 수 있다.
+
 
 --------
 ##### (2) 데이터베이스 삭제
@@ -620,10 +622,13 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 2) referential triggered action 절
  
 	FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)
-	ON DELETE SET NULL ON UPDATE CASCADE
+	ON DELETE SET NULL ON UPDATE CASCADE;
 	(ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
-	or
-	ON DELETE SET DEFAULT ON UPDATE CASCADE
+	
+	혹은,
+	
+	FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)
+	ON DELETE SET DEFAULT ON UPDATE CASCADE;
 	(DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
 
 
@@ -633,9 +638,11 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 ALTER 쿼리문은 TABLE에 대한 정의를 변경하는 역할을 한다.
 명령어의 사용 방법은 아래와 같다.
 
-	ALTER TABLE 테이블명 ADD 추가할컬럼명 데이터형
-	ALTER TABLE 테이블명 MODIFY 변경할컬럼명 데이터형
-	ALTER TABLE 테이블명 DROP 삭제할컬럼명
+	ALTER TABLE 테이블명 ADD 추가할컬럼명 데이터형;
+	
+	ALTER TABLE 테이블명 MODIFY 변경할컬럼명 데이터형;
+	
+	ALTER TABLE 테이블명 DROP 삭제할컬럼명;
 ### 
 
 ---------
@@ -654,7 +661,7 @@ ALTER 쿼리문은 TABLE에 대한 정의를 변경하는 역할을 한다.
 DROP 쿼리문은 SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제하는 역할을 한다.
 명령어의 사용방법은 아래와 같다.
 
-	DROP TABLE 삭제할 테이블 명
+	DROP TABLE 삭제할 테이블 명;
 
 ### 
 
@@ -670,7 +677,7 @@ INSERT는 테이블에 새로운 레코드를 삽입할 떄 사용하는 쿼리�
 명령어의 사용법은 다음과 같다.
 
 	INSERT INTO 테이블명
-	VALUES 레코드값
+	VALUES 레코드값;
 
 #### 
 
@@ -714,7 +721,13 @@ SAL>2000의 조건을 만족한 레코드만 삭제
 테이블에서 조건에 맞는 레코드의 내용을 변경할 때 사용하는 명령어이다.
 사용법은 아래와 같다.
 
-	UPDATE 테이블명 SET 수정할 레코드값 [WHERE 수정해야할 컬럼명 = 값]
+	UPDATE 테이블명 SET 컬럼 명 = 값 [WHERE 컬럼 명 = 값];
+
+여기서 `SET 컬럼 명 = 값`은 수정하고자 하는 컬럼명을 셋팅하는 부분이며 `WHERE 컬럼명 = 값`을 통한 조건 설정으로 원하는 조건에 맞는 튜플의 컬럼을 수정할 수 있다.
+#### 
+WHERE절은 필수적인 사항이 아니기 때문에 꼭 사용하지 않아도 무관하지만 WHERE을 사용하지 않으면 해당 테이블의 모든 컬럼 값이 변경되므로 WHERE을 통한 조건설정을 통해 변경하고자 하는 컬럼 값을 설정해 주는 것이 일반적이다.
+#### 
+이에 대한 예시는 다음과 같다.
 
 ----------
 
@@ -727,6 +740,16 @@ SAL>2000의 조건을 만족한 레코드만 삭제
 	GROUP BY 그룹화 컬럼(들)
 	HAVING 그룹조건
 	ORDER BY 컬럼명
+
+조회하고자 하는 컬럼명과 그 컬럼이 속한 테이블을 명시해주는 부분은 `SELECT 컬럼명 FROM 테이블 명`부분이다.
+#### 
+`WHERE 조건`부분을 통해 해당 조건에 부합하는 튜플만을 조회할 수 있다.
+#### 
+`GROUP BY 그룹화 컬럼(들)`절은 `SELECT SUM(salary)`와 같이 특정 그룹으로 묶어 데이터를 집계하고자 할 때 사용하는 부분으로 WHERE와 ORDER BY절 사이에 위치한다.
+#### 
+`HAVING 그룹조건` 절은 GROUP BY절 다음에 위치하여 GROUP BY한 결과를 대상으로 다시 조건 필터를 거는 역할을 수행한다.
+#### 
+`ORDER BY 컬럼명`절은 데이터를 해당 컬럼명을 기준으로 정렬하고자 할 때 사용하는 절이다. Default는 오름차순으로 되어있지만 확실하게 명시하고자 할 때 `ORDER BY 컬럼명 ASC;`으로 작성할 수 있고 내림차순으로 정렬하고자 할 때는 `ORDER BY 컬럼명 DESC;`라고 작성하면 된다.
 
 ----------
 
