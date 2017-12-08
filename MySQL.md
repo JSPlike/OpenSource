@@ -1,6 +1,11 @@
 MySQL REFERENCE
 ===================
 
+**0. MySQL 개요**
+----
+
+#### 왜 MySQL인가?
+
 
 **1. DBMS와 MySQL 소개**
 -------------
@@ -463,11 +468,14 @@ show databases; 명령어로 데이터베이스를 확인해보면 아래와 같
 ----------
 
 
-####**SQL의 분류**
+
+#### **SQL의 분류**
+
 
 SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 
 	1. DDL(Data Define Language : 데이터 정의어) : CREATE, ALTER, DROP
+
 	→ SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 정의, 변경, 삭제 할 때 사용하는 언어
 	
 	2. DML(Data Manipulation Language : 데이터 조작어) : INSERT, DELETE, UPDATE, SELECT
@@ -475,6 +483,7 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 
 	3. DCL(Data Control Language : 데이터 제어어) : COMMIT, ROLLBACK, GRANT, REVOKE
 	→ 데이터의 보안, 무결성, 회복, 병행 수행 제어 등을 정의하는 데 사용되는 언어
+
 
 ---------
 ### **3-2 DDL**
@@ -484,7 +493,9 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 비유하자면 데이터베이스가 디렉토리라고 할 때 테이블은 파일이라고 할 수 있다.
 디렉토리는 파일들을 그룹핑해주는 역할을 하는 것이고 파일은 데이터를 담는 역할을 한다. 여기서 파일과 유사한 기능을 하는 것이 **테이블**이라고 할 수 있다.
 ######
-#####**``스키마(schema)**란?
+
+##### **``스키마(schema)**란?
+
 테이블에 적재될 데이터의 구조와 형식을 정의 하는 것을 말한다.
 테이블에 어떤 형식의 데이터들이 삽입되고 저장될 것인지는 데이터를 삽입하기 전에 미리 정의 해놓아야 한다.
 즉 스키마는 일종의 데이터의 설계도라고 할 수 있다. 만약 스키마와 맞지 않는 데이터를 삽입하려고 하면 오류가 발생한다.
@@ -522,6 +533,7 @@ CREATE는 테이블을 생성하는 쿼리 명령어이다.
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
  BONUS 의 이름을 가진 테이블에 ENAME, JOB, SAL, COMM의 column을 가진 테이블을 생성
+
  
 #######
 
@@ -583,6 +595,7 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 >	 2) referential triggered action 절
  
 >> **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
+
 > **ON DELETE SET NULL ON UPDATE CASCADE** 
  > (ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
  > or
@@ -596,6 +609,7 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 
 ----------
 #### 3-2-2 ALTER
+
 >→ TABLE에 대한 정의를 변경
 > ALTER TABLE 테이블명 ADD 추가할컬럼명 데이터형
 > ALTER TABLE 테이블명 MODIFY 변경할컬럼명 데이터형
@@ -622,9 +636,10 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 \# 테이블 삭제하기  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/8.JPG?raw=true">
 
+
 ----------
 
-###**< DML >**
+### **< DML >**
 #### 3-5 Insert
 >→ 테이블에 새로운 레코드 삽입
 >**INSERT INTO 테이블명**
