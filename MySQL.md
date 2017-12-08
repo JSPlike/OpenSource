@@ -851,6 +851,7 @@ BONUS테이블에 레코드 중 SAL>2000과 JOB='student'를 만족한 레코드
 `GROUP BY 그룹화 컬럼(들)`절은 `SELECT SUM(salary)`와 같이 특정 그룹으로 묶어 데이터를 집계하고자 할 때 사용하는 부분으로 WHERE와 ORDER BY절 사이에 위치한다.
 
 ※ 자주 쓰이는 GROUP BY 함수들
+
 |Function Name()| Explanation |
 | :---------- | :--------- |
 |COUNT(필드명) | NULL 값이 아닌 레코드 수를 구한다. |
