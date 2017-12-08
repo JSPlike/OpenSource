@@ -567,24 +567,25 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 --------------------- 
  - 예제   
 
-	-- student 테이블 생성
+-- student 테이블 생성
 	
-		CREATE TABLE `student` (
-		    `id`  tinyint NOT NULL ,
-		    `name`  char(4) NOT NULL ,
-		    `sex`  enum('남자','여자') NOT NULL ,
-		    `address`  varchar(50) NOT NULL ,
-		    `birthday`  datetime NOT NULL ,
-		    PRIMARY KEY (`id`)
-		);
-    -- BONUS 테이블 생성
+	CREATE TABLE `student` (
+		`id`  tinyint NOT NULL ,
+		`name`  char(4) NOT NULL ,
+		`sex`  enum('남자','여자') NOT NULL ,
+		`address`  varchar(50) NOT NULL ,
+		`birthday`  datetime NOT NULL ,
+		PRIMARY KEY (`id`)
+	);
+		
+   -- BONUS 테이블 생성
 
-		CREATE TABLE IF NOT EXISTS `BONUS` (
-		  `ENAME` varchar(10) DEFAULT NULL,
-		  `JOB` varchar(9) DEFAULT NULL,
-		  `SAL` double DEFAULT NULL,
-		  `COMM` double DEFAULT NULL
-		) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+	CREATE TABLE IF NOT EXISTS `BONUS` (
+	  `ENAME` varchar(10) DEFAULT NULL,
+	  `JOB` varchar(9) DEFAULT NULL,
+	  `SAL` double DEFAULT NULL,
+	  `COMM` double DEFAULT NULL
+	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
  BONUS 의 이름을 가진 테이블에 ENAME, JOB, SAL, COMM의 column을 가진 테이블을 생성
 
@@ -945,8 +946,8 @@ for( $i = 0; $i < 99999; $i ++ ) {
 
 ----
 
-##유용한 코드한줄
-===
+## 유용한 코드한줄
+
 
 쿼리를 연구하면서 유용할 것 같은 코드한 줄을 공개한다.
 
