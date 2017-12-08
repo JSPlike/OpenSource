@@ -11,6 +11,7 @@ MySQL REFERENCE MANUAL
 이러한 의식의 흐름에서 보다 많은 사람들이 MySQL을 쉽고 편하게 사용할 수 있도록 한글 매뉴얼을 제작해보고자 MySQL이라는 오픈소스를 선택하게 되었다. 문서는 데이터베이스 관리 시스템과 그중 하나인 MySQL을 소개하는 것부터 이를 컴퓨터에 설치하고 SQL언어로 데이터를 직접 조작하는 방법까지 차례로 기술되었다. 구체적인 목차는 아래와 같다.
 #### 
 
+
 [TOC]
 
 
@@ -87,7 +88,9 @@ MySQL은 데이터베이스를 따로 관리하기 위한  GUI (Graphical User I
 
 ### 2-1 가상머신에 Ubuntu 설치
 
+
 #### 2-1-1 **Windows 환경**
+
 
 **VMware** 가상머신의 설치:
 
@@ -142,7 +145,9 @@ App Store에서 parallels Lite를 검색한 뒤 설치한다.
 
 ----------
 ### 2-2 MySQL 설치
+
 #### **2-2-1 Windows 환경**
+
 ##### **(1) 설치**
 mysql을 설치하는 방법에는 여러가지가 있지만 그 중 간편하게 설치하는 방법으로 APMSETUP이 있다.
 
@@ -163,7 +168,9 @@ APM_Setup 7 Default Data를 선택하고 다음
 *README 파일* 에서 설치된 프로그램들의 버전을 확인할 수 있다.
 
 ------
+
 ##### **(2) 설치 확인**
+
 
 잘 설치 되었는지 확인하기 위해 웹 브라우저에 localhost를 입력해 본다.
 
@@ -207,8 +214,10 @@ tray에서 apmsetup moniter라고 하는 이 시스템 tray를 오른쪽 클릭 
 
 #### **2-2-2 Mac 환경**
 ##### **(1) 설치**
+
 **# MAMP Stack**
  
+
 Mac에서 MySQL을 설치하는 방법은 여러가지가 있다. 이 문서에서는 그중 bitnami에서 제공하는 MAMP Stack이라는 것으로 MySQL을 설치하는 방법을 알아볼 것이다.
 ##### 
 **Bitnami MAMP Stack**은 완전 통합형이며 MAMP 개발 환경을 제공합니다. PHP, MySQL 및 Apache 외에도 FastCGI, OpenSSL, phpMyAdmin, ModSecurity, SQLite, Varnish, ImageMagick, xDebug, Xcache, OpenLDAP, ModSecurity, Memcache, OAuth, PEAR, PECL, APC, GD, cURL 및 기타 구성 요소가 포함됩니다. Zend Framework, Symfony, CodeIgniter, CakePHP, Smarty, Laravel과 같은 프레임 워크등을 제공하고 있다.
@@ -293,8 +302,10 @@ MySQL 실행기가 있는 곳까지 가기위해 이 명령을 실행해야한�
 
 Welcome이라는 글씨가 보이면서 **mysql >** 의 입력란이 보이면 설치에 성공한 것이다. 
 
+
 #### **2-2-3 Linux 환경**
 ##### **(1) 설치**
+
 리눅스 중 우분투(Ubuntu)라고 하는 리눅스 배포판을 설치했다고 가정한 후의 설명이다.
 #### 
 terminal 창을 열고  아래의 명령어를 작성한다.
@@ -340,7 +351,9 @@ mysql -uroot -p [password] 의 방법으로 접속하는 것 또한 가능하지
 -------
 ##### **(2) 설치 확인**
 
+
 **"apache가 잘 설치되었는지 확인**하기 위해서는 firefox의 주소창에 localhost를 입력하여 접속해본다.
+
 ##### 
 It works! 가 출력되는 화면으로 접속할 것이다. 부가적인 확인을 위해 아래의 과정을 참고한다. 아래의 과정은 index.html이라는 파일이 현재 웹브라우저에서 localhost를 입력할 때 출력하고 있다는 것을 보이기 위한 과정으로 생략해도 좋다.
 
@@ -362,7 +375,9 @@ It works! 가 출력되는 화면으로 접속할 것이다. 부가적인 확인
 이 파일을 에디터에서 오픈하여 It works! 라는 문자열을 수정해본다.
 
 ---------
+
 **"php가 잘 설치되었는지 확인**하기 위한 과정은 다음과 같다.
+
 
 /var/www/index 경로에서
 
@@ -425,7 +440,9 @@ navicate은 아주 많은 기능이 있고 안정적인 클라이언트 프로�
 
 ### 
 #### 3-1-1 Database
+
 **"Database**란 데이터가 실질적으로 적재되는 테이블들을 분류하는 상위 개념을 말한다.
+
 
 
 ##### (1) 데이터베이스 생성
@@ -433,7 +450,9 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 
 	CREATE DATABASE `데이터베이스명` CHARACTER SET utf8 COLLATE utf8_general_ci;
 
+
 여기서 데이터베이스명 양쪽에 붙어있는 기호 **`**은 작은따옴표가 아니라 **억음부호(grave accent)**라고 하는 것으로 키보드 상으로는 아래 그림과 같은 위치에 있다.
+
 
 <img src="https://user-images.githubusercontent.com/32252093/33759533-05325b0c-dc46-11e7-9cd8-a9411c11e63a.png" width="500px" height="200px">
 
@@ -447,9 +466,11 @@ SQL 명령어를 이용하여 데이터베이스를 생성하는 명령어는 �
 #### 
 `show databases;` 명령어로 데이터베이스를 확인해보면 아래와 같은 결과가 나타날 것이다.
 
+
 <img src="https://user-images.githubusercontent.com/32252093/33759541-08cd6234-dc46-11e7-9e63-9be917c7c5e3.png" width="500px" height="200px">
 
 class라는 이름의 데이터베이스가 생긴 것을 확인할 수 있다.
+
 
 
 --------
@@ -463,6 +484,8 @@ class라는 이름의 데이터베이스가 생긴 것을 확인할 수 있다.
 ----- 
 ##### (3) 데이터베이스 열람
 
+
+
 데이터베이스를 열람하기 위한 query문은 다음과 같다.
 
 	SHOW DATABASES;
@@ -470,12 +493,15 @@ class라는 이름의 데이터베이스가 생긴 것을 확인할 수 있다.
 ------
 ##### (4) 데이터베이스 선택
 
+
+
 위의 명령어로 어떠한 데이터베이스가 존재하는 지 확인했다면 특정 데이터베이스에 들어가 데이터 작업을 할 수 있어야 한다. 특정 데이터베이스를 선택하는 query문은 아래와 같다.
 
 	USE `데이터베이스명`;
 
 
 ----------
+
 
 #### **※ 실습 준비**
 
@@ -490,6 +516,7 @@ class라는 이름의 데이터베이스가 생긴 것을 확인할 수 있다.
 ![테이블 확인](http://cfile23.uf.tistory.com/image/2159FE3E587610DF159D9D)		
 
 ---------
+
 
 #### **SQL의 분류**
 
@@ -512,13 +539,17 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 ### **3-2 DDL**
 #### 3-2-1 CREATE
 
+
 ##### (1) **테이블(Table)** 이란
+
 '데이터가 실질적으로 저장되는 저장소' 라고 할 수 있다.
 비유하자면 데이터베이스가 디렉토리라고 할 때 테이블은 파일이라고 할 수 있다.
 디렉토리는 파일들을 그룹핑해주는 역할을 하는 것이고 파일은 데이터를 담는 역할을 한다. 여기서 파일과 유사한 기능을 하는 것이 **테이블**이라고 할 수 있다.
 ## 
 
+
 ##### (2) **스키마(schema)** 란?
+
 
 테이블에 적재될 데이터의 구조와 형식을 정의 하는 것을 말한다.
 테이블에 어떤 형식의 데이터들이 삽입되고 저장될 것인지는 데이터를 삽입하기 전에 미리 정의 해놓아야 한다.
@@ -615,12 +646,15 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 ##### 
 참조무결성이 위반되는 경우 아래와 같이 **해결**한다.
 
+
 1) Default operation 
 
 	`SAL` double NOT NULL DEFAULT 1000;
+
 		 
 2) referential triggered action 절
  
+
 	FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)
 	ON DELETE SET NULL ON UPDATE CASCADE;
 	(ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
@@ -632,11 +666,13 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 	(DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
 
 
+
 ----------
 #### 3-2-2 ALTER
 
 ALTER 쿼리문은 TABLE에 대한 정의를 변경하는 역할을 한다.
 명령어의 사용 방법은 아래와 같다.
+
 
 	ALTER TABLE 테이블명 ADD 추가할컬럼명 데이터형;
 	
@@ -644,6 +680,7 @@ ALTER 쿼리문은 TABLE에 대한 정의를 변경하는 역할을 한다.
 	
 	ALTER TABLE 테이블명 DROP 삭제할컬럼명;
 ### 
+
 
 ---------
 ##### (1) 테이블에 있는 컬럼 수정, 추가, 삭제하기  
@@ -661,9 +698,11 @@ ALTER 쿼리문은 TABLE에 대한 정의를 변경하는 역할을 한다.
 DROP 쿼리문은 SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제하는 역할을 한다.
 명령어의 사용방법은 아래와 같다.
 
+
 	DROP TABLE 삭제할 테이블 명;
 
 ### 
+
 
 ##### (1) 테이블 삭제하기  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/8.JPG?raw=true">
@@ -676,8 +715,10 @@ DROP 쿼리문은 SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제하는 역할을 �
 INSERT는 테이블에 새로운 레코드를 삽입할 떄 사용하는 쿼리문이다.
 명령어의 사용법은 다음과 같다.
 
+
 	INSERT INTO 테이블명
 	VALUES 레코드값;
+
 
 #### 
 
@@ -687,14 +728,18 @@ INSERT는 테이블에 새로운 레코드를 삽입할 떄 사용하는 쿼리�
 
 
 ----------
+
 #### 3-3-2 DELETE
+
 DELETE는 테이블에 조건에 맞는 레코드를 삭제할 때 사용하는 명령어이다.
 
 	DELETE FROM 테이블명 [WHERE 삭제하려는 칼럼 명 = 값];
 
 
 
+
 ##### (1)  특정 레코드 삭제
+
 SAL>2000의 조건을 만족한 레코드만 삭제  
 <img src="https://github.com/JSPlike/OpenSource/blob/gaeun/11.JPG?raw=true" >
 
@@ -721,6 +766,7 @@ SAL>2000의 조건을 만족한 레코드만 삭제
 테이블에서 조건에 맞는 레코드의 내용을 변경할 때 사용하는 명령어이다.
 사용법은 아래와 같다.
 
+
 	UPDATE 테이블명 SET 컬럼 명 = 값 [WHERE 컬럼 명 = 값];
 
 여기서 `SET 컬럼 명 = 값`은 수정하고자 하는 컬럼명을 셋팅하는 부분이며 `WHERE 컬럼명 = 값`을 통한 조건 설정으로 원하는 조건에 맞는 튜플의 컬럼을 수정할 수 있다.
@@ -728,6 +774,7 @@ SAL>2000의 조건을 만족한 레코드만 삭제
 WHERE절은 필수적인 사항이 아니기 때문에 꼭 사용하지 않아도 무관하지만 WHERE을 사용하지 않으면 해당 테이블의 모든 컬럼 값이 변경되므로 WHERE을 통한 조건설정을 통해 변경하고자 하는 컬럼 값을 설정해 주는 것이 일반적이다.
 #### 
 이에 대한 예시는 다음과 같다.
+
 
 ----------
 
@@ -741,6 +788,7 @@ WHERE절은 필수적인 사항이 아니기 때문에 꼭 사용하지 않아�
 	HAVING 그룹조건
 	ORDER BY 컬럼명
 
+
 조회하고자 하는 컬럼명과 그 컬럼이 속한 테이블을 명시해주는 부분은 `SELECT 컬럼명 FROM 테이블 명`부분이다.
 #### 
 `WHERE 조건`부분을 통해 해당 조건에 부합하는 튜플만을 조회할 수 있다.
@@ -750,6 +798,7 @@ WHERE절은 필수적인 사항이 아니기 때문에 꼭 사용하지 않아�
 `HAVING 그룹조건` 절은 GROUP BY절 다음에 위치하여 GROUP BY한 결과를 대상으로 다시 조건 필터를 거는 역할을 수행한다.
 #### 
 `ORDER BY 컬럼명`절은 데이터를 해당 컬럼명을 기준으로 정렬하고자 할 때 사용하는 절이다. Default는 오름차순으로 되어있지만 확실하게 명시하고자 할 때 `ORDER BY 컬럼명 ASC;`으로 작성할 수 있고 내림차순으로 정렬하고자 할 때는 `ORDER BY 컬럼명 DESC;`라고 작성하면 된다.
+
 
 ----------
 
@@ -765,7 +814,9 @@ MySQL은 버전별로 버그의 차이가 있다 이 문서에서 사용한 MySQ
 이제 나올 몇가지 버그는 MySQL을 사용하면서 생겼던 버그 입니다. 버전에 따른 새로운 버그가 생길 수도 있으며 그러한 버그들에 대처하는 방법을 알고 있는 것이 중요합니다.
 #### 
 
+
 #### 4-1-1 **첫번째 버그 발생**
+
 
 <img src="http://cfile27.uf.tistory.com/image/99BD9F335A28F96D2F720E">
 
@@ -839,9 +890,78 @@ GRANT ALL PRIVILEGES ON *.* TO '[유저 이름]'@'%'
 
 > 이 후에 이 유저를 통해 Connection을 진행하게 되면 처음 '127.0.0.1'에서 MySQL 허가를 받을 수 없다는 메시지는 뜨지 않는다.
 
-# 
+### **4-2 계정 정보 확인시**
+
+
+일단, 결과부터 말하자면 MySQL에서 버전별로 계정정보중 비밀번호를 확인할 수 있는 컬럼의 이름이 조금 다르다.
+
+버전 5.6 이하의 MySQL
+```
+SELECT User, Host, Password FROM User;
+```
+
+버전 5.7 이상의 MySQL
+```
+SELECT User, Host, authentication_string FROM User;
+```
+
+>**Note:**
+>
+>바로 패스워드를 나타내는 컬럼의 이름이 바뀌었다. 버전 5.7이상에서 MySQL 유저의 정보를 확인시 주의해야 할 점이다.
+
+실제로 5.7.20버전의 MySQL 에서 password를 검색해보았다.
+
+#### 
+
+<img src="http://cfile29.uf.tistory.com/image/990D85335A2A43FF0C91EE">
+
+역시나 원하는 컬럼을 찾을 수 없다.
+#### 
+
+<img src="http://cfile26.uf.tistory.com/image/99192B335A2A441F06314E">
+
+이번에는 원하는 값들이 잘 나오는 것을 확인 할 수 있다.
+
+>비밀번호 조회방법을 알아보면서 비밀번호를 호출 시 뜨는 저 해시값
+>```556A1819C902459389465119AFDEF298638C520B```
+>이게 거슬렸다 해시값으로 암호화 되어있지만 복호화가 가능하지 않을까? 라는 생각이 들었다.
+
+```
+<?
+for( $i = 0; $i < 99999; $i ++ ) {
+
+       $temp = mysql_fetch_array( mysql_query ( "select password('$i')" ) );
+
+       if( '556A1819C902459389465119AFDEF298638C520B' == $temp[0] ) {
+              echo " find ok : $i ";
+              break;
+       }
+}
+?>
+```
+
+위와 같은 코드로 해시값을 복호화하는 것이 가능한 것을 확인 했다. 데이터베이스의 보안을 위해 좀더
+이중 보안이 필요한 것 같다.
+
+----
+
+##유용한 코드한줄
+===
+
+쿼리를 연구하면서 유용할 것 같은 코드한 줄을 공개한다.
+
+```
+INSERT INTO book_count(id, book, b_count) VALUES(?, ?, ?) ON DUPLICATE KEY UPDATE b_count = b_count + 1
+```
+
+간단하게 해석하자면 입력값을 넣어서 중복 값이 있으면 카운트를 1씩 증가하는 코드이다. 삽입과 수정 쿼리문을 동시에 사용하면서
+간단한 쿼리 구성을 할 수있다.
+
+----
 
 
 [^dbms]: [DBMS](https://en.wikipedia.org/wiki/Database/)는 다수의 사용자들이 데이터베이스 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합이다.
 
 [^mysql]: [MySQL](https://www.mysql.com/why-mysql/)은 현재 가장 많이 사용되고 있는 오픈소스형태의 관계형 데이터베이스 관리 시스템(RDBMS)이다.
+
+
