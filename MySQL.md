@@ -510,13 +510,13 @@ SQL의 쿼리 명령어는 크게 DDS, DML, DCL 3가지로 분류할 수 있다.
 ### **3-2 DDL**
 #### 3-2-1 CREATE
 
-##### (1) **"테이블(Table)** 이란
+##### (1) **테이블(Table)** 이란
 '데이터가 실질적으로 저장되는 저장소' 라고 할 수 있다.
 비유하자면 데이터베이스가 디렉토리라고 할 때 테이블은 파일이라고 할 수 있다.
 디렉토리는 파일들을 그룹핑해주는 역할을 하는 것이고 파일은 데이터를 담는 역할을 한다. 여기서 파일과 유사한 기능을 하는 것이 **테이블**이라고 할 수 있다.
 ## 
 
-##### (2) **"스키마(schema)** 란?
+##### (2) **스키마(schema)** 란?
 
 테이블에 적재될 데이터의 구조와 형식을 정의 하는 것을 말한다.
 테이블에 어떤 형식의 데이터들이 삽입되고 저장될 것인지는 데이터를 삽입하기 전에 미리 정의 해놓아야 한다.
@@ -608,24 +608,23 @@ IF NOT EXISTS는 존재하지 않을 경우를 뜻함. 즉 **CREATE TABLE IF NOT
 
 --------------
 
-##### (6) **"참조 무결성**이란?
+##### (6) **참조 무결성**이란?
 한 테이블의 레코드는 반드시 다른 테이블의 레코드와 연관시켜야 하는 것을 의미한다. 레코드를 삽입, 삭제, 수정할 때 참조 무결성 제약조건에 위배될 수 있기 때문에 유의해야 한다.
 ##### 
 참조무결성이 위반되는 경우 아래와 같이 **해결**한다.
 
->	 1) Default operation 
->		 >\`SAL\` double NOT NULL DEFAULT 1000;
+1) Default operation 
+
+	`SAL` double NOT NULL DEFAULT 1000;
 		 
->	 2) referential triggered action 절
+2) referential triggered action 절
  
->> **FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)**
-
-> **ON DELETE SET NULL ON UPDATE CASCADE** 
-
- > (ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
- > or
- > **ON DELETE SET DEFAULT ON UPDATE CASCADE**
- > (DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
+	FOREIGN KEY(Super_ssn) REFERENCES EMPLOYEE(ssn)
+	ON DELETE SET NULL ON UPDATE CASCADE
+	(ssn이 삭제되면 Super_ssn을 NULL로 설정, ssn이 수정되면 Super_ssn도 수정된 값으로 변경)
+	or
+	ON DELETE SET DEFAULT ON UPDATE CASCADE
+	(DEFAULT는 UPDATE, DELETE에선 NULL과 같은 의미)
 
 
 ----------
@@ -665,7 +664,7 @@ DROP 쿼리문은 SCHEMA, DOMAIN, TABLE, VIEW, INDEX를 삭제하는 역할을 �
 
 ----------
 
-### **3-3 DML **
+### **3-3 DML**
 #### 3-3-1 INSERT
 INSERT는 테이블에 새로운 레코드를 삽입할 떄 사용하는 쿼리문이다.
 명령어의 사용법은 다음과 같다.
