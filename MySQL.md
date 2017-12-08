@@ -803,8 +803,73 @@ GRANT ALL PRIVILEGES ON *.* TO '[유저 이름]'@'%'
 
 > 이 후에 이 유저를 통해 Connection을 진행하게 되면 처음 '127.0.0.1'에서 MySQL 허가를 받을 수 없다는 메시지는 뜨지 않는다.
 
-# 
+### **4-2 계정 정보 확인시**
 
+일단, 결과부터 말하자면 MySQL에서 버전별로 계정정보중 비밀번호를 확인할 수 있는 컬럼의 이름이 조금 다르다.
+
+버전 5.6 이하의 MySQL
+```
+SELECT User, Host, Password FROM User;
+```
+
+버전 5.7 이상의 MySQL
+```
+SELECT User, Host, authentication_string FROM User;
+```
+
+>**Note:**
+>
+>바로 패스워드를 나타내는 컬럼의 이름이 바뀌었다. 버전 5.7이상에서 MySQL 유저의 정보를 확인시 주의해야 할 점이다.
+
+실제로 5.7.20버전의 MySQL 에서 password를 검색해보았다.
+
+#### 
+
+<img src="http://cfile29.uf.tistory.com/image/990D85335A2A43FF0C91EE">
+
+역시나 원하는 컬럼을 찾을 수 없다.
+#### 
+
+<img src="http://cfile26.uf.tistory.com/image/99192B335A2A441F06314E">
+
+이번에는 원하는 값들이 잘 나오는 것을 확인 할 수 있다.
+
+>비밀번호 조회방법을 알아보면서 비밀번호를 호출 시 뜨는 저 해시값
+>```556A1819C902459389465119AFDEF298638C520B```
+>이게 거슬렸다 해시값으로 암호화 되어있지만 복호화가 가능하지 않을까? 라는 생각이 들었다.
+
+```
+<?
+for( $i = 0; $i < 99999; $i ++ ) {
+
+       $temp = mysql_fetch_array( mysql_query ( "select password('$i')" ) );
+
+       if( '556A1819C902459389465119AFDEF298638C520B' == $temp[0] ) {
+              echo " find ok : $i ";
+              break;
+       }
+}
+?>
+```
+
+위와 같은 코드로 해시값을 복호화하는 것이 가능한 것을 확인 했다. 데이터베이스의 보안을 위해 좀더
+이중 보안이 필요한 것 같다.
+
+----
+
+##유용한 코드한줄
+===
+
+쿼리를 연구하면서 유용할 것 같은 코드한 줄을 공개한다.
+
+```
+INSERT INTO book_count(id, book, b_count) VALUES(?, ?, ?) ON DUPLICATE KEY UPDATE b_count = b_count + 1
+```
+
+간단하게 해석하자면 입력값을 넣어서 중복 값이 있으면 카운트를 1씩 증가하는 코드이다. 삽입과 수정 쿼리문을 동시에 사용하면서
+간단한 쿼리 구성을 할 수있다.
+
+----
 
 [^dbms]: [DBMS](https://en.wikipedia.org/wiki/Database/)는 다수의 사용자들이 데이터베이스 내의 데이터를 접근할 수 있도록 해주는 소프트웨어 도구의 집합이다.
 
